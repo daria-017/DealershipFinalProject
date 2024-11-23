@@ -29,7 +29,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Right = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         Left = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,9 +58,10 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setMinimumSize(new java.awt.Dimension(100, 100));
         jLabel5.setPreferredSize(new java.awt.Dimension(100, 100));
 
-        jLabel6.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel6.setForeground(new java.awt.Color(216, 214, 196));
-        jLabel6.setText("copyright © Dealership. All rights reserved.");
+        jLabel7.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel7.setForeground(new java.awt.Color(216, 214, 196));
+        jLabel7.setText("copyright © Dealership. All rights reserved.");
+        jLabel7.setOpaque(true);
 
         javax.swing.GroupLayout RightLayout = new javax.swing.GroupLayout(Right);
         Right.setLayout(RightLayout);
@@ -73,7 +74,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(RightLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel7)))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         RightLayout.setVerticalGroup(
@@ -81,8 +82,8 @@ public class Login extends javax.swing.JFrame {
             .addGroup(RightLayout.createSequentialGroup()
                 .addGap(126, 126, 126)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addComponent(jLabel7)
                 .addContainerGap())
         );
 
@@ -294,7 +295,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField2;
