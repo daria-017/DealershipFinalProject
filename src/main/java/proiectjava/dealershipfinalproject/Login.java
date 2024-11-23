@@ -59,7 +59,7 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setPreferredSize(new java.awt.Dimension(100, 100));
 
         jLabel6.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel6.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel6.setForeground(new java.awt.Color(216, 214, 196));
         jLabel6.setText("copyright © Dealership. All rights reserved.");
 
         javax.swing.GroupLayout RightLayout = new javax.swing.GroupLayout(Right);
@@ -91,7 +91,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(Right);
         Right.setBounds(0, 0, 400, 500);
 
-        Left.setBackground(new java.awt.Color(255, 255, 255));
+        Left.setBackground(new java.awt.Color(216, 214, 196));
         Left.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel1.setBackground(new java.awt.Color(242, 242, 242));
@@ -109,12 +109,12 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Email");
 
-        jTextField2.setBackground(new java.awt.Color(242, 242, 242));
+        jTextField2.setBackground(new java.awt.Color(216, 214, 196));
         jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
-        jPasswordField1.setBackground(new java.awt.Color(242, 242, 242));
+        jPasswordField1.setBackground(new java.awt.Color(216, 214, 196));
 
-        jButton1.setBackground(new java.awt.Color(242, 242, 242));
+        jButton1.setBackground(new java.awt.Color(216, 214, 196));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 102, 102));
         jButton1.setText("Sign up");
@@ -131,11 +131,12 @@ public class Login extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setText("I don't have an account");
 
         jButton2.setBackground(new java.awt.Color(0, 102, 102));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(216, 214, 196));
         jButton2.setText("Login");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -241,6 +242,11 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        SignUp SignUpFrame = new SignUp();
+        SignUpFrame.setVisible(true);
+        SignUpFrame.pack();
+        SignUpFrame.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
