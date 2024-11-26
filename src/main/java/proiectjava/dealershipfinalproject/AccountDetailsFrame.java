@@ -100,21 +100,30 @@ public class AccountDetailsFrame extends JFrame {
     return null; // Return null for invalid lines
 }
 
-private Color parseColor(String colorString) {
-    // Remove the "java.awt.Color[r=,g=,b=]" part to extract RGB values
-    colorString = colorString.replace("java.awt.Color[r=", "").replace("g=", "").replace("b=", "").replace("]", "");
+    private Color parseColor(String colorString) {
+        // Remove the "java.awt.Color[r=,g=,b=]" part to extract RGB values
+        colorString = colorString.replace("java.awt.Color[r=", "").replace("g=", "").replace("b=", "").replace("]", "");
     
-    // Split by commas to get individual color components
-    String[] rgb = colorString.split(",");
+        // Split by commas to get individual color components
+        String[] rgb = colorString.split(",");
     
-    // Parse the RGB values
-    int red = Integer.parseInt(rgb[0].trim());
-    int green = Integer.parseInt(rgb[1].trim());
-    int blue = Integer.parseInt(rgb[2].trim());
+        // Parse the RGB values
+        int red = Integer.parseInt(rgb[0].trim());
+        int green = Integer.parseInt(rgb[1].trim());
+        int blue = Integer.parseInt(rgb[2].trim());
     
-    return new Color(red, green, blue); // Return the Color object
-}
+        return new Color(red, green, blue); // Return the Color object
+    }
+    public static void main(String[] args) {
+        // Create a simple customer object for testing
+        Customer testCustomer = new Customer("Prenume", "Nume", 123, null);
 
-
-
+        // Create an AccountDetailsFrame passing the customer object
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new AccountDetailsFrame(testCustomer);
+            }
+        });
+    }
 }
