@@ -18,46 +18,46 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 400);
         setLayout(new GridLayout(7, 2, 10, 10));
-        
+
         // Labels and fields
         JLabel nameLabel = new JLabel("Name:");
         JTextField nameField = new JTextField();
-        
+
         JLabel usernameLabel = new JLabel("Username:");
         JTextField usernameField = new JTextField();
-        
+
         JLabel emailLabel = new JLabel("Email:");
         JTextField emailField = new JTextField();
-        
+
         JLabel passwordLabel = new JLabel("Password:");
         JPasswordField passwordField = new JPasswordField();
-        
+
         JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
         JPasswordField confirmPasswordField = new JPasswordField();
-        
+
         // Buttons
         JButton createAccountButton = new JButton("Create Account");
         JButton cancelButton = new JButton("Cancel");
-        
+
         // Add components to the frame
         add(nameLabel);
         add(nameField);
-        
+
         add(usernameLabel);
         add(usernameField);
-        
+
         add(emailLabel);
         add(emailField);
-        
+
         add(passwordLabel);
         add(passwordField);
-        
+
         add(confirmPasswordLabel);
         add(confirmPasswordField);
-        
+
         add(createAccountButton);
         add(cancelButton);
-        
+
         // Add button action listeners
         createAccountButton.addActionListener(new ActionListener() {
             @Override
@@ -67,7 +67,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                 String email = emailField.getText().trim();
                 String password = new String(passwordField.getPassword());
                 String confirmPassword = new String(confirmPasswordField.getPassword());
-                
+
                 if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "All fields must be filled out!", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (!password.equals(confirmPassword)) {
@@ -78,7 +78,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                         writer.write(name + "," + username + "," + email + "," + password);
                         writer.newLine();
                         JOptionPane.showMessageDialog(null, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                        
+
                         // Clear fields
                         nameField.setText("");
                         usernameField.setText("");
@@ -91,22 +91,17 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                 }
             }
         });
-        
+
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // Close the window
             }
         });
-        
+
         // Make the frame visible
         setVisible(true);
     }
-    
-    public static void main(String[] args) {
-        new CreateAccountFrame();
-    }
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -126,7 +121,10 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+
+public static void main(String[] args) {
+        new CreateAccountFrame();
+    }
 }
