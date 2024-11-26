@@ -1,10 +1,5 @@
 package proiectjava.dealershipfinalproject;
 
-/**
- *
- * @author Dragos :>
- */
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,9 +7,11 @@ import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/**
+ *
+ * @author Dragos :>
+ */
 public class CreateAccountFrame extends javax.swing.JFrame {
-
     public CreateAccountFrame() {
         // Set up the frame
         setTitle("Create Account");
@@ -22,6 +19,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         setSize(400, 400);
         setLayout(new GridLayout(7, 2, 10, 10));
 
+        // Labels and fields
         JLabel nameLabel = new JLabel("Name:");
         JTextField nameField = new JTextField();
 
@@ -41,6 +39,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         JButton createAccountButton = new JButton("Create Account");
         JButton cancelButton = new JButton("Cancel");
 
+        // Add components to the frame
         add(nameLabel);
         add(nameField);
 
@@ -66,22 +65,29 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                 String name = nameField.getText().trim();
                 String username = usernameField.getText().trim();
                 String email = emailField.getText().trim();
-                String password = new String(passwordField.getPassword()).trim();
-                String confirmPassword = new String(confirmPasswordField.getPassword()).trim();
+                String password = new String(passwordField.getPassword());
+                String confirmPassword = new String(confirmPasswordField.getPassword());
 
-                if (!password.equals(confirmPassword)) {
-                    JOptionPane.showMessageDialog(null, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "All fields must be filled out!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if (!password.equals(confirmPassword)) {
+                    JOptionPane.showMessageDialog(null, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    saveAccountToFile(name, username, email, password);
-                    JOptionPane.showMessageDialog(null, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    // Clear fields after successful account creation
-                    nameField.setText("");
-                    usernameField.setText("");
-                    emailField.setText("");
-                    passwordField.setText("");
-                    confirmPasswordField.setText("");
+                    // Write to the file
+                    try (BufferedWriter writer = new BufferedWriter(new FileWriter("accounts.txt", true))) {
+                        writer.write(name + "," + username + "," + email + "," + password);
+                        writer.newLine();
+                        JOptionPane.showMessageDialog(null, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+                        // Clear fields
+                        nameField.setText("");
+                        usernameField.setText("");
+                        emailField.setText("");
+                        passwordField.setText("");
+                        confirmPasswordField.setText("");
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(null, "Error writing to file!", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
             }
         });
@@ -96,21 +102,6 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         // Make the frame visible
         setVisible(true);
     }
-
-    private void saveAccountToFile(String name, String username, String email, String password) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("accounts.txt", true))) {
-            writer.write(name + "," + username + "," + email + "," + password);
-            writer.newLine();
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error saving account to file!", "Error", JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
-        }
-    }
-
-    public static void main(String[] args) {
-        new CreateAccountFrame();
-    }
- 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -132,4 +123,8 @@ public class CreateAccountFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+
+public static void main(String[] args) {
+        new CreateAccountFrame();
+    }
 }
