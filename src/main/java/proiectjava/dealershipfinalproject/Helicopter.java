@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
  *
  * @author Daria
  */
+//modificare
 
 
 public class Helicopter extends Vehicle {
