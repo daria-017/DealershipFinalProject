@@ -1,19 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package proiectjava.dealershipfinalproject;
 
+import javax.swing.ImageIcon;
 import java.awt.Color;
 
-/**
- *
- * @author Daria
- */
-public class DealershipFinalProject {
-
+public class Test {
     public static void main(String[] args) {
-       Engine yachtEngine1 = new Engine("V6 Marine", 500, 300, "Diesel");
+        Engine yachtEngine1 = new Engine("V6 Marine", 500, 300, "Diesel");
         Engine yachtEngine2 = new Engine("V8 Marine", 700, 400, "Diesel");
         Engine yachtEngine3 = new Engine("Electric Marine", 300, 500, "Electric");
         Engine yachtEngine4 = new Engine("Hybrid Marine", 600, 350, "Hybrid");
