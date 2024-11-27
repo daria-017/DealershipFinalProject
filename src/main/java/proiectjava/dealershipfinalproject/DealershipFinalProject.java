@@ -13,8 +13,7 @@ import javax.swing.ImageIcon;
 public class DealershipFinalProject {
 
     public static void main(String[] args) {
-        
-        
+
         Atv atv1 = new Atv(1, "Honda", "TRX250", (short) 2020, Color.RED, 3000.0, 180,
                 new Engine("Petrol", 250, 25, "Single-cylinder"),
                 new Transmission("Manual", 5),
@@ -45,7 +44,6 @@ public class DealershipFinalProject {
                 new Transmission("CVT", 0),
                 new ImageIcon("atv6.jpg"), "Utility", true, false, 25, "Independent Rear");
 
-        
         System.out.println("Cele 6 instante ale Atv");
         System.out.println(atv1.toString());
         System.out.println(atv2.toString());
@@ -55,7 +53,7 @@ public class DealershipFinalProject {
         System.out.println(atv6.toString());
 
         Atv[] atvArray = new Atv[10];
-        atvArray[0] =new Atv(atv1);
+        atvArray[0] = new Atv(atv1);
         atvArray[1] = new Atv(atv2);
         atvArray[2] = new Atv(atv3);
         atvArray[3] = new Atv(atv4);
@@ -65,18 +63,15 @@ public class DealershipFinalProject {
         atvArray[7] = new Atv(atv4);
         atvArray[8] = new Atv(atv5);
         atvArray[9] = new Atv(atv6);
-  
 
-
-     
         System.out.println("Toate elementele vectorului cu atv-uri");
         for (Atv atv : atvArray) {
             System.out.println(atv.toString());
 
         }
-        
+
         System.out.println("");
-               Drone drone1 = new Drone(1, "DJI", "Phantom 4", (short) 2021, Color.WHITE, 1500.0, 1380,
+        Drone drone1 = new Drone(1, "DJI", "Phantom 4", (short) 2021, Color.WHITE, 1500.0, 1380,
                 new Engine("Electric", 4, 40, "Quadcopter"), new Transmission("None", 0),
                 new ImageIcon("drone1.jpg"), 4, true, "Medium", true, 6);
 
@@ -108,26 +103,25 @@ public class DealershipFinalProject {
         System.out.println(drone5.toString());
         System.out.println(drone6.toString());
 
-        
         Drone[] droneArray = new Drone[10];
-        droneArray[0] =new Drone(drone1);
-        droneArray[1] =new Drone( drone2);
-        droneArray[2] =new Drone( drone3);
-        droneArray[3] =new Drone( drone4);
-        droneArray[4] =new Drone( drone5);
-        droneArray[5] =new Drone( drone6);
-        droneArray[6] =new Drone( drone3);
-        droneArray[7] =new Drone( drone2);
-        droneArray[8] =new Drone( drone3);
-        droneArray[9] =new Drone( drone4);
-        
+        droneArray[0] = new Drone(drone1);
+        droneArray[1] = new Drone(drone2);
+        droneArray[2] = new Drone(drone3);
+        droneArray[3] = new Drone(drone4);
+        droneArray[4] = new Drone(drone5);
+        droneArray[5] = new Drone(drone6);
+        droneArray[6] = new Drone(drone3);
+        droneArray[7] = new Drone(drone2);
+        droneArray[8] = new Drone(drone3);
+        droneArray[9] = new Drone(drone4);
+
         System.out.println("Elementele vectorului cu drone:");
         for (Drone drone : droneArray) {
             System.out.println(drone.toString());
         }
-    
+
         System.out.println("");
-     
+
         Scooter scooter1 = new Scooter(1, "Vespa", "Primavera", (short) 2020, Color.RED, 4000.0, 120,
                 new Engine("Electric", 1, 10, "Single"), new Transmission("Automatic", 1),
                 new ImageIcon("scooter1.jpg"), "Electric", true, false, false, 50);
@@ -152,7 +146,6 @@ public class DealershipFinalProject {
                 new Engine("Electric", 1, 8, "Single"), new Transmission("Automatic", 1),
                 new ImageIcon("scooter6.jpg"), "Electric", false, false, false, 45);
 
-   
         System.out.println("Cele 6 instante ale lui scooter:");
         System.out.println(scooter1.toString());
         System.out.println(scooter2.toString());
@@ -162,18 +155,17 @@ public class DealershipFinalProject {
         System.out.println(scooter6.toString());
 
         Scooter[] scooterArray = new Scooter[10];
-        scooterArray[0] = scooter1;
-        scooterArray[1] = scooter2;
-        scooterArray[2] = scooter3;
-        scooterArray[3] = scooter4;
-        scooterArray[4] = scooter5;
-        scooterArray[5] = scooter6;
-         scooterArray[6] = scooter3;
-        scooterArray[7] = scooter4;
-        scooterArray[8] = scooter2;
-        scooterArray[9] = scooter1;
+        scooterArray[0] = new Scooter(scooter1);
+        scooterArray[1] = new Scooter(scooter2);
+        scooterArray[2] = new Scooter(scooter3);
+        scooterArray[3] = new Scooter(scooter4);
+        scooterArray[4] = new Scooter(scooter5);
+        scooterArray[5] = new Scooter(scooter6);
+        scooterArray[6] = new Scooter(scooter3);
+        scooterArray[7] = new Scooter(scooter4);
+        scooterArray[8] = new Scooter(scooter2);
+        scooterArray[9] = new Scooter(scooter1);
 
-    
         System.out.println("Toate instantele vectorului cu scootere");
         for (Scooter scooter : scooterArray) {
             System.out.println(scooter.toString());
