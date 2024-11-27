@@ -41,7 +41,8 @@ public class LoginFrame {
         // Copyright
         copyrightLabel = new JLabel("copyright © Dealership. All rights reserved.", JLabel.CENTER);
         copyrightLabel.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        copyrightLabel.setForeground(new Color(216, 214, 196)); // Culoare deschisă
+        copyrightLabel.setBackground(new Color(216, 214, 196)); // Culoare deschisă
+        copyrightLabel.setForeground(new Color(0, 102, 102)); // Culoare deschisă 
         copyrightLabel.setBounds(0, 460, 400, 20); // Poziționat sub logo, centrat pe panoul drept
         rightPanel.add(copyrightLabel);
 
@@ -94,15 +95,15 @@ public class LoginFrame {
 
         // Label pentru Sign up
         signupLabel = new JLabel("I don't have an account.");
-        signupLabel.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        signupLabel.setFont(new Font("Segoe UI", Font.PLAIN, 16));
         signupLabel.setForeground(new Color(0, 102, 102));
         signupLabel.setBounds(40, 360, 200, 30); // Poziționare sub butonul Login
         leftPanel.add(signupLabel);
 
         // Sign Up button
         signUpButton = new JButton("Sign up");
-        signUpButton.setBackground(new Color(0, 102, 102));
-        signUpButton.setForeground(new Color(216, 214, 196));
+        signUpButton.setBackground(new Color(216, 214, 196));
+        signUpButton.setForeground(new Color(0, 102, 102));
         signUpButton.setFont(new Font("Segoe UI", Font.PLAIN, 16));
         signUpButton.setBounds(270, 360, 95, 40); // Poziționat lângă label
         leftPanel.add(signUpButton);

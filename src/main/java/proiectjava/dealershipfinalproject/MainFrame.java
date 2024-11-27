@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
     public static void main(String[] args) {
         // Create a frame
         JFrame frame = new JFrame("Main Frame");
-        frame.setSize(800, 600);
+        frame.setSize(800, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         final int MIN_WIDTH = 150;
