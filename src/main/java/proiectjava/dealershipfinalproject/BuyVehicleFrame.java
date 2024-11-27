@@ -21,7 +21,7 @@ public class BuyVehicleFrame extends JFrame {
         // JFrame setup
         setTitle("Vehicle Marketplace");
         setSize(800, 600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
 
         // Dropdown to select vehicles
