@@ -121,11 +121,11 @@ public class MainFrame extends JFrame {
         HoverButton buyVehicleButton = new HoverButton("Buy A Vehicle");
 
         accountDetailsButton.addActionListener(e -> {
-             AccountDetailsFrame accountDetailsFrame = new AccountDetailsFrame(loggedInCustomer);
+             AccountDetailsFrame accountDetailsFrame = new AccountDetailsFrame();
              accountDetailsFrame.setVisible(true);
         });
         buyVehicleButton.addActionListener(e -> {
-             BuyVehicleFrame buyVehicleFrame = new BuyVehicleFrame(loggedInCustomer);
+             BuyVehicleFrame buyVehicleFrame = new BuyVehicleFrame();
              buyVehicleFrame.setVisible(true);
         });
 
