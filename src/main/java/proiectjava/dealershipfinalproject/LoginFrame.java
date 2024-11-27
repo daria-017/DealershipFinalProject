@@ -4,8 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class LoginClass {
+public class LoginFrame {
 
     // Elemente GUI
     private JFrame frame;
@@ -15,7 +18,7 @@ public class LoginClass {
     private JPasswordField passwordField;
     private JButton loginButton, signUpButton;
 
-    public LoginClass() {
+    public LoginFrame() {
         // Inițializare fereastră principală
         frame = new JFrame("LOGIN");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,9 +114,26 @@ public class LoginClass {
                 String email = emailField.getText();
                 String password = new String(passwordField.getPassword());
 
-                // Simulare autentificare simplă
-                if (email.equals("admin") && password.equals("admin")) {
+                // Citire date din fișier și verificare autentificare
+                boolean loginSuccess = false;
+                try (BufferedReader reader = new BufferedReader(new FileReader("accounts.txt"))) {
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        String[] userDetails = line.split(",");
+                        if (userDetails.length == 4 && userDetails[2].equals(email) && userDetails[3].equals(password)) {
+                            loginSuccess = true;
+                            break;
+                        }
+                    }
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(frame, "Error reading from file!", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                if (loginSuccess) {
                     JOptionPane.showMessageDialog(frame, "Login successful!");
+                    frame.dispose(); // Închide fereastra curentă
+                    MainFrame.main(null); // Deschide fereastra principală
                 } else {
                     JOptionPane.showMessageDialog(frame, "Invalid email or password!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -124,7 +144,7 @@ public class LoginClass {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose(); // Închide fereastra curentă
-                new CreateAccountFrame(); // Deschide fereastra de înregistrare (trebuie implementată)
+                new CreateAccountFrame(); // Deschide fereastra de înregistrare
             }
         });
 
@@ -138,6 +158,6 @@ public class LoginClass {
     }
 
     public static void main(String[] args) {
-        new LoginClass();
+        new LoginFrame();
     }
 }
