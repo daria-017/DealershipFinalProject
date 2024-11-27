@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
  *
  * @author Daria
  */
-public class JetPlane extends Vehicle {
+public class Jetplane extends Vehicle {
     private int maxAltitude; // Altitudine maximă in metri
     private int maxRange;    // Distanța maximă (în kilometri)
     private int maxSpeed;    // Viteza maximă (în km/h)
@@ -24,7 +24,7 @@ public class JetPlane extends Vehicle {
     
 
     
-    public JetPlane() {
+    public Jetplane() {
         super();
         this.maxAltitude = 0;
         this.maxRange = 0;
@@ -39,7 +39,7 @@ public class JetPlane extends Vehicle {
    
     }    
    
-    public JetPlane(int id, String brand, String model, short year, Color color, double price, int weight,  Engine engine,Transmission transmission, ImageIcon photo, int maxAltitude, int maxRange, int maxSpeed,
+    public Jetplane(int id, String brand, String model, short year, Color color, double price, int weight,  Engine engine,Transmission transmission, ImageIcon photo, int maxAltitude, int maxRange, int maxSpeed,
                     boolean militaryAircraft, boolean luggageCapacity, String propulsionSystem, boolean highSpeed,
                     int engineCycles) {
         super(id, brand, model, year, color, price, weight, engine, transmission, photo);
@@ -55,7 +55,7 @@ public class JetPlane extends Vehicle {
     }
 
    
-    public JetPlane(JetPlane jetplane) {
+    public Jetplane(Jetplane jetplane) {
         super(jetplane);
         this.maxAltitude = jetplane.maxAltitude;
         this.maxRange = jetplane.maxRange;
