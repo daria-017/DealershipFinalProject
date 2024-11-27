@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+
 /**
  *
  * @author Dragos :>
@@ -15,24 +16,33 @@ public class CreateAccountFrame extends javax.swing.JFrame {
     public CreateAccountFrame() {
         // Set up the frame
         setTitle("Create Account");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(400, 400);
+        setLocationRelativeTo(null); // Center the window on the screen
         setLayout(new GridLayout(7, 2, 10, 10));
+
+        // Set background color
+        getContentPane().setBackground(new Color(0, 102, 102));
 
         // Labels and fields
         JLabel nameLabel = new JLabel("Name:");
+        nameLabel.setForeground(Color.WHITE); // Set text color
         JTextField nameField = new JTextField();
 
         JLabel usernameLabel = new JLabel("Username:");
+        usernameLabel.setForeground(Color.WHITE);
         JTextField usernameField = new JTextField();
 
         JLabel emailLabel = new JLabel("Email:");
+        emailLabel.setForeground(Color.WHITE);
         JTextField emailField = new JTextField();
 
         JLabel passwordLabel = new JLabel("Password:");
+        passwordLabel.setForeground(Color.WHITE);
         JPasswordField passwordField = new JPasswordField();
 
         JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
+        confirmPasswordLabel.setForeground(Color.WHITE);
         JPasswordField confirmPasswordField = new JPasswordField();
 
         // Buttons
@@ -80,7 +90,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
                         new LoginFrame();
-                        
+
                     } catch (IOException ex) {
                         JOptionPane.showMessageDialog(null, "Error writing to file!", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -96,32 +106,19 @@ public class CreateAccountFrame extends javax.swing.JFrame {
             }
         });
 
+        // Add a custom close operation
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                new LoginFrame();
+            }
+        });
+
         // Make the frame visible
         setVisible(true);
     }
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        pack();
-    }// </editor-fold>                        
-
-    // Variables declaration - do not modify                     
-    // End of variables declaration                   
-
-public static void main(String[] args) {
+    public static void main(String[] args) {
         new CreateAccountFrame();
     }
 }
