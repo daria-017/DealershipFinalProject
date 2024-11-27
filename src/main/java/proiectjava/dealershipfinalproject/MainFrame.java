@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
         class HoverButton extends JButton {
             private boolean isPressed = false;
             private boolean isHovered = false; // Hover state
-            private Color baseColor = new Color(0, 128, 128); // Default teal color
+            private Color baseColor = new Color(0, 102, 102); // Default teal color
             private Color hoverColor = baseColor.darker(); // Darker teal for hover
 
             public HoverButton(String text) {
@@ -114,7 +114,7 @@ public class MainFrame extends JFrame {
         // Create the header label with "SELECT AN OPTION"
         JLabel headerLabel = new JLabel("SELECT AN OPTION", JLabel.CENTER);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 30));  // Set large, bold font
-        headerLabel.setForeground(new java.awt.Color(0,128,128));  // Optional: set text color
+        headerLabel.setForeground(new java.awt.Color(0, 102, 102));  // Optional: set text color
 
         // Create buttons
         HoverButton accountDetailsButton = new HoverButton("Account Details");
@@ -133,6 +133,7 @@ public class MainFrame extends JFrame {
         JPanel rightPanel = new JPanel();
         rightPanel.setLayout(null);  // Absolute positioning for custom layout
         headerLabel.setBounds(0, 50, 400, 40); // Place header at the top of the right panel
+        rightPanel.setBackground(new Color(216, 214, 196));
         rightPanel.add(headerLabel);
 
         // Adjust button sizes dynamically and position header
