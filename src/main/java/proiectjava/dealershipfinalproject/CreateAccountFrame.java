@@ -78,13 +78,9 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                         writer.write(name + "," + username + "," + email + "," + password);
                         writer.newLine();
                         JOptionPane.showMessageDialog(null, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-
-                        // Clear fields
-                        nameField.setText("");
-                        usernameField.setText("");
-                        emailField.setText("");
-                        passwordField.setText("");
-                        confirmPasswordField.setText("");
+                        dispose();
+                        new LoginClass();
+                        
                     } catch (IOException ex) {
                         JOptionPane.showMessageDialog(null, "Error writing to file!", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -96,6 +92,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // Close the window
+                new LoginClass();
             }
         });
 
