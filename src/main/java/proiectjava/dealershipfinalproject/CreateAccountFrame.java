@@ -79,7 +79,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                         writer.newLine();
                         JOptionPane.showMessageDialog(null, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
-                        new LoginClass();
+                        new LoginFrame();
                         
                     } catch (IOException ex) {
                         JOptionPane.showMessageDialog(null, "Error writing to file!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -92,7 +92,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // Close the window
-                new LoginClass();
+                new LoginFrame();
             }
         });
 
