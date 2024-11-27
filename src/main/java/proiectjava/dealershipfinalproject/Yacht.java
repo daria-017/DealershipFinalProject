@@ -65,7 +65,7 @@ public class Yacht extends Vehicle{
 
     @Override
     public String toString() {
-        return super.toString()+"Yacht{" + "nauticalMiles=" + nauticalMiles + ", maxCrew=" + maxCrew + ", flag=" + flag + "}\n";
+        return super.toString()+"Yacht{" + "nauticalMiles=" + nauticalMiles + ", maxCrew=" + maxCrew + ", flag=" + flag + "}";
     }
     
 }
