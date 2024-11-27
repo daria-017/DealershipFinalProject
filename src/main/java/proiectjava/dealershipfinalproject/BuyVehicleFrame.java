@@ -7,14 +7,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class VehicleDisplayApp extends JFrame {
+public class BuyVehicleFrame extends JFrame {
     private ArrayList<Vehicle> vehicles;  //facem arraylist pt fiecare 
     private JLabel vehicleImageLabel;
     private JTextArea vehicleDetailsTextArea;
     private JComboBox<Vehicle> vehicleListDropdown;
     private JTextArea purchaseLog;
 
-    public VehicleDisplayApp() {
+    public BuyVehicleFrame() {
     vehicles = new ArrayList<>();
         populateVehicles();
 
@@ -167,6 +167,6 @@ public class VehicleDisplayApp extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(VehicleDisplayApp::new);
+        SwingUtilities.invokeLater(BuyVehicleFrame::new);
     }
 }
