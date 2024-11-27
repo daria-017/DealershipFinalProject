@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AccountDetailsFrame extends JFrame {
 
-    public AccountDetailsFrame(Customer customer) {
+    public AccountDetailsFrame() {
         setTitle("Account Details");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -69,14 +69,11 @@ public class AccountDetailsFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Create a simple customer object for testing
-        Customer testCustomer = new Customer("Prenume", "Nume", 123, null);
-
-        // Create an AccountDetailsFrame passing the customer object
+        // Launch the frame
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new AccountDetailsFrame(testCustomer);
+                new AccountDetailsFrame();
             }
         });
     }
