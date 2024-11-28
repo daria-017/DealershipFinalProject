@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Daria
+ * @author Daria 
  */
 public class Airplane extends Vehicle {
     private int maxAltitude; // Altitudine maximă in metri

@@ -14,7 +14,8 @@ import javax.swing.ImageIcon;
 public class DealershipFinalProject {
 
     public static void main(String[] args) {
-       Engine yachtEngine1 = new Engine("V6 Marine", 500, 300, "Diesel");
+        System.out.println("--------Yacht--------");
+        Engine yachtEngine1 = new Engine("V6 Marine", 500, 300, "Diesel");
         Engine yachtEngine2 = new Engine("V8 Marine", 700, 400, "Diesel");
         Engine yachtEngine3 = new Engine("Electric Marine", 300, 500, "Electric");
         Engine yachtEngine4 = new Engine("Hybrid Marine", 600, 350, "Hybrid");
@@ -65,9 +66,10 @@ public class DealershipFinalProject {
         System.out.println(yacht14.toString());
         System.out.println(yacht15.toString());
         System.out.println(yacht16.toString());
+        System.out.println("");
         
         
-        
+        System.out.println("--------Jetski--------");
         Engine jetskiEngine1 = new Engine("V2 Marine", 150, 50, "Petrol");
         Engine jetskiEngine2 = new Engine("Electric Marine", 80, 60, "Electric");
         Engine jetskiEngine3 = new Engine("Inline-3 Marine", 200, 70, "Petrol");
@@ -119,6 +121,8 @@ public class DealershipFinalProject {
         for (Jetski jetski : jetskis) {
             System.out.println(jetski.toString());
         }
+        
+        System.out.println("");
         
         Atv atv1 = new Atv(1, "Honda", "TRX250", (short) 2020, Color.RED, 3000.0, 180,
                 new Engine("Petrol", 250, 25, "Single-cylinder"),
