@@ -718,7 +718,27 @@ public class DealershipFinalProject {
             if(atv.respectaCerinta("Manual",40))
                 System.out.println(atv);      
         }
-            
- 
+        
+        // Dragos :>
+        //Boat
+        System.out.println("\n>> Boats: GPS = TRUE && Acceleration Time < 5");
+        
+        for(Boat boat : boats)
+        {
+            if(boat.respectaCerinta(true, 5.0))
+            {
+                System.out.println(boat);
+            }
+        }
+        
+        System.out.println("\n>> Sail Boats: Nautical Miles < 750 && Has Life Buoy = false");
+        
+        for(SailBoat sailBoat : sailBoats)
+        {
+            if(sailBoat.respectaCerinta(750, false))
+            {
+                System.out.println(sailBoat);
+            }
+        }
     }
 }
