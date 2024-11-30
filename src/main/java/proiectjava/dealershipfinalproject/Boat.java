@@ -24,7 +24,7 @@ public class Boat extends Vehicle {
         propulsionType = "<empty>";
     }
 
-    Boat(int id, String brand, String model, short year, Color color, double price, int weight,  Engine engine,Transmission transmission, ImageIcon photo,
+    Boat(int id, String brand, String model, short year, Color color, double price, int weight, Engine engine, Transmission transmission, ImageIcon photo,
             int nauticalMiles, boolean gps, double accelerationTime, boolean sonar, String propulsionType) {
         super(id, brand, model, year, color, price, weight, engine, transmission, photo);
         this.nauticalMiles = nauticalMiles;
@@ -87,5 +87,9 @@ public class Boat extends Vehicle {
 
     public void setPropulsionType(String propulsionType) {
         this.propulsionType = propulsionType;
+    }
+
+    public boolean respectaCerinta(boolean gps, double accelerationTime) {
+        return this.gps == gps && this.accelerationTime < accelerationTime;
     }
 }
