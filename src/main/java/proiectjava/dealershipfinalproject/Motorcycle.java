@@ -86,6 +86,11 @@ public class Motorcycle extends Vehicle {
         return this.type;
     }
     
+    // respectaCerinta() method:
+    public boolean respectaCerinta(boolean abs, int mileage) {
+        return this.abs == abs && this.mileage < mileage;
+    }
+    
     // toString method:
     @Override
     public String toString() {
