@@ -149,5 +149,10 @@ public class Helicopter extends Vehicle {
         return "Helicopter "+super.toString()+"max altitude: "+maxAltitude+" max range: "+maxRange+" max speed: "+maxSpeed+" engine cycles: "+engineCycles+" number of blades"+numberOfBlades+" loudness: "+loudness+
                 "military aircraft:"+militaryAircraft+" cargo: "+cargo+ "rotor type: "+rotorType;
     }
+     
+     //functie
+    public boolean canFlyToLocation(int requiredRange, int requiredAltitude) {
+        return this.maxRange >= requiredRange && this.maxAltitude >= requiredAltitude;
+    }
 }
 

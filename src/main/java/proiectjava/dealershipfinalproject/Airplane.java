@@ -155,4 +155,9 @@ public class Airplane extends Vehicle {
         return "AirPlane "+super.toString()+"max altitude: "+maxAltitude+" max range: "+maxRange+" max speed: "+maxSpeed+" passenger capacity: "+passengerCapacity+
                 "number of wings"+numberOfWings+" luggage capacity: "+luggageCapacity+" cargo: "+cargo+" high speed: "+highSpeed+" category: "+category;
     }
+    
+    //functie
+    public boolean canFlyToLocation(int requiredRange, int requiredAltitude) {
+        return this.maxRange >= requiredRange && this.maxAltitude >= requiredAltitude;
+    }
 }

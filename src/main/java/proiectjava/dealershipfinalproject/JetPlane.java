@@ -155,6 +155,11 @@ public class JetPlane extends Vehicle {
         return "JetPlane "+super.toString()+"max altitude: "+maxAltitude+" max range: "+maxRange+" max speed: "+maxSpeed+" engine cycles: "+engineCycles+
                 "military aircraft:"+militaryAircraft+" luggage capacity: "+luggageCapacity+" high speed: "+highSpeed+" propulsion system: "+propulsionSystem;
     }
+     
+     //functie
+    public boolean canFlyToLocation(int requiredRange, int requiredAltitude) {
+        return this.maxRange >= requiredRange && this.maxAltitude >= requiredAltitude;
+    }
 
 }
 
