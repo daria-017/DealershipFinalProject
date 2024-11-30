@@ -4,7 +4,7 @@ import java.awt.Color;
 
 public class AirVehiclesTest {
     public static void main(String[] args) {
-        // Instanțe pentru clasele Engine și Transmission
+        
         Engine airplaneEngine1 = new Engine("Turbojet", 2000, 5000, "Jet Fuel");
         Engine airplaneEngine2 = new Engine("Turboprop", 1500, 3000, "Jet Fuel");
         Engine airplaneEngine3 = new Engine("Piston", 500, 200, "Avgas");
@@ -27,7 +27,7 @@ public class AirVehiclesTest {
         Transmission airplaneTransmission9 = new Transmission("Turbofan System", 1);
         Transmission airplaneTransmission10 = new Transmission("Dual Propeller", 2);
 
-        // Exemple de utilizare a constructorilor pentru Airplane
+        
         Airplane airplane1 = new Airplane();
         Airplane airplane2 = new Airplane(2, "Boeing", "737", (short) 2019, Color.WHITE, 1200000, 2000,
                 airplaneEngine1, airplaneTransmission1, null, 80000, 900, 1000, 150, 2, true, false, true,
@@ -36,9 +36,9 @@ public class AirVehiclesTest {
 
         System.out.println(airplane1);
         System.out.println(airplane2);
-        System.out.println(airplane3);
+        System.out.println(airplane3+"\n\n");
 
-        // Vector de avioane complet
+       
         Airplane[] allAirplanes = new Airplane[10];
         allAirplanes[0] = new Airplane(1, "Boeing", "747", (short) 2020, Color.GRAY, 25000000, 30000,
                 airplaneEngine1, airplaneTransmission2, null, 100000, 950, 1000, 800, 4, true, false, true,
@@ -75,21 +75,18 @@ public class AirVehiclesTest {
             System.out.println(airplane);
         }
 
-        // Similar pentru Helicopters și JetPlanes
-        // Continuarea codului pentru Helicopters și JetPlanes va fi completată într-o altă secțiune pentru spațiu
-        
-           // Exemple de utilizare a constructorului Helicopter cu parametrii specificați
+   
         Helicopter helicopter1 = new Helicopter();
         Helicopter helicopter2 = new Helicopter(1, "Bell", "206", (short) 2020, Color.GREEN, 1200000, 800,
                 airplaneEngine1, airplaneTransmission1, null, 4000, 220, 250, (short) 1, 800, 2, true,
                 true, "Main Rotor");
         Helicopter helicopter3 = new Helicopter(helicopter2);
 
-        System.out.println(helicopter1);
+        System.out.println("\n\n"+helicopter1);
         System.out.println(helicopter2);
-        System.out.println(helicopter3);
+        System.out.println(helicopter3+"\n\n");
 
-        // Vector complet de elicoptere
+     
         Helicopter[] allHelicopters = new Helicopter[10];
         allHelicopters[0] = new Helicopter(2, "Eurocopter", "AS350", (short) 2018, Color.BLUE, 900000, 700,
                 airplaneEngine2, airplaneTransmission2, null, 3500, 210, 230, (short) 1, 750, 1, true,
@@ -126,18 +123,18 @@ public class AirVehiclesTest {
             System.out.println(helicopter);
         }
         
-                // Exemple de utilizare a constructorului JetPlane cu parametrii specificați
+                
         JetPlane jetPlane1 = new JetPlane();
         JetPlane jetPlane2 = new JetPlane(1, "Concorde", "Type A", (short) 1976, Color.WHITE, 50000000, 40000,
                 airplaneEngine1, airplaneTransmission1, null, 120000, 2200, 2400, true, false, "Commercial", true,
                 2);
         JetPlane jetPlane3 = new JetPlane(jetPlane2);
 
-        System.out.println(jetPlane1);
+        System.out.println("\n\n"+jetPlane1);
         System.out.println(jetPlane2);
-        System.out.println(jetPlane3);
+        System.out.println(jetPlane3+"\n\n");
 
-        // Vector complet de avioane JetPlane
+       
         JetPlane[] allJetPlanes = new JetPlane[10];
         allJetPlanes[0] = new JetPlane(2, "Boeing", "747", (short) 1990, Color.WHITE, 150000000, 80000,
                 airplaneEngine2, airplaneTransmission2, null, 45000, 15000, 900, false, true, "Turbofan", false,
@@ -173,6 +170,8 @@ public class AirVehiclesTest {
         for (JetPlane jetPlane : allJetPlanes) {
             System.out.println(jetPlane);
         }
+        
+        
 
     }
 }
