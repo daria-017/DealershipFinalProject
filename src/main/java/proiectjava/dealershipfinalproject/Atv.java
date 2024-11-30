@@ -90,7 +90,10 @@ String suspensionType;
         this.suspensionType = suspensionType;
     }
 
-    
+        public boolean respectaCerinta(String suspensiontype,int rackCapacity)
+    {
+        return suspensionType.equals(this.suspensionType) && rackCapacity<this.rackCapacity;
+    }
 }
 
 

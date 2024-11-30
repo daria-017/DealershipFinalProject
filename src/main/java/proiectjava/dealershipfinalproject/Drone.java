@@ -88,6 +88,11 @@ public class Drone extends Vehicle {
     public String toString() {
         return super.toString()+"Drone{" + "engineCycles=" + engineCycles + ", surveillance=" + surveillance + ", size=" + size + ", magnetometer=" + magnetometer + ", numberOfSensors=" + numberOfSensors + '}';
     }
-
+    
+    
+    public boolean respectaCerinta(double price,int numbrOfSensors)
+    {
+        return price==this.getPrice() &&  numberOfSensors<this.numberOfSensors;
+    }
 
 }
