@@ -67,7 +67,7 @@ public class AccountDetailsFrame extends JFrame {
         }
         return vehicleData;
     }
-
+/*
     public static void main(String[] args) {
         // Launch the frame
         SwingUtilities.invokeLater(new Runnable() {
@@ -77,4 +77,5 @@ public class AccountDetailsFrame extends JFrame {
             }
         });
     }
+*/
 }
