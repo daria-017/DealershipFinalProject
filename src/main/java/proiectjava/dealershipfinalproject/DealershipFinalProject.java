@@ -693,5 +693,32 @@ public class DealershipFinalProject {
         for(Motorcycle motorcycle : motorcycles) {
             if(motorcycle.respectaCerinta(false, 200000)) { System.out.println(motorcycle); }
         }
+        
+        //
+        System.out.println("Toate instantele vectorului cu scootere care respecta conditia");
+        for (Scooter scooter : scooterArray) {
+ 
+            if(scooter.respectaCerinta(false, (short)2020)) 
+             System.out.println(scooter);
+            
+            }
+        
+      System.out.println("Toate instantele vectorului cu drone care respecta conditia");
+
+            
+       for (Drone drone : droneArray) 
+        {
+            if(!drone.respectaCerinta(1000 ,6)) 
+             System.out.println(drone);
+        }
+        
+                   
+            System.out.println("Toate elementele vectorului cu atv-uri ce respecta conditia");
+        for (Atv atv : atvArray) {
+            if(atv.respectaCerinta("Manual",40))
+                System.out.println(atv);      
+        }
+            
+ 
     }
 }

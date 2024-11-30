@@ -90,9 +90,9 @@ public class Drone extends Vehicle {
     }
     
     
-    public boolean respectaCerinta(double price,int numbrOfSensors)
+    public boolean respectaCerinta(double price,int numberOfSensors)
     {
-        return price==this.getPrice() &&  numberOfSensors<this.numberOfSensors;
+        return price<this.getPrice() &&  numberOfSensors<this.numberOfSensors;
     }
 
 }
