@@ -90,10 +90,6 @@ public class Boat extends Vehicle {
     }
 
     public boolean respectaCerinta(boolean gps, double accelerationTime) {
-        if (this.gps == gps && this.accelerationTime < accelerationTime) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.gps == gps && this.accelerationTime < accelerationTime;
     }
 }
