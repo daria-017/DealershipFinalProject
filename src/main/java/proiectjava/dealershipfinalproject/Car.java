@@ -103,10 +103,7 @@ public class Car extends Vehicle {
         return "Am schimbat uleiul la masina.";
     }
     
-    // respectaCerinta() method:
-    public boolean respectaCerinta(boolean isConvertible, int mileage) {
-        return this.isConvertible == isConvertible && this.mileage < mileage;
-    }
+
     
     // toString method:
     @Override
@@ -114,8 +111,8 @@ public class Car extends Vehicle {
         return super.toString() + " Car{" + "mileage=" + this.mileage + ", topSpeed=" + this.topSpeed + ", isConvertible=" + this.isConvertible + ", abs=" + this.abs + ", gps=" + this.gps + ", body=" + this.body + '}';
     }
     
-    public boolean respectaCerinta(boolean abs,int topSpeed)
-    {
-        return abs==this.abs && topSpeed<this.topSpeed;
+
+    public boolean respectaCerinta(boolean isConvertible, int mileage) {
+        return this.isConvertible == isConvertible && this.mileage < mileage;
     }
 }
