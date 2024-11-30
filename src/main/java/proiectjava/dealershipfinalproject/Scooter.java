@@ -94,6 +94,9 @@ public class Scooter extends Vehicle{
         return  super.toString()+"Scooter{" + "type=" + type + ", abs=" + abs + ", offroad=" + offroad + ", sport=" + sport + ", topSpeed=" + topSpeed + '}';
     }
 
-
+        public boolean respectaCerinta(boolean offroad,short year)
+    {
+        return offroad==offroad && year<this.getYear();
+    }
 
 }
