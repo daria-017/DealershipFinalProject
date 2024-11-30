@@ -152,7 +152,11 @@ public class Helicopter extends Vehicle {
      
      //functie
     public boolean canFlyToLocation(int requiredRange, int requiredAltitude) {
-        return this.maxRange >= requiredRange && this.maxAltitude >= requiredAltitude;
+        if(this.maxRange >= requiredRange && this.maxAltitude >= requiredAltitude){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
 
