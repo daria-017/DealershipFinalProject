@@ -113,4 +113,9 @@ public class Car extends Vehicle {
     public String toString() {
         return super.toString() + " Car{" + "mileage=" + this.mileage + ", topSpeed=" + this.topSpeed + ", isConvertible=" + this.isConvertible + ", abs=" + this.abs + ", gps=" + this.gps + ", body=" + this.body + '}';
     }
+    
+    public boolean respectaCerinta(boolean abs,int topSpeed)
+    {
+        return abs==this.abs && topSpeed<this.topSpeed;
+    }
 }
