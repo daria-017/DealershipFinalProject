@@ -117,8 +117,4 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         // Make the frame visible
         setVisible(true);
     }
-
-    public static void main(String[] args) {
-        new CreateAccountFrame();
-    }
 }
