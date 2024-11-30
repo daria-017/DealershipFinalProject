@@ -103,6 +103,11 @@ public class Car extends Vehicle {
         return "Am schimbat uleiul la masina.";
     }
     
+    // respectaCerinta() method:
+    public boolean respectaCerinta(boolean isConvertible, int mileage) {
+        return this.isConvertible == isConvertible && this.mileage < mileage;
+    }
+    
     // toString method:
     @Override
     public String toString() {

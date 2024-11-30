@@ -85,6 +85,10 @@ public class Truck extends Vehicle {
         return this.cargoSensor;
     }
     
+    public boolean respectaCerinta(boolean backupSound, int maxWeight) {
+        return this.backupSound == backupSound && this.maxWeight < maxWeight;
+    }
+    
     // toString method:
     @Override
     public String toString() {
