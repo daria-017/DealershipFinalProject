@@ -34,7 +34,8 @@ public class LoginFrame {
 
         // Logo
         logoLabel = new JLabel();
-        logoLabel.setIcon(new ImageIcon("C:\\Users\\Daria\\Desktop\\An2-Sem1\\Java\\Dealership_logo_200px.png")); // Schimbă calea dacă este necesar
+        ImageIcon logo = new ImageIcon("Dealership_logo_200px.png");
+        logoLabel.setIcon(logo); // Schimbă calea dacă este necesar
         logoLabel.setBounds(100, 130, 200, 200); // Centrat pe panoul drept
         rightPanel.add(logoLabel);
 

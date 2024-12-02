@@ -9,114 +9,147 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- *
  * @author Dragos :>
  */
 public class CreateAccountFrame extends javax.swing.JFrame {
+
+    private JPanel jPanel1;
+    private JPanel Right, Left;
+    private JLabel copyright, logoLabel;
+    private JLabel titlu, nameLabel, emailLabel, passwordLabel, confirmPasswordLabel, usernameLabel;
+    private JTextField nameField, emailField, usernameField;
+    private JPasswordField passwordField, confirmPasswordField;
+    private JButton createAccountButton, cancelButton;
+    private ImageIcon logoIcon;
+
     public CreateAccountFrame() {
-        // Set up the frame
         setTitle("Create Account");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(400, 400);
-        setLocationRelativeTo(null); // Center the window on the screen
-        setLayout(new GridLayout(7, 2, 10, 10));
+        setPreferredSize(new Dimension(800, 500));
 
-        // Set background color
-        getContentPane().setBackground(new Color(0, 102, 102));
+        initComponents();
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
 
-        // Labels and fields
-        JLabel nameLabel = new JLabel("Name:");
-        nameLabel.setForeground(Color.WHITE); // Set text color
-        JTextField nameField = new JTextField();
+    private void initComponents() {
+        jPanel1 = new JPanel();
+        jPanel1.setLayout(null);
+        jPanel1.setPreferredSize(new Dimension(800, 500));
 
-        JLabel usernameLabel = new JLabel("Username:");
-        usernameLabel.setForeground(Color.WHITE);
-        JTextField usernameField = new JTextField();
+        // Right panel
+        Right = new JPanel();
+        Right.setBackground(new Color(0, 102, 102));
+        Right.setBounds(0, 0, 400, 500);
+        Right.setLayout(null);
 
-        JLabel emailLabel = new JLabel("Email:");
-        emailLabel.setForeground(Color.WHITE);
-        JTextField emailField = new JTextField();
+        logoIcon = new ImageIcon("logo200x.png"); // Logo placeholder
+        logoLabel = new JLabel(logoIcon);
+        logoLabel.setBounds(100, 100, 200, 200);
 
-        JLabel passwordLabel = new JLabel("Password:");
-        passwordLabel.setForeground(Color.WHITE);
-        JPasswordField passwordField = new JPasswordField();
+        copyright = new JLabel("© Dealership. All rights reserved.");
+        copyright.setForeground(new Color(216, 214, 196));
+        copyright.setBounds(100, 450, 200, 20);
 
-        JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
-        confirmPasswordLabel.setForeground(Color.WHITE);
-        JPasswordField confirmPasswordField = new JPasswordField();
+        Right.add(logoLabel);
+        Right.add(copyright);
 
-        // Buttons
-        JButton createAccountButton = new JButton("Create Account");
-        JButton cancelButton = new JButton("Cancel");
+        // Left panel
+        Left = new JPanel();
+        Left.setLayout(null);
+        Left.setBackground(new Color(216, 214, 196));
+        Left.setBounds(400, 0, 400, 500);
 
-        // Add components to the frame
-        add(nameLabel);
-        add(nameField);
+        titlu = new JLabel("SIGN UP");
+        titlu.setFont(new Font("Segoe UI", Font.BOLD, 36));
+        titlu.setForeground(new Color(0, 102, 102));
+        titlu.setBounds(120, 20, 200, 50);
 
-        add(usernameLabel);
-        add(usernameField);
+        nameLabel = new JLabel("Name:");
+        nameLabel.setBounds(30, 100, 100, 25);
+        nameField = new JTextField();
+        nameField.setBounds(30, 130, 340, 30);
 
-        add(emailLabel);
-        add(emailField);
+        usernameLabel = new JLabel("Username:");
+        usernameLabel.setBounds(30, 170, 100, 25);
+        usernameField = new JTextField();
+        usernameField.setBounds(30, 200, 340, 30);
 
-        add(passwordLabel);
-        add(passwordField);
+        emailLabel = new JLabel("Email:");
+        emailLabel.setBounds(30, 240, 100, 25);
+        emailField = new JTextField();
+        emailField.setBounds(30, 270, 340, 30);
 
-        add(confirmPasswordLabel);
-        add(confirmPasswordField);
+        passwordLabel = new JLabel("Password:");
+        passwordLabel.setBounds(30, 310, 100, 25);
+        passwordField = new JPasswordField();
+        passwordField.setBounds(30, 340, 340, 30);
 
-        add(createAccountButton);
-        add(cancelButton);
+        confirmPasswordLabel = new JLabel("Confirm Password:");
+        confirmPasswordLabel.setBounds(30, 380, 150, 25);
+        confirmPasswordField = new JPasswordField();
+        confirmPasswordField.setBounds(30, 410, 340, 30);
 
-        // Add button action listeners
+        createAccountButton = new JButton("Create Account");
+        createAccountButton.setBounds(60, 460, 120, 30);
+        createAccountButton.setBackground(new Color(0, 102, 102));
+        createAccountButton.setForeground(new Color(216, 214, 196));
         createAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name = nameField.getText().trim();
-                String username = usernameField.getText().trim();
-                String email = emailField.getText().trim();
-                String password = new String(passwordField.getPassword());
-                String confirmPassword = new String(confirmPasswordField.getPassword());
-
-                if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "All fields must be filled out!", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (!password.equals(confirmPassword)) {
-                    JOptionPane.showMessageDialog(null, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    // Write to the file
-                    try (BufferedWriter writer = new BufferedWriter(new FileWriter("accounts.txt", true))) {
-                        writer.write(name + "," + username + "," + email + "," + password);
-                        writer.newLine();
-                        JOptionPane.showMessageDialog(null, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                        dispose();
-                        new LoginFrame();
-
-                    } catch (IOException ex) {
-                        JOptionPane.showMessageDialog(null, "Error writing to file!", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
-                }
+                handleCreateAccount();
             }
         });
 
-        cancelButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose(); // Close the window
-                new LoginFrame();
-            }
-        });
+        cancelButton = new JButton("Cancel");
+        cancelButton.setBounds(220, 460, 120, 30);
+        cancelButton.setBackground(new Color(216, 214, 196));
+        cancelButton.setForeground(new Color(0, 102, 102));
+        cancelButton.addActionListener(e -> dispose());
 
-        // Add a custom close operation
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                new LoginFrame();
-            }
-        });
+        Left.add(titlu);
+        Left.add(nameLabel);
+        Left.add(nameField);
+        Left.add(usernameLabel);
+        Left.add(usernameField);
+        Left.add(emailLabel);
+        Left.add(emailField);
+        Left.add(passwordLabel);
+        Left.add(passwordField);
+        Left.add(confirmPasswordLabel);
+        Left.add(confirmPasswordField);
+        Left.add(createAccountButton);
+        Left.add(cancelButton);
 
-        // Make the frame visible
-        setVisible(true);
+        jPanel1.add(Right);
+        jPanel1.add(Left);
+        add(jPanel1);
     }
+
+    private void handleCreateAccount() {
+        String name = nameField.getText().trim();
+        String username = usernameField.getText().trim();
+        String email = emailField.getText().trim();
+        String password = new String(passwordField.getPassword());
+        String confirmPassword = new String(confirmPasswordField.getPassword());
+
+        if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "All fields must be filled out!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (!password.equals(confirmPassword)) {
+            JOptionPane.showMessageDialog(this, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("accounts.txt", true))) {
+                writer.write(name + "," + username + "," + email + "," + password);
+                writer.newLine();
+                JOptionPane.showMessageDialog(this, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Error writing to file!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         new CreateAccountFrame();
     }
