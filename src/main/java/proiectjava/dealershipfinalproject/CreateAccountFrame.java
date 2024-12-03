@@ -135,7 +135,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         createAccountButton.setBackground(new Color(0, 102, 102));
         createAccountButton.setForeground(new Color(216, 214, 196));
         createAccountButton.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-        createAccountButton.setBounds(150, 525, 100, 50);
+        createAccountButton.setBounds(150, 530, 100, 50);
 
         loginLabel = new JLabel("Already have an account?");
         loginLabel.setFont(new Font("Segoe UI", Font.PLAIN, 16));
