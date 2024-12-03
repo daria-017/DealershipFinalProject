@@ -66,4 +66,8 @@ public class Jetski extends Vehicle{
     public String toString() {
         return super.toString()+"Jetski{" + "nauticalMiles=" + nauticalMiles + ", handlebars=" + handlebars + ", propulsionSystem=" + propulsionSystem + '}';
     }
+    public boolean respectaCerinta(int nauticalMiles, boolean handlebars)
+    {
+        return this.nauticalMiles < nauticalMiles && this.handlebars == handlebars;
+    }
 }
