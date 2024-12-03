@@ -4,11 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 /**
  * @author Dragos :>
@@ -23,10 +27,13 @@ public class CreateAccountFrame extends javax.swing.JFrame {
     private JPasswordField passwordField, confirmPasswordField;
     private JButton createAccountButton, loginButton;
     private ImageIcon logoIcon;
+    private JCheckBox showPasswordCheckBox, agreeCheckBox;
+
+    private boolean agree = false;
 
     public CreateAccountFrame() {
         setTitle("Create Account");
-        setPreferredSize(new Dimension(800, 650));
+        setPreferredSize(new Dimension(800, 710));
         setResizable(false);
 
         initComponents();
@@ -38,21 +45,21 @@ public class CreateAccountFrame extends javax.swing.JFrame {
     private void initComponents() {
         jPanel1 = new JPanel();
         jPanel1.setLayout(null);
-        jPanel1.setPreferredSize(new Dimension(800, 650));
+        jPanel1.setPreferredSize(new Dimension(800, 710));
 
         Left = new JPanel();
         Left.setBackground(new Color(0, 102, 102));
-        Left.setBounds(0, 0, 400, 650);
+        Left.setBounds(0, 0, 400, 710);
         Left.setLayout(null);
 
         logoLabel = new JLabel();
         logoIcon = new ImageIcon("Dealership_logo_200px.png");
         logoLabel.setIcon(logoIcon);
-        logoLabel.setBounds(100, 205, 200, 200);
+        logoLabel.setBounds(100, 235, 200, 200);
 
         copyright = new JLabel("© Dealership. All rights reserved.");
         copyright.setForeground(new Color(216, 214, 196));
-        copyright.setBounds(100, 550, 200, 20);
+        copyright.setBounds(100, 610, 200, 20);
 
         Left.add(logoLabel);
         Left.add(copyright);
@@ -60,7 +67,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         Right = new JPanel();
         Right.setLayout(null);
         Right.setBackground(new Color(216, 214, 196));
-        Right.setBounds(400, 0, 400, 600);
+        Right.setBounds(400, 0, 400, 710);
 
         titlu = new JLabel("SIGN UP");
         titlu.setFont(new Font("Segoe UI", Font.BOLD, 36));
@@ -112,27 +119,39 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         confirmPasswordField.setBackground(new Color(216, 214, 196));
         confirmPasswordField.setBounds(30, 410, 325, 40);
 
+        showPasswordCheckBox = new JCheckBox("Show Password");
+        showPasswordCheckBox.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        showPasswordCheckBox.setForeground(new Color(0, 102, 102));
+        showPasswordCheckBox.setBounds(30, 460, 150, 30);
+        showPasswordCheckBox.setBackground(new Color(216, 214, 196));
+
+        agreeCheckBox = new JCheckBox("Agree to our Terms and Conditions");
+        agreeCheckBox.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        agreeCheckBox.setForeground(new Color(0, 102, 102));
+        agreeCheckBox.setBounds(30, 485, 300, 30);
+        agreeCheckBox.setBackground(new Color(216, 214, 196));
+
         createAccountButton = new JButton("Sign Up");
         createAccountButton.setBackground(new Color(0, 102, 102));
         createAccountButton.setForeground(new Color(216, 214, 196));
         createAccountButton.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-        createAccountButton.setBounds(150, 470, 100, 50);
+        createAccountButton.setBounds(150, 525, 100, 50);
 
         loginLabel = new JLabel("Already have an account?");
         loginLabel.setFont(new Font("Segoe UI", Font.PLAIN, 16));
         loginLabel.setForeground(new Color(0, 102, 102));
-        loginLabel.setBounds(40, 545, 200, 30);
+        loginLabel.setBounds(40, 605, 200, 30);
 
         loginButton = new JButton("Login");
         loginButton.setBackground(new Color(216, 214, 196));
         loginButton.setForeground(new Color(0, 102, 102));
         loginButton.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-        loginButton.setBounds(255, 540, 80, 40);
+        loginButton.setBounds(255, 600, 80, 40);
 
         createAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleCreateAccount();
+                handleCreateAccount(agree);
             }
         });
 
@@ -151,6 +170,55 @@ public class CreateAccountFrame extends javax.swing.JFrame {
             }
         });
 
+        agreeCheckBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    agree = true;
+                } else {
+                    agree = false;
+                }
+            }
+        });
+
+        showPasswordCheckBox.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    passwordField.setEchoChar((char) 0); // Show password
+                    confirmPasswordField.setEchoChar((char) 0);
+                } else {
+                    passwordField.setEchoChar('•'); // Mask password
+                    confirmPasswordField.setEchoChar('•');
+                }
+            }
+        });
+
+        KeyListener enterKeyListener = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // No action needed for keyTyped
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    handleCreateAccount(agree);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // No action needed for keyReleased
+            }
+        };
+
+        nameField.addKeyListener(enterKeyListener);
+        usernameField.addKeyListener(enterKeyListener);
+        emailField.addKeyListener(enterKeyListener);
+        passwordField.addKeyListener(enterKeyListener);
+        confirmPasswordField.addKeyListener(enterKeyListener);
+
         Right.add(titlu);
         Right.add(nameLabel);
         Right.add(nameField);
@@ -162,6 +230,8 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         Right.add(passwordField);
         Right.add(confirmPasswordLabel);
         Right.add(confirmPasswordField);
+        Right.add(showPasswordCheckBox);
+        Right.add(agreeCheckBox);
         Right.add(createAccountButton);
         Right.add(loginLabel);
         Right.add(loginButton);
@@ -171,7 +241,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         add(jPanel1);
     }
 
-    private void handleCreateAccount() {
+    private void handleCreateAccount(boolean agree) {
         String name = nameField.getText().trim();
         String username = usernameField.getText().trim();
         String email = emailField.getText().trim();
@@ -224,6 +294,11 @@ public class CreateAccountFrame extends javax.swing.JFrame {
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Error reading from file!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        if (!agree) {
+            JOptionPane.showMessageDialog(this, "You did not agree to our Terms and Conditions!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
         if (!dataExists) {
