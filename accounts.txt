@@ -1,1 +1,2 @@
 Administrator,admin,admin@owner.com,Admin123,0
+Daria,daria,daria@gmail.com,daria,1

@@ -122,7 +122,7 @@ public class LoginFrame {
                     String line;
                     while ((line = reader.readLine()) != null) {
                         String[] userDetails = line.split(",");
-                        if (userDetails.length == 4 && userDetails[2].equals(email) && userDetails[3].equals(password)) {
+                        if (userDetails.length == 5 && userDetails[2].equals(email) && userDetails[3].equals(password)) {
                             loginSuccess = true;
                             break;
                         }
