@@ -12,6 +12,7 @@ public class AccountDetailsFrame extends JFrame {
     public AccountDetailsFrame() {
         setTitle("Account Details");
         setSize(800, 600);
+        setBackground(new Color(0, 102, 102));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
 
