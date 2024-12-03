@@ -328,8 +328,4 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         }
         return accountCount;
     }
-
-    public static void main(String[] args) {
-        new CreateAccountFrame();
-    }
 }
