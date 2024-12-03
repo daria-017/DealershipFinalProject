@@ -67,6 +67,7 @@ public class Yacht extends Vehicle{
     public String toString() {
         return super.toString()+"Yacht{" + "nauticalMiles=" + nauticalMiles + ", maxCrew=" + maxCrew + ", flag=" + flag + "}";
     }
+    
     public boolean respectaCerinta(double price,int maxCrew)
     {
         return price<this.getPrice() &&  maxCrew<this.maxCrew;

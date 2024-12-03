@@ -71,6 +71,9 @@ public class DealershipFinalProject {
         System.out.println(yacht16.toString());
         System.out.println("");
         
+        for(Yacht yacht : yachts) {
+            if(yacht.respectaCerinta(2000000, 50)) { System.out.println(yacht); }
+        }
         
         System.out.println("--------Jetski--------");
         Engine jetskiEngine1 = new Engine("V2 Marine", 150, 50, "Petrol");
@@ -123,6 +126,10 @@ public class DealershipFinalProject {
 
         for (Jetski jetski : jetskis) {
             System.out.println(jetski.toString());
+        }
+        
+        for(Jetski jetski : jetskis) {
+            if(jetski.respectaCerinta(1000, true)) { System.out.println(jetski); }
         }
         
         System.out.println("");
