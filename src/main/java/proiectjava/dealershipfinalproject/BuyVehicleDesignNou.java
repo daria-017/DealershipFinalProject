@@ -4,15 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 public class BuyVehicleDesignNou extends javax.swing.JFrame {
 
@@ -117,19 +113,12 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
         buyButton.setForeground(new Color(216, 214, 196));
         buyButton.setFont(new Font("Segoe UI", Font.PLAIN, 16));
         buyButton.setBounds(55, 400, 100, 50);
-        
+
         moreButton = new JButton("See more details");
         moreButton.setBackground(new Color(216, 214, 196));
         moreButton.setForeground(new Color(0, 102, 102));
         moreButton.setFont(new Font("Segoe UI", Font.PLAIN, 16));
         moreButton.setBounds(180, 400, 150, 50);
-        
-        moreLabel = new JLabel("Already have an account?");
-        moreLabel.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-        moreLabel.setForeground(new Color(0, 102, 102));
-        moreLabel.setBounds(40, 605, 200, 40);
-
-        
 
         optionsList.addActionListener(new ActionListener() {
             @Override
@@ -210,9 +199,9 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
                         String line;
                         while ((line = reader.readLine()) != null) {
                             String[] vehicleData = line.split(",");
-                            if (vehicleData.length >= 14 && selectedItem.startsWith(vehicleData[2].trim())) {
+                            if (vehicleData.length >= 14 && selectedItem.equals(vehicleData[2] + " - "+vehicleData[3] + " - " +vehicleData[5])) {
                                 String imageFileName = vehicleData[14].trim();
-                                carLabel.setIcon(new ImageIcon(imageFileName));
+                                carLabel.setIcon(new ImageIcon("Resources/Images/"+imageFileName));
                                 brand.setText("Brand: " + vehicleData[2]);
                                 model.setText("Model: " + vehicleData[3]);
                                 year.setText("Year: " + vehicleData[4]);
@@ -230,14 +219,41 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
         buyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String loggedUser = "-1";
+                String selectedVehicle = (String) availableVehicles.getSelectedItem();
+                if (selectedVehicle != null && !selectedVehicle.equals("==Not available==")) {
+                    try (BufferedReader reader = new BufferedReader(new FileReader("availableVehicles.txt")); 
+                            BufferedWriter writer = new BufferedWriter(new FileWriter("purchasesNew.txt", true))) {
+
+                        String line;
+                        boolean vehicleFound = false;
+
+                        while ((line = reader.readLine()) != null) {
+                            String[] vehicleData = line.split(",");
+                            if (vehicleData.length >= 6 && selectedVehicle.startsWith(vehicleData[2].trim())) {
+                                writer.write(loggedUser+","+line);
+                                writer.newLine();
+                                vehicleFound = true;
+                                JOptionPane.showMessageDialog(jPanel1, "Vehicle bought successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                                break;
+                            }
+                        }
+
+                        if (!vehicleFound) {
+                            JOptionPane.showMessageDialog(jPanel1, "Selected vehicle not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(jPanel1, "Error processing file!", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(jPanel1, "No vehicle selected to buy!", "Warning", JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
 
         moreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
-                new LoginFrame();
             }
         });
 
