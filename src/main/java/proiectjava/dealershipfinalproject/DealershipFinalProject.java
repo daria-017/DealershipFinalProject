@@ -651,34 +651,34 @@ public class DealershipFinalProject {
        
         JetPlane[] allJetPlanes = new JetPlane[10];
         allJetPlanes[0] = new JetPlane(2, "Boeing", "747", (short) 1990, Color.WHITE, 150000000, 80000,
-                airplaneEngine2, airplaneTransmission2, null, 45000, 15000, 900, false, true, "Turbofan", false,
+                airplaneEngine2, airplaneTransmission2, null, 13000, 14000, 1000, false, true, "Turbofan", false,
                 2);
         allJetPlanes[1] = new JetPlane(3, "Airbus", "A380", (short) 2010, Color.BLUE, 300000000, 120000,
-                airplaneEngine3, airplaneTransmission3, null, 43000, 15500, 1020, false, true, "Turbofan", false,
+                airplaneEngine3, airplaneTransmission3, null, 13100, 15200, 1020, false, true, "Turbofan", false,
                 4);
         allJetPlanes[2] = new JetPlane(4, "Lockheed", "SR-71", (short) 1966, Color.BLACK, 34000000, 30000,
-                airplaneEngine4, airplaneTransmission4, null, 85000, 5400, 3700, true, false, "Turbojet", true,
+                airplaneEngine4, airplaneTransmission4, null, 26000, 5400, 3700, true, false, "Turbojet", true,
                 2);
         allJetPlanes[3] = new JetPlane(5, "McDonnell Douglas", "F-15", (short) 1980, Color.GRAY, 29000000, 25000,
-                airplaneEngine5, airplaneTransmission5, null, 65000, 4000, 2650, true, false, "Turbofan", true,
+                airplaneEngine5, airplaneTransmission5, null, 15000, 3800, 2650, true, false, "Turbofan", true,
                 2);
         allJetPlanes[4] = new JetPlane(6, "Northrop", "B-2 Spirit", (short) 1997, Color.BLACK, 2000000000, 170000,
-                airplaneEngine6, airplaneTransmission6, null, 50000, 6000, 1010, true, true, "Turbofan", false,
+                airplaneEngine6, airplaneTransmission6, null, 15000, 11000, 1010, true, true, "Turbofan", false,
                 4);
         allJetPlanes[5] = new JetPlane(7, "Dassault", "Rafale", (short) 2015, Color.GRAY, 85000000, 24000,
-                airplaneEngine7, airplaneTransmission7, null, 52000, 3700, 2120, true, false, "Turbofan", true,
+                airplaneEngine7, airplaneTransmission7, null, 15200, 3700, 2120, true, false, "Turbofan", true,
                 2);
         allJetPlanes[6] = new JetPlane(8, "Tupolev", "Tu-160", (short) 1987, Color.WHITE, 150000000, 275000,
-                airplaneEngine8, airplaneTransmission8, null, 52000, 12300, 2220, true, true, "Turbofan", false,
+                airplaneEngine8, airplaneTransmission8, null, 12500, 12300, 2220, true, true, "Turbofan", false,
                 4);
         allJetPlanes[7] = new JetPlane(9, "Saab", "Gripen", (short) 2018, Color.GRAY, 85000000, 14000,
-                airplaneEngine9, airplaneTransmission9, null, 50000, 3000, 2450, true, false, "Turbofan", true,
+                airplaneEngine9, airplaneTransmission9, null, 15000, 3000, 2450, true, false, "Turbofan", true,
                 1);
         allJetPlanes[8] = new JetPlane(10, "Boeing", "777", (short) 2016, Color.WHITE, 350000000, 77500,
-                airplaneEngine10, airplaneTransmission10, null, 43000, 14300, 905, false, true, "Turbofan", false,
+                airplaneEngine10, airplaneTransmission10, null, 13100, 14300, 905, false, true, "Turbofan", false,
                 2);
         allJetPlanes[9] = new JetPlane(11, "Mikoyan", "MiG-29", (short) 1983, Color.GRAY, 29000000, 11000,
-                airplaneEngine1, airplaneTransmission1, null, 59000, 3200, 2445, true, false, "Turbofan", true,
+                airplaneEngine1, airplaneTransmission1, null, 18000, 3200, 2445, true, false, "Turbofan", true,
                 2);
 
         for (JetPlane jetPlane : allJetPlanes) {
@@ -748,17 +748,27 @@ public class DealershipFinalProject {
             }
         }
         
-        System.out.println("\n\n------------------------\nCan the plane fly to its destination? A flight of 2700 km at 10000m in the air ");
+        System.out.println("\n\n------------------------\nCan the plane fly to its destination? The flight covers 2700 km with a passenger capacity of 800");
         for(Airplane airplane:allAirplanes){
             if(airplane.canFlyToLocation(2700, 10000)){
                 System.out.println(airplane);
             }
         }
         
+        System.out.println("\n\nCan the helicopter fly over the mountains? The flight requires 300 km at an altitude of 6000 meters.");
         for(Helicopter helicopter:allHelicopters){
             if(helicopter.canFlyToLocation(300, 6000)){
                 System.out.println(helicopter);
             }
         }
+        
+        
+        System.out.println("\n\nCan the jetplane reach its destination in time? The flight is 5000 km at a speed of 2000 km/h.");
+        for(JetPlane jetplane:allJetPlanes){
+            if(jetplane.canFlyToLocation(5000, 2000)){
+                System.out.println(jetplane);
+            }
+        }
+        
     }
 }

@@ -157,8 +157,8 @@ public class JetPlane extends Vehicle {
     }
      
      //functie
-    public boolean canFlyToLocation(int requiredRange, int requiredAltitude) {
-        if(this.maxRange >= requiredRange && this.maxAltitude >= requiredAltitude){
+    public boolean canFlyToLocation(int requiredRange, int requiredSpeed) {
+        if(this.maxRange >= requiredRange && this.maxSpeed >= requiredSpeed){
             return true;
         }else{
             return false;
