@@ -1,0 +1,39 @@
+Cars,1,Toyota,Camry,2022,Blue,25000.99,1500,V6,200,60,Diesel,Automatic,6,car1.jpg,12000,240,false,true,true,Sedan
+Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.jpg,8000,260,true,true,true,Coupe
+Cars,3,Tesla,Model S,2021,White,75000.00,2000,V8,300,80,Benzina,Automatic,5,car3.jpg,15000,250,false,true,true,Sedan
+Trucks,1,Ford,F-250,2023,Black,55000.00,3500,V6,200,60,Diesel,Automatic,6,truck1.jpg,18000,7500,1700,false,true
+Trucks,2,Chevrolet,Silverado 2500,2022,Blue,60000.00,4000,V4,120,40,Diesel,Manual,6,truck2.jpg,22000,8000,1800,true,true
+Trucks,3,Ram,3500,2021,Gray,65000.00,4500,V8,300,80,Benzina,Automatic,5,truck3.jpg,25000,8500,1900,true,false
+Motorcycles,1,Honda,CBR1000RR,2023,Black,18000.00,250,V6,200,60,Diesel,Automatic,6,motorcycle1.jpg,12000,180,false,true,Sport
+Motorcycles,2,Kawasaki,Ninja ZX-10R,2022,Green,19000.00,260,V4,120,40,Diesel,Manual,6,motorcycle2.jpg,15000,190,true,true,Sport
+Motorcycles,3,Suzuki,GSX-R1000,2021,Blue,17000.00,240,V8,300,80,Benzina,Automatic,5,motorcycle3.jpg,18000,175,true,false,Sport
+ATVs,1,Honda,TRX250,2020,Red,3000.0,180,Petrol,250,25,Single-cylinder,Manual,5,atv1.jpg,Utility,false,true,30,Independent
+ATVs,2,Yamaha,Raptor 700R,2021,Blue,9000.0,200,Petrol,686,45,Single-cylinder,Automatic,4,atv2.jpg,Sport,false,true,20,Dual-A-arm
+ATVs,3,Can-Am,Outlander 450,2022,Black,6500.0,400,Petrol,427,38,Single-cylinder,CVT,0,atv3.jpg,Utility,true,false,40,Trailing Arm
+Scooters,1,Vespa,Primavera,2020,Red,4000.0,120,Electric,1,10,Single,Automatic,1,scooter1.jpg,Electric,true,false,false,50
+Scooters,2,Honda,PCX,2021,Black,3700.0,135,Petrol,2,15,Single Cylinder,Automatic,1,scooter2.jpg,Gasoline,true,false,true,80
+Scooters,3,Yamaha,NMAX,2022,Blue,4500.0,140,Petrol,2,20,Single Cylinder,Automatic,1,scooter3.jpg,Hybrid,true,true,true,90
+Yachts,1,Azimut,Grande,2023,Blue,5000000.0,30000,V6 Marine,500,300,Diesel,Automatic,6,null,400,12,Italy
+Yachts,2,Sunseeker,Predator,2022,Red,4500000.0,28000,V8 Marine,700,400,Diesel,Manual,5,null,350,10,UK
+Yachts,3,Princess,X95,2021,White,6000000.0,35000,Electric Marine,300,500,Electric,CVT,1,null,500,15,France
+Jet Skis,1,Kawasaki,Ultra 310X,2023,Black,16000.0,600,V2 Marine,150,50,Petrol,Automatic,1,null,140,true,Waterjet
+Jet Skis,2,Honda,AquaTrax,2022,Yellow,14500.0,500,Electric Marine,80,60,Electric,Manual,1,null,130,true,Waterjet
+Jet Skis,3,Sea-Doo,Spark Trixx,2021,White,12000.0,450,Inline-3 Marine,200,70,Petrol,Single-Speed,0,null,90,true,Propeller
+Boats,1,Yamaha,WaveRunner,2023,Blue,15000.99,400,V4,300,500,Diesel,Automatic,6,boat1.jpg,500,500,true,5.5,true,Jet Propulsion
+Boats,2,Bayliner,Element,2022,White,25000.75,1200,V6,200,0,Petrol,Manual,4,boat2.jpg,700,700,false,6.8,false,Propeller
+Boats,3,Sea-Doo,Spark,2021,Red,12000.00,700,V4,150,200,Petrol,Manual,5,boat3.jpg,250,500,true,7.0,true,Jet Propulsion
+Sail Boats,1,Yamaha,Model X,2022,Blue,25000.00,1200,V4,100,50,Diesel,Manual,6,sailboat1.jpg,1000,1000,true,8.5,true,true
+Sail Boats,2,Bayliner,Model Y,2023,White,30000.00,1500,V6,200,100,Petrol,Automatic,5,sailboat2.jpg,1500,1500,false,10.0,false,false
+Sail Boats,3,Hunter,Model C,2021,White,18000.00,1400,V4,150,50,Diesel,Manual,6,sailboat3.jpg,600,600,true,12.0,false,true
+Drones,1,DJI,Phantom 4,2021,White,1500.00,1380,Electric,4,40,Quadcopter,None,0,drone1.jpg,4,true,Medium,true,6
+Drones,2,Parrot,Anafi,2020,Black,1000.00,500,Electric,2,25,Quadcopter,None,0,drone2.jpg,2,false,Small,false,4
+Drones,3,Autel Robotics,Evo Lite+,2022,Orange,2000.00,820,Electric,4,50,Quadcopter,None,0,drone3.jpg,4,true,Large,true,8
+Jet Planes,1,Concorde,Type A,1976,White,50000000.00,40000,Jet,2,2400,Turbofan,None,0,null,120000,2200,2400,true,false,Commercial,true,2
+Jet Planes,2,Boeing,747,1990,White,150000000.00,80000,Jet,2,900,Turbofan,None,0,null,45000,15000,900,false,true,Turbofan,false,2
+Jet Planes,3,Airbus,A380,2010,Blue,300000000.00,120000,Jet,2,1020,Turbofan,None,0,null,43000,15500,1020,false,true,Turbofan,false,4
+Airplanes,1,Boeing,737,2019,White,1200000.00,2000,Turbojet,2,1000,Jet Fuel,Propeller,2,null,80000,900,1000,150,true,false,true,Commercial,800
+Airplanes,2,Boeing,747,2020,Gray,25000000.00,30000,Turbojet,2,1000,Jet Fuel,Single-stage Gearbox,1,null,13000,14000,1000,800,true,false,true,Commercial,1200
+Airplanes,3,Airbus,A320,2018,Blue,20000000.00,25000,Turboprop,2,900,Jet Fuel,Multi-stage Gearbox,3,null,12000,7000,900,220,true,false,true,Commercial,600
+Helicopters,1,Bell,206,2020,Green,1200000.00,800,Turbojet,2,1000,Jet Fuel,Propeller,2,null,4000,220,250,1,800,2,true,true,Main Rotor
+Helicopters,2,Eurocopter,AS350,2018,Blue,900000.00,700,Turboprop,2,900,Jet Fuel,Single-stage Gearbox,1,null,3500,210,230,1,750,1,true,false,Main Rotor
+Helicopters,3,Sikorsky,UH-60,2015,Black,15000000.00,3000,Piston,2,300,Avgas,Multi-stage Gearbox,3,null,8000,295,315,4,900,4,true,true,Main Rotor\
