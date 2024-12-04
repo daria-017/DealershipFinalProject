@@ -1,2 +1,2 @@
-Raul,Raul,thepykeprodigy@gmail.com,6969420360
-a,a,Email,pass
+Administrator,admin,admin@owner.com,Admin123,0
+Daria,daria,daria@gmail.com,daria,1

@@ -10,33 +10,38 @@ import java.util.List;
 public class AccountDetailsFrame extends JFrame {
 
     public AccountDetailsFrame() {
-        setTitle("Account Details");
-        setSize(800, 600);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setLayout(new BorderLayout());
+    setTitle("Account Details");
+    setSize(800, 600);
+    getContentPane().setBackground(new Color(0, 102, 102));
+    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    setLayout(new BorderLayout());
 
-        // Header:
-        JLabel header = new JLabel("Owned Vehicles", JLabel.CENTER);
-        header.setFont(new Font("Arial", Font.BOLD, 20));
-        add(header, BorderLayout.NORTH);
+    // Header:
+    JLabel header = new JLabel("Owned Vehicles", JLabel.CENTER);
+    header.setFont(new Font("Arial", Font.BOLD, 20));
+    header.setForeground(Color.WHITE);  // Set text color to white
+    add(header, BorderLayout.NORTH);
 
-        // Vehicle Table with only one column:
-        String[] columnNames = {"Vehicle Details"};
-        DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
-        JTable vehicleTable = new JTable(tableModel);
-        JScrollPane scrollPane = new JScrollPane(vehicleTable);
-        add(scrollPane, BorderLayout.CENTER);
+    // Vehicle Table with only one column:
+    String[] columnNames = {"Vehicle Details"};
+    DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
+    JTable vehicleTable = new JTable(tableModel);
+    vehicleTable.setForeground(Color.WHITE); // Set table text color to white
+    vehicleTable.setBackground(new Color(0, 102, 102)); // Set table background color
+    JScrollPane scrollPane = new JScrollPane(vehicleTable);
+    add(scrollPane, BorderLayout.CENTER);
 
-        // Filling the table with raw data from the file:
-        List<String> vehicleData = loadVehicleDataFromFile();
-        if (vehicleData.isEmpty()) {
-            tableModel.addRow(new Object[]{"No vehicles!"});
-        } else {
-            populateTable(tableModel, vehicleData);
-        }
-
-        setVisible(true);
+    // Filling the table with raw data from the file:
+    List<String> vehicleData = loadVehicleDataFromFile();
+    if (vehicleData.isEmpty()) {
+        tableModel.addRow(new Object[]{"No vehicles!"});
+    } else {
+        populateTable(tableModel, vehicleData);
     }
+
+    setVisible(true);
+}
+
 
     private void populateTable(DefaultTableModel tableModel, List<String> vehicleData) {
         for (String data : vehicleData) {

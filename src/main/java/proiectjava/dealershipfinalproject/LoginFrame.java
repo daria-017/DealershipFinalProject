@@ -34,7 +34,8 @@ public class LoginFrame {
 
         // Logo
         logoLabel = new JLabel();
-        logoLabel.setIcon(new ImageIcon("C:\\Users\\Daria\\Desktop\\An2-Sem1\\Java\\Dealership_logo_200px.png")); // Schimbă calea dacă este necesar
+        ImageIcon logo = new ImageIcon("Dealership_logo_200px.png");
+        logoLabel.setIcon(logo); // Schimbă calea dacă este necesar
         logoLabel.setBounds(100, 130, 200, 200); // Centrat pe panoul drept
         rightPanel.add(logoLabel);
 
@@ -121,7 +122,7 @@ public class LoginFrame {
                     String line;
                     while ((line = reader.readLine()) != null) {
                         String[] userDetails = line.split(",");
-                        if (userDetails.length == 4 && userDetails[2].equals(email) && userDetails[3].equals(password)) {
+                        if (userDetails.length == 5 && userDetails[2].equals(email) && userDetails[3].equals(password)) {
                             loginSuccess = true;
                             break;
                         }

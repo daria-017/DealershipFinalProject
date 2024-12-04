@@ -71,6 +71,9 @@ public class DealershipFinalProject {
         System.out.println(yacht16.toString());
         System.out.println("");
         
+        for(Yacht yacht : yachts) {
+            if(yacht.respectaCerinta(2000000, 50)) { System.out.println(yacht); }
+        }
         
         System.out.println("--------Jetski--------");
         Engine jetskiEngine1 = new Engine("V2 Marine", 150, 50, "Petrol");
@@ -123,6 +126,10 @@ public class DealershipFinalProject {
 
         for (Jetski jetski : jetskis) {
             System.out.println(jetski.toString());
+        }
+        
+        for(Jetski jetski : jetskis) {
+            if(jetski.respectaCerinta(1000, true)) { System.out.println(jetski); }
         }
         
         System.out.println("");
@@ -548,34 +555,34 @@ public class DealershipFinalProject {
        
         Airplane[] allAirplanes = new Airplane[10];
         allAirplanes[0] = new Airplane(1, "Boeing", "747", (short) 2020, Color.GRAY, 25000000, 30000,
-                airplaneEngine1, airplaneTransmission2, null, 100000, 950, 1000, 800, 4, true, false, true,
+                airplaneEngine1, airplaneTransmission2, null, 13000, 14000, 1000, 800, 4, true, false, true,
                 "Commercial", 1200);
         allAirplanes[1] = new Airplane(2, "Airbus", "A320", (short) 2018, Color.BLUE, 20000000, 25000,
-                airplaneEngine2, airplaneTransmission3, null, 90000, 850, 900, 600, 2, true, false, true,
+                airplaneEngine2, airplaneTransmission3, null, 12000, 7000, 900, 220, 2, true, false, true,
                 "Commercial", 600);
-        allAirplanes[2] = new Airplane(3, "Cessna", "Skyhawk", (short) 2015, Color.RED, 300000, 1200,
-                airplaneEngine3, airplaneTransmission4, null, 5000, 220, 250, 4, 1, false, true, false,
+        allAirplanes[2] = new Airplane(3, "Cessna", "172", (short) 2015, Color.RED, 300000, 1200,
+                airplaneEngine3, airplaneTransmission4, null, 4500, 960, 300, 4, 1, false, true, false,
                 "Private", 300);
         allAirplanes[3] = new Airplane(4, "Piper", "Cherokee", (short) 2019, Color.YELLOW, 250000, 1100,
-                airplaneEngine4, airplaneTransmission5, null, 4000, 240, 260, 4, 1, false, true, false,
+                airplaneEngine4, airplaneTransmission5, null, 3400, 967, 237, 4, 1, false, true, false,
                 "Private", 400);
         allAirplanes[4] = new Airplane(5, "Bombardier", "Global 7500", (short) 2022, Color.WHITE, 45000000, 35000,
-                airplaneEngine5, airplaneTransmission6, null, 100000, 980, 1100, 20, 2, true, false, true,
+                airplaneEngine5, airplaneTransmission6, null, 15500, 14200, 1100, 20, 2, true, false, true,
                 "Business", 800);
         allAirplanes[5] = new Airplane(6, "Gulfstream", "G700", (short) 2023, Color.BLACK, 65000000, 40000,
-                airplaneEngine6, airplaneTransmission7, null, 120000, 1050, 1150, 25, 2, true, false, true,
+                airplaneEngine6, airplaneTransmission7, null, 15500, 12070, 1150, 25, 2, true, false, true,
                 "Business", 900);
         allAirplanes[6] = new Airplane(7, "Lockheed", "SR-71", (short) 1976, Color.WHITE, 120000000, 15000,
-                airplaneEngine7, airplaneTransmission8, null, 140000, 3600, 4000, 2, 1, true, false, true,
+                airplaneEngine7, airplaneTransmission8, null, 25000, 4828, 3500, 1, 1, true, false, true,
                 "Military", 1500);
         allAirplanes[7] = new Airplane(8, "Antonov", "An-225", (short) 1988, Color.GRAY, 300000000, 60000,
-                airplaneEngine8, airplaneTransmission9, null, 640000, 800, 900, 1500, 6, true, true, true,
+                airplaneEngine8, airplaneTransmission9, null, 10972, 15000, 900, 70, 6, true, true, true,
                 "Cargo", 500);
         allAirplanes[8] = new Airplane(9, "Embraer", "E195", (short) 2021, Color.WHITE, 15000000, 20000,
-                airplaneEngine9, airplaneTransmission10, null, 85000, 900, 950, 600, 2, true, false, true,
+                airplaneEngine9, airplaneTransmission10, null, 12500, 4800, 800, 132, 2, true, false, true,
                 "Commercial", 600);
         allAirplanes[9] = new Airplane(10, "Dassault", "Falcon 8X", (short) 2023, Color.BLUE, 50000000, 30000,
-                airplaneEngine10, airplaneTransmission1, null, 110000, 950, 1050, 20, 2, true, false, true,
+                airplaneEngine10, airplaneTransmission1, null, 15545, 11945, 1000, 20, 2, true, false, true,
                 "Business", 700);
 
         for (Airplane airplane : allAirplanes) {
@@ -620,7 +627,7 @@ public class DealershipFinalProject {
                 airplaneEngine9, airplaneTransmission9, null, 4000, 245, 265, (short) 2, 700, 2, true,
                 false, "Main Rotor");
         allHelicopters[8] = new Helicopter(10, "Leonardo", "AW609", (short) 2021, Color.WHITE, 12000000, 1500,
-                airplaneEngine10, airplaneTransmission10, null, 7000, 280, 300, (short) 4, 850, 3, true,
+                airplaneEngine10, airplaneTransmission10, null, 7000, 300, 300, (short) 4, 850, 3, true,
                 true, "Tilt Rotor");
         allHelicopters[9] = new Helicopter(11, "Kaman", "K-MAX", (short) 2018, Color.YELLOW, 6000000, 500,
                 airplaneEngine1, airplaneTransmission1, null, 4000, 200, 220, (short) 2, 600, 1, true,
@@ -738,6 +745,19 @@ public class DealershipFinalProject {
             if(sailBoat.respectaCerinta(750, false))
             {
                 System.out.println(sailBoat);
+            }
+        }
+        
+        System.out.println("\n\n------------------------\nCan the airplane fly to the destination? A 2700 km flight at 10000m in the air ");
+        for(Airplane airplane:allAirplanes){
+            if(airplane.canFlyToLocation(2700, 10000)){
+                System.out.println(airplane);
+            }
+        }
+        
+        for(Helicopter helicopter:allHelicopters){
+            if(helicopter.canFlyToLocation(300, 6000)){
+                System.out.println(helicopter);
             }
         }
     }
