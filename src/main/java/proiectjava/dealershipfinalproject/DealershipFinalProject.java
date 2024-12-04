@@ -750,7 +750,7 @@ public class DealershipFinalProject {
         
         System.out.println("\n\n------------------------\nCan the plane fly to its destination? The flight covers 2700 km with a passenger capacity of 800");
         for(Airplane airplane:allAirplanes){
-            if(airplane.canFlyToLocation(2700, 10000)){
+            if(airplane.canFlyToLocation(2700, 800)){
                 System.out.println(airplane);
             }
         }
