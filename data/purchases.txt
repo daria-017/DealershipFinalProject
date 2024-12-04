@@ -1,0 +1,3 @@
+Purchased:  id: 1 brand: Toyota model: Corolla year: 2020 color: java.awt.Color[r=0,g=0,b=255] price: 20000.0 weight(in kg): 1500engine={Type: , Horsepower: 0, Fuel Capacity: 0, The Type of Fuel: } transmission={Transmission{type=, numberOfGears=0}
+Purchased:  id: 1 brand: Toyota model: Corolla year: 2020 color: java.awt.Color[r=0,g=0,b=255] price: 20000.0 weight(in kg): 1500engine={Type: , Horsepower: 0, Fuel Capacity: 0, The Type of Fuel: } transmission={Transmission{type=, numberOfGears=0}
+Purchased:  id: 1 brand: Toyota model: Corolla year: 2020 color: java.awt.Color[r=0,g=0,b=255] price: 20000.0 weight(in kg): 1500engine={Type: , Horsepower: 0, Fuel Capacity: 0, The Type of Fuel: } transmission={Transmission{type=, numberOfGears=0}
