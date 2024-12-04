@@ -748,7 +748,7 @@ public class DealershipFinalProject {
             }
         }
         
-        System.out.println("\n\n------------------------\nCan the airplane fly to the destination? A 2700 km flight at 10000m in the air ");
+        System.out.println("\n\n------------------------\nCan the plane fly to its destination? A flight of 2700 km at 10000m in the air ");
         for(Airplane airplane:allAirplanes){
             if(airplane.canFlyToLocation(2700, 10000)){
                 System.out.println(airplane);
