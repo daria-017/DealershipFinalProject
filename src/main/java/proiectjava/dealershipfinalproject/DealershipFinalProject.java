@@ -687,16 +687,19 @@ public class DealershipFinalProject {
         
         // Afisare in functie de 2 conditii:
         // Car:
+        System.out.println("Filtrare car:");
         for(Car car : cars) {
             if(car.respectaCerinta(true, 300000)) { System.out.println(car); }
         }
         
         // Truck:
+        System.out.println("Filtrare truck:");
         for(Truck truck : trucks) {
             if(truck.respectaCerinta(true, 10000)) { System.out.println(truck); }
         }
         
         // Motorcycle:
+        System.out.println("Filtrare motorcycle:");
         for(Motorcycle motorcycle : motorcycles) {
             if(motorcycle.respectaCerinta(false, 200000)) { System.out.println(motorcycle); }
         }
