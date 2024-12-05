@@ -72,7 +72,9 @@ public class DealershipFinalProject {
         System.out.println("");
         
         for(Yacht yacht : yachts) {
-            if(yacht.respectaCerinta(2000000, 50)) { System.out.println(yacht); }
+            if(yacht.respectaCerinta(2000000, 50)){ 
+                System.out.println(yacht); 
+            }
         }
         
         System.out.println("--------Jetski--------");
@@ -129,7 +131,9 @@ public class DealershipFinalProject {
         }
         
         for(Jetski jetski : jetskis) {
-            if(jetski.respectaCerinta(1000, true)) { System.out.println(jetski); }
+            if(jetski.respectaCerinta(1000, true)){
+                System.out.println(jetski);
+            }
         }
         
         System.out.println("");
