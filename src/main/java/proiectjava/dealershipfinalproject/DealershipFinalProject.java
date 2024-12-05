@@ -53,7 +53,7 @@ public class DealershipFinalProject {
         yachts[9] = new Yacht(10, "Feadship", "Symphony", (short) 2018, Color.PINK, 10000000.00, 55000, yachtEngine10, yachtTransmission10, null, 700, 28, "Netherlands");
   
         for (Yacht yacht : yachts) {
-                System.out.println(yacht.toString());
+            System.out.println(yacht.toString());
         }
         
         Yacht yacht11 = new Yacht();
