@@ -68,6 +68,8 @@ public class Jetski extends Vehicle{
     }
     public boolean respectaCerinta(int nauticalMiles, boolean handlebars)
     {
-        return this.nauticalMiles < nauticalMiles && this.handlebars == handlebars;
+        if(this.nauticalMiles < nauticalMiles && this.handlebars == handlebars)
+            return true;
+        else return false;
     }
 }
