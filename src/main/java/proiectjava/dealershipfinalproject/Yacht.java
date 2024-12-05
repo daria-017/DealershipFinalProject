@@ -70,6 +70,8 @@ public class Yacht extends Vehicle{
     
     public boolean respectaCerinta(double price,int maxCrew)
     {
-        return price<this.getPrice() &&  maxCrew<this.maxCrew;
+        if(price<this.getPrice() &&  maxCrew<this.maxCrew)
+            return true;
+        else return false;
     }
 }
