@@ -1,5 +1,7 @@
-Cars,1,Toyota,Camry,2022,Blue,25000.99,1500,V6,200,60,Diesel,Automatic,6,car1.jpg,12000,240,false,true,true,Sedan
 -1,ATVs,2,Yamaha,Raptor 700R,2021,Blue,9000.0,200,Petrol,686,45,Single-cylinder,Automatic,4,atv2.jpg,Sport,false,true,20,Dual-A-arm
 -1,ATVs,2,Yamaha,Raptor 700R,2021,Blue,9000.0,200,Petrol,686,45,Single-cylinder,Automatic,4,atv2.jpg,Sport,false,true,20,Dual-A-arm
 -1,Yachts,3,Princess,X95,2021,White,6000000.0,35000,Electric Marine,300,500,Electric,CVT,1,null,500,15,France
 -1,Yachts,1,Azimut,Grande,2023,Blue,5000000.0,30000,V6 Marine,500,300,Diesel,Automatic,6,yacht1.png,400,12,Italy
+-1,Cars,1,Toyota,Camry,2022,Blue,25000.99,1500,V6,200,60,Diesel,Automatic,6,car1.png,12000,240,false,true,true,Sedan
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,3,Tesla,Model S,2021,White,75000.00,2000,V8,300,80,Benzina,Automatic,5,car3.png,15000,250,false,true,true,Sedan
