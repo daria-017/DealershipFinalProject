@@ -4,22 +4,22 @@ import javax.swing.AbstractListModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarListModel extends AbstractListModel<String> {
-    private final List<String> cars = new ArrayList<>();
+public class TruckListModel extends AbstractListModel<String> {
+    private final List<String> trucks = new ArrayList<>();
 
     @Override
     public int getSize() {
-        return cars.size();
+        return trucks.size();
     }
 
     @Override
     public String getElementAt(int index) {
-        return cars.get(index);
+        return trucks.get(index);
     }
 
-    public void addCar(String car) {
-        cars.add(car);
-        int index = cars.size() - 1;
+    public void addTruck(String truck) {
+        trucks.add(truck);
+        int index = trucks.size() - 1;
         fireIntervalAdded(this, index, index);
     }
 }
