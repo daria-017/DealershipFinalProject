@@ -6,7 +6,6 @@ package proiectjava.dealershipfinalproject;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import javax.swing.DefaultListModel;
 /**
  *
  * @author Alex
@@ -19,6 +18,8 @@ public class AccountDetails extends javax.swing.JFrame {
     public AccountDetails() {
         initComponents();
         populateCarsList("purchasesNew.txt", (CarListModel) carsList.getModel());
+        populateTrucksList("purchasesNew.txt", (TruckListModel) trucksList.getModel());
+        populateMotorcyclesList("purchasesNew.txt", (MotorcycleListModel) motorcyclesList.getModel());
     }
 
     /**
@@ -30,15 +31,25 @@ public class AccountDetails extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         mainPanel = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         menuButton = new javax.swing.JButton();
         tabbedPanel = new javax.swing.JTabbedPane();
         carsTab = new javax.swing.JPanel();
-        scrollBar = new javax.swing.JScrollBar();
-        scrollPane = new javax.swing.JScrollPane();
+        carsScrollPane = new javax.swing.JScrollPane();
         CarListModel carListModel = new CarListModel();
         carsList = new javax.swing.JList<>();
+        trucksTab = new javax.swing.JPanel();
+        trucksScrollPane = new javax.swing.JScrollPane();
+        TruckListModel truckListModel = new TruckListModel();
+        trucksList = new javax.swing.JList<>();
+        motorcyclesTab = new javax.swing.JPanel();
+        motorcyclesScrollPane = new javax.swing.JScrollPane();
+        MotorcycleListModel motorcycleListModel = new MotorcycleListModel();
+        motorcyclesList = new javax.swing.JList<>();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Account");
@@ -79,43 +90,103 @@ public class AccountDetails extends javax.swing.JFrame {
         carsTab.setMaximumSize(new java.awt.Dimension(880, 415));
         carsTab.setMinimumSize(new java.awt.Dimension(880, 415));
 
-        scrollBar.setBackground(new java.awt.Color(0, 102, 102));
-        scrollBar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        scrollBar.setMaximumSize(new java.awt.Dimension(10, 48));
-        scrollBar.setMinimumSize(new java.awt.Dimension(10, 48));
+        carsScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        carsScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        carsScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
 
-        scrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
-        scrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
-        scrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
-
+        carsList.setBackground(new java.awt.Color(216, 214, 196));
+        carsList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         carsList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         carsList.setModel(carListModel);
         carsList.setToolTipText("");
-        scrollPane.setViewportView(carsList);
+        carsList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        carsScrollPane.setViewportView(carsList);
 
         javax.swing.GroupLayout carsTabLayout = new javax.swing.GroupLayout(carsTab);
         carsTab.setLayout(carsTabLayout);
         carsTabLayout.setHorizontalGroup(
             carsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, carsTabLayout.createSequentialGroup()
+            .addGroup(carsTabLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(scrollBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(carsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
                 .addContainerGap())
         );
         carsTabLayout.setVerticalGroup(
             carsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(carsTabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(carsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(scrollBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(carsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         tabbedPanel.addTab("Cars", null, carsTab, "");
-        carsTab.getAccessibleContext().setAccessibleName("Cars");
+        carsTab.getAccessibleContext().setAccessibleName("");
+
+        trucksTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        trucksScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        trucksScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        trucksScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        trucksList.setBackground(new java.awt.Color(216, 214, 196));
+        trucksList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        trucksList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        trucksList.setModel(truckListModel);
+        trucksList.setToolTipText("");
+        trucksList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        trucksScrollPane.setViewportView(trucksList);
+
+        javax.swing.GroupLayout trucksTabLayout = new javax.swing.GroupLayout(trucksTab);
+        trucksTab.setLayout(trucksTabLayout);
+        trucksTabLayout.setHorizontalGroup(
+            trucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trucksTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(trucksScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        trucksTabLayout.setVerticalGroup(
+            trucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trucksTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(trucksScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("Trucks", trucksTab);
+
+        motorcyclesTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        motorcyclesScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        motorcyclesScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        motorcyclesScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        motorcyclesList.setBackground(new java.awt.Color(216, 214, 196));
+        motorcyclesList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        motorcyclesList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        motorcyclesList.setModel(motorcycleListModel);
+        motorcyclesList.setToolTipText("");
+        motorcyclesList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        motorcyclesScrollPane.setViewportView(motorcyclesList);
+
+        javax.swing.GroupLayout motorcyclesTabLayout = new javax.swing.GroupLayout(motorcyclesTab);
+        motorcyclesTab.setLayout(motorcyclesTabLayout);
+        motorcyclesTabLayout.setHorizontalGroup(
+            motorcyclesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(motorcyclesTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(motorcyclesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        motorcyclesTabLayout.setVerticalGroup(
+            motorcyclesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(motorcyclesTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(motorcyclesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("Motorcycles", motorcyclesTab);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -178,6 +249,40 @@ public class AccountDetails extends javax.swing.JFrame {
         }
     }
     
+    public void populateTrucksList(String filePath, TruckListModel truckListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Trucks".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    truckListModel.addTruck(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateMotorcyclesList(String filePath, MotorcycleListModel motorcycleListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Motorcycles".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    motorcycleListModel.addMotorcycle(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         // TODO add your handling code here:
         MainFrame mainFrame = new MainFrame();
@@ -224,12 +329,18 @@ public class AccountDetails extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> carsList;
+    private javax.swing.JScrollPane carsScrollPane;
     private javax.swing.JPanel carsTab;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton menuButton;
-    private javax.swing.JScrollBar scrollBar;
-    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JList<String> motorcyclesList;
+    private javax.swing.JScrollPane motorcyclesScrollPane;
+    private javax.swing.JPanel motorcyclesTab;
     private javax.swing.JTabbedPane tabbedPanel;
     private javax.swing.JLabel title;
+    private javax.swing.JList<String> trucksList;
+    private javax.swing.JScrollPane trucksScrollPane;
+    private javax.swing.JPanel trucksTab;
     // End of variables declaration//GEN-END:variables
 }
