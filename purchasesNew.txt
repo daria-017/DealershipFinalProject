@@ -5,3 +5,21 @@
 -1,Cars,1,Toyota,Camry,2022,Blue,25000.99,1500,V6,200,60,Diesel,Automatic,6,car1.png,12000,240,false,true,true,Sedan
 -1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
 -1,Cars,3,Tesla,Model S,2021,White,75000.00,2000,V8,300,80,Benzina,Automatic,5,car3.png,15000,250,false,true,true,Sedan
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Trucks,2,Chevrolet,Silverado 2500,2022,Blue,60000.00,4000,V4,120,40,Diesel,Manual,6,truck2.png,22000,8000,1800,true,true
+-1,Motorcycles,2,Kawasaki,Ninja ZX-10R,2022,Green,19000.00,260,V4,120,40,Diesel,Manual,6,motorcycle2.png,15000,190,true,true,Sport
+-1,Motorcycles,3,Suzuki,GSX-R1000,2021,Blue,17000.00,240,V8,300,80,Benzina,Automatic,5,motorcycle3.png,18000,175,true,false,Sport
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
+-1,Cars,2,Ford,Mustang,2023,Red,45000.50,1600,V4,120,40,Diesel,Manual,6,car2.png,8000,260,true,true,true,Coupe
