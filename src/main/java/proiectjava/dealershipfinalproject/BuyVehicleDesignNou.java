@@ -19,6 +19,8 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
     private JButton buyButton, moreButton;
     private ImageIcon carIcon;
     private JComboBox<String> optionsList, specificVehicleTypes, availableVehicles;
+    
+    String selectedLine;
 
     public BuyVehicleDesignNou() {
         setTitle("Buy Vehicle");
@@ -196,17 +198,18 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
                 String selectedItem = (String) availableVehicles.getSelectedItem();
                 if (selectedItem != null && !selectedItem.equals("==Not available==")) {
                     try (BufferedReader reader = new BufferedReader(new FileReader("availableVehicles.txt"))) {
-                        String line;
-                        while ((line = reader.readLine()) != null) {
-                            String[] vehicleData = line.split(",");
+                        while ((selectedLine = reader.readLine()) != null) {
+                            String[] vehicleData = selectedLine.split(",");
                             if (vehicleData.length >= 14 && selectedItem.equals(vehicleData[2] + " - "+vehicleData[3] + " - " +vehicleData[5])) {
                                 String imageFileName = vehicleData[14].trim();
-                                carLabel.setIcon(new ImageIcon("Resources/Images/"+imageFileName));
+                                carLabel.setIcon(new ImageIcon("resources/images/"+imageFileName));
                                 brand.setText("Brand: " + vehicleData[2]);
                                 model.setText("Model: " + vehicleData[3]);
                                 year.setText("Year: " + vehicleData[4]);
                                 color.setText("Color: " + vehicleData[5]);
                                 price.setText("Price: " + vehicleData[6] + " RON");
+                                
+                                break;
                             }
                         }
                     } catch (IOException err) {
@@ -254,7 +257,42 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
         moreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            }
+//        String[] parts = selectedLine.split(",");
+//
+//        // Extract and parse values
+//        int id = Integer.parseInt(parts[1]);
+//        String brand = parts[2];
+//        String model = parts[3];
+//        short year = Short.parseShort(parts[4]);
+//        Color color = getColor(parts[5]);
+//        double price = Double.parseDouble(parts[6]);
+//        int weight = Integer.parseInt(parts[7]);
+//
+//        // Create Engine object
+//        Engine engine = new Engine(parts[8], Integer.parseInt(parts[9]),
+//                Integer.parseInt(parts[10]), parts[11]);
+//
+//        // Create Transmission object
+//        Transmission transmission = new Transmission(parts[12], Integer.parseInt(parts[13]));
+//
+//        // Load ImageIcon
+//        ImageIcon photo = new ImageIcon(parts[14]); // Ensure the path to the image is correct
+//
+//        // Remaining car attributes
+//        int mileage = Integer.parseInt(parts[15]);
+//        int topSpeed = Integer.parseInt(parts[16]);
+//        boolean isConvertible = Boolean.parseBoolean(parts[17]);
+//        boolean abs = Boolean.parseBoolean(parts[18]);
+//        boolean gps = Boolean.parseBoolean(parts[19]);
+//        String body = parts[20];
+//
+//        // Create Car object
+//        Car car = new Car(id, brand, model, year, color, price, weight, engine, transmission,
+//                photo, mileage, topSpeed, isConvertible, abs, gps, body);
+//
+//        // Print the Car object (assuming a toString method in Car)
+//        System.out.println(car);
+    }
         });
 
         Left.add(carLabel);
@@ -282,5 +320,22 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
 
     public static void main(String[] args) {
         new BuyVehicleDesignNou();
+    }
+    
+    private static Color getColor(String colorName) {
+        switch (colorName.toLowerCase()) {
+            case "blue":
+                return Color.BLUE;
+            case "red":
+                return Color.RED;
+            case "green":
+                return Color.GREEN;
+            case "black":
+                return Color.BLACK;
+            case "white":
+                return Color.WHITE;
+            default:
+                return Color.GRAY; // Default color if no match
+        }
     }
 }
