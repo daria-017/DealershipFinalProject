@@ -496,6 +496,8 @@ public class AccountDetails extends javax.swing.JFrame {
 
         tabbedPanel.addTab("JetPlanes", jetPlanesTab);
 
+        airplanesTab.setBackground(new java.awt.Color(216, 214, 196));
+
         airplanesScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
         airplanesScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
         airplanesScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
@@ -526,6 +528,8 @@ public class AccountDetails extends javax.swing.JFrame {
         );
 
         tabbedPanel.addTab("Airplanes", airplanesTab);
+
+        helicoptersTab.setBackground(new java.awt.Color(216, 214, 196));
 
         helicoptersScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
         helicoptersScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
