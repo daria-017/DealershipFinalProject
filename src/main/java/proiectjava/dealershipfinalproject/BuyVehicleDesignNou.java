@@ -233,7 +233,7 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
 
                         while ((line = reader.readLine()) != null) {
                             String[] vehicleData = line.split(",");
-                            if (vehicleData.length >= 6 && selectedVehicle.startsWith(vehicleData[2].trim())) {
+                            if (vehicleData.length >= 6 && selectedVehicle.equals(vehicleData[2] + " - " + vehicleData[3] + " - " + vehicleData[5])) {
                                 writer.write(loggedUser+","+line);
                                 writer.newLine();
                                 vehicleFound = true;
