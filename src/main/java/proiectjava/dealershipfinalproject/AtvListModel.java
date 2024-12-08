@@ -17,8 +17,8 @@ public class AtvListModel extends AbstractListModel<String> {
         return atvs.get(index);
     }
 
-    public void addAtv(String car) {
-        atvs.add(car);
+    public void addAtv(String atv) {
+        atvs.add(atv);
         int index = atvs.size() - 1;
         fireIntervalAdded(this, index, index);
     }
