@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package proiectjava.dealershipfinalproject;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,15 +7,22 @@ import java.io.IOException;
  * @author Alex
  */
 public class AccountDetails extends javax.swing.JFrame {
-
-    /**
-     * Creates new form AccountDetails
-     */
+    
     public AccountDetails() {
         initComponents();
         populateCarsList("purchasesNew.txt", (CarListModel) carsList.getModel());
         populateTrucksList("purchasesNew.txt", (TruckListModel) trucksList.getModel());
         populateMotorcyclesList("purchasesNew.txt", (MotorcycleListModel) motorcyclesList.getModel());
+        populateAtvsList("purchasesNew.txt", (AtvListModel) atvsList.getModel());
+        populateScootersList("purchasesNew.txt", (ScooterListModel) scootersList.getModel());
+        populateYachtsList("purchasesNew.txt", (YachtListModel) yachtsList.getModel());
+        populateJetSkisList("purchasesNew.txt", (JetSkiListModel) jetSkisList.getModel());
+        populateBoatsList("purchasesNew.txt", (BoatListModel) boatsList.getModel());
+        populateSailBoatsList("purchasesNew.txt", (SailBoatListModel) sailBoatsList.getModel());
+        populateDronesList("purchasesNew.txt", (DroneListModel) dronesList.getModel());
+        populateJetPlanesList("purchasesNew.txt", (JetPlaneListModel) jetPlanesList.getModel());
+        populateAirplanesList("purchasesNew.txt", (AirplaneListModel) airplanesList.getModel());
+        populateHelicoptersList("purchasesNew.txt", (HelicopterListModel) helicoptersList.getModel());
     }
 
     /**
@@ -48,6 +51,46 @@ public class AccountDetails extends javax.swing.JFrame {
         motorcyclesScrollPane = new javax.swing.JScrollPane();
         MotorcycleListModel motorcycleListModel = new MotorcycleListModel();
         motorcyclesList = new javax.swing.JList<>();
+        atvsTab = new javax.swing.JPanel();
+        atvsScrollPane = new javax.swing.JScrollPane();
+        AtvListModel atvListModel = new AtvListModel();
+        atvsList = new javax.swing.JList<>();
+        scootersTab = new javax.swing.JPanel();
+        scootersScrollPane = new javax.swing.JScrollPane();
+        ScooterListModel scooterListModel = new ScooterListModel();
+        scootersList = new javax.swing.JList<>();
+        yachtsTab = new javax.swing.JPanel();
+        yachtsScrollPane = new javax.swing.JScrollPane();
+        YachtListModel yachtListModel = new YachtListModel();
+        yachtsList = new javax.swing.JList<>();
+        jetSkisTab = new javax.swing.JPanel();
+        jetSkisScrollPane = new javax.swing.JScrollPane();
+        JetSkiListModel jetSkiListModel = new JetSkiListModel();
+        jetSkisList = new javax.swing.JList<>();
+        boatsTab = new javax.swing.JPanel();
+        boatsScrollPane = new javax.swing.JScrollPane();
+        BoatListModel boatListModel = new BoatListModel();
+        boatsList = new javax.swing.JList<>();
+        sailBoatsTab = new javax.swing.JPanel();
+        sailBoatsScrollPane = new javax.swing.JScrollPane();
+        SailBoatListModel sailBoatListModel = new SailBoatListModel();
+        sailBoatsList = new javax.swing.JList<>();
+        dronesTab = new javax.swing.JPanel();
+        dronesScrollPane = new javax.swing.JScrollPane();
+        DroneListModel droneListModel = new DroneListModel();
+        dronesList = new javax.swing.JList<>();
+        jetPlanesTab = new javax.swing.JPanel();
+        jetPlanesScrollPane = new javax.swing.JScrollPane();
+        JetPlaneListModel jetPlaneListModel = new JetPlaneListModel();
+        jetPlanesList = new javax.swing.JList<>();
+        airplanesTab = new javax.swing.JPanel();
+        airplanesScrollPane = new javax.swing.JScrollPane();
+        AirplaneListModel airplaneListModel = new AirplaneListModel();
+        airplanesList = new javax.swing.JList<>();
+        helicoptersTab = new javax.swing.JPanel();
+        helicoptersScrollPane = new javax.swing.JScrollPane();
+        HelicopterListModel helicopterListModel = new HelicopterListModel();
+        helicoptersList = new javax.swing.JList<>();
 
         jTextField1.setText("jTextField1");
 
@@ -188,6 +231,332 @@ public class AccountDetails extends javax.swing.JFrame {
 
         tabbedPanel.addTab("Motorcycles", motorcyclesTab);
 
+        atvsTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        atvsScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        atvsScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        atvsScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        atvsList.setBackground(new java.awt.Color(216, 214, 196));
+        atvsList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        atvsList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        atvsList.setModel(atvListModel);
+        atvsList.setToolTipText("");
+        atvsList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        atvsScrollPane.setViewportView(atvsList);
+
+        javax.swing.GroupLayout atvsTabLayout = new javax.swing.GroupLayout(atvsTab);
+        atvsTab.setLayout(atvsTabLayout);
+        atvsTabLayout.setHorizontalGroup(
+            atvsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(atvsTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(atvsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        atvsTabLayout.setVerticalGroup(
+            atvsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(atvsTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(atvsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("ATVs", atvsTab);
+
+        scootersTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        scootersScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        scootersScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        scootersScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        scootersList.setBackground(new java.awt.Color(216, 214, 196));
+        scootersList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        scootersList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        scootersList.setModel(scooterListModel);
+        scootersList.setToolTipText("");
+        scootersList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        scootersScrollPane.setViewportView(scootersList);
+
+        javax.swing.GroupLayout scootersTabLayout = new javax.swing.GroupLayout(scootersTab);
+        scootersTab.setLayout(scootersTabLayout);
+        scootersTabLayout.setHorizontalGroup(
+            scootersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scootersTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(scootersScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        scootersTabLayout.setVerticalGroup(
+            scootersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scootersTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(scootersScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("Scooters", scootersTab);
+
+        yachtsTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        yachtsScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        yachtsScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        yachtsScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        yachtsList.setBackground(new java.awt.Color(216, 214, 196));
+        yachtsList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        yachtsList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        yachtsList.setModel(yachtListModel);
+        yachtsList.setToolTipText("");
+        yachtsList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        yachtsScrollPane.setViewportView(yachtsList);
+
+        javax.swing.GroupLayout yachtsTabLayout = new javax.swing.GroupLayout(yachtsTab);
+        yachtsTab.setLayout(yachtsTabLayout);
+        yachtsTabLayout.setHorizontalGroup(
+            yachtsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(yachtsTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(yachtsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        yachtsTabLayout.setVerticalGroup(
+            yachtsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(yachtsTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(yachtsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("Yachts", yachtsTab);
+
+        jetSkisTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        jetSkisScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        jetSkisScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        jetSkisScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        jetSkisList.setBackground(new java.awt.Color(216, 214, 196));
+        jetSkisList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jetSkisList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jetSkisList.setModel(jetSkiListModel);
+        jetSkisList.setToolTipText("");
+        jetSkisList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        jetSkisScrollPane.setViewportView(jetSkisList);
+
+        javax.swing.GroupLayout jetSkisTabLayout = new javax.swing.GroupLayout(jetSkisTab);
+        jetSkisTab.setLayout(jetSkisTabLayout);
+        jetSkisTabLayout.setHorizontalGroup(
+            jetSkisTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jetSkisTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jetSkisScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jetSkisTabLayout.setVerticalGroup(
+            jetSkisTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jetSkisTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jetSkisScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("JetSkis", jetSkisTab);
+
+        boatsTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        boatsScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        boatsScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        boatsScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        boatsList.setBackground(new java.awt.Color(216, 214, 196));
+        boatsList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        boatsList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        boatsList.setModel(boatListModel);
+        boatsList.setToolTipText("");
+        boatsList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        boatsScrollPane.setViewportView(boatsList);
+
+        javax.swing.GroupLayout boatsTabLayout = new javax.swing.GroupLayout(boatsTab);
+        boatsTab.setLayout(boatsTabLayout);
+        boatsTabLayout.setHorizontalGroup(
+            boatsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(boatsTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(boatsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        boatsTabLayout.setVerticalGroup(
+            boatsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(boatsTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(boatsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("Boats", boatsTab);
+
+        sailBoatsTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        sailBoatsScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        sailBoatsScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        sailBoatsScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        sailBoatsList.setBackground(new java.awt.Color(216, 214, 196));
+        sailBoatsList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        sailBoatsList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        sailBoatsList.setModel(sailBoatListModel);
+        sailBoatsList.setToolTipText("");
+        sailBoatsList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        sailBoatsScrollPane.setViewportView(sailBoatsList);
+
+        javax.swing.GroupLayout sailBoatsTabLayout = new javax.swing.GroupLayout(sailBoatsTab);
+        sailBoatsTab.setLayout(sailBoatsTabLayout);
+        sailBoatsTabLayout.setHorizontalGroup(
+            sailBoatsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sailBoatsTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(sailBoatsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        sailBoatsTabLayout.setVerticalGroup(
+            sailBoatsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sailBoatsTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(sailBoatsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("SailBoats", sailBoatsTab);
+
+        dronesTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        dronesScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        dronesScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        dronesScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        dronesList.setBackground(new java.awt.Color(216, 214, 196));
+        dronesList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        dronesList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        dronesList.setModel(droneListModel);
+        dronesList.setToolTipText("");
+        dronesList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        dronesScrollPane.setViewportView(dronesList);
+
+        javax.swing.GroupLayout dronesTabLayout = new javax.swing.GroupLayout(dronesTab);
+        dronesTab.setLayout(dronesTabLayout);
+        dronesTabLayout.setHorizontalGroup(
+            dronesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dronesTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(dronesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        dronesTabLayout.setVerticalGroup(
+            dronesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dronesTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dronesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("Drones", dronesTab);
+
+        jetPlanesTab.setBackground(new java.awt.Color(216, 214, 196));
+
+        jetPlanesScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        jetPlanesScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        jetPlanesScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        jetPlanesList.setBackground(new java.awt.Color(216, 214, 196));
+        jetPlanesList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jetPlanesList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jetPlanesList.setModel(jetPlaneListModel);
+        jetPlanesList.setToolTipText("");
+        jetPlanesList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        jetPlanesScrollPane.setViewportView(jetPlanesList);
+
+        javax.swing.GroupLayout jetPlanesTabLayout = new javax.swing.GroupLayout(jetPlanesTab);
+        jetPlanesTab.setLayout(jetPlanesTabLayout);
+        jetPlanesTabLayout.setHorizontalGroup(
+            jetPlanesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jetPlanesTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jetPlanesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jetPlanesTabLayout.setVerticalGroup(
+            jetPlanesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jetPlanesTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jetPlanesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("JetPlanes", jetPlanesTab);
+
+        airplanesScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        airplanesScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        airplanesScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        airplanesList.setBackground(new java.awt.Color(216, 214, 196));
+        airplanesList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        airplanesList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        airplanesList.setModel(airplaneListModel);
+        airplanesList.setToolTipText("");
+        airplanesList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        airplanesScrollPane.setViewportView(airplanesList);
+
+        javax.swing.GroupLayout airplanesTabLayout = new javax.swing.GroupLayout(airplanesTab);
+        airplanesTab.setLayout(airplanesTabLayout);
+        airplanesTabLayout.setHorizontalGroup(
+            airplanesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(airplanesTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(airplanesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        airplanesTabLayout.setVerticalGroup(
+            airplanesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(airplanesTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(airplanesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("Airplanes", airplanesTab);
+
+        helicoptersScrollPane.setMaximumSize(new java.awt.Dimension(826, 380));
+        helicoptersScrollPane.setMinimumSize(new java.awt.Dimension(826, 380));
+        helicoptersScrollPane.setPreferredSize(new java.awt.Dimension(826, 380));
+
+        helicoptersList.setBackground(new java.awt.Color(216, 214, 196));
+        helicoptersList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        helicoptersList.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        helicoptersList.setModel(helicopterListModel);
+        helicoptersList.setToolTipText("");
+        helicoptersList.setSelectionBackground(new java.awt.Color(0, 102, 102));
+        helicoptersScrollPane.setViewportView(helicoptersList);
+
+        javax.swing.GroupLayout helicoptersTabLayout = new javax.swing.GroupLayout(helicoptersTab);
+        helicoptersTab.setLayout(helicoptersTabLayout);
+        helicoptersTabLayout.setHorizontalGroup(
+            helicoptersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(helicoptersTabLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(helicoptersScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        helicoptersTabLayout.setVerticalGroup(
+            helicoptersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(helicoptersTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(helicoptersScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        tabbedPanel.addTab("Helis", helicoptersTab);
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -283,6 +652,176 @@ public class AccountDetails extends javax.swing.JFrame {
         }
     }
     
+    public void populateAtvsList(String filePath, AtvListModel atvListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "ATVs".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    atvListModel.addAtv(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateScootersList(String filePath, ScooterListModel scooterListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Scooters".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    scooterListModel.addScooter(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateYachtsList(String filePath, YachtListModel yachtListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Yachts".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    yachtListModel.addYacht(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateJetSkisList(String filePath, JetSkiListModel jetSkisListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Jet Skis".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    jetSkisListModel.addJetSki(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateBoatsList(String filePath, BoatListModel boatsListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Boats".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    boatsListModel.addBoat(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateSailBoatsList(String filePath, SailBoatListModel sailBoatsListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Sail Boats".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    sailBoatsListModel.addSailBoat(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateDronesList(String filePath, DroneListModel dronesListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Drones".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    dronesListModel.addDrone(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateJetPlanesList(String filePath, JetPlaneListModel jetPlanesListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Jet Planes".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    jetPlanesListModel.addJetPlane(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateAirplanesList(String filePath, AirplaneListModel airplanesListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Airplanes".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    airplanesListModel.addAirplane(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void populateHelicoptersList(String filePath, HelicopterListModel helicoptersListModel) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] details = line.split(",");
+                if (details.length > 5 && "Helicopters".equals(details[1])) {
+                    String make = details[3];
+                    String model = details[4];
+                    String year = details[5];
+                    helicoptersListModel.addHelicopter(make + " " + model + " (" + year + ")");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         // TODO add your handling code here:
         MainFrame mainFrame = new MainFrame();
@@ -328,19 +867,49 @@ public class AccountDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> airplanesList;
+    private javax.swing.JScrollPane airplanesScrollPane;
+    private javax.swing.JPanel airplanesTab;
+    private javax.swing.JList<String> atvsList;
+    private javax.swing.JScrollPane atvsScrollPane;
+    private javax.swing.JPanel atvsTab;
+    private javax.swing.JList<String> boatsList;
+    private javax.swing.JScrollPane boatsScrollPane;
+    private javax.swing.JPanel boatsTab;
     private javax.swing.JList<String> carsList;
     private javax.swing.JScrollPane carsScrollPane;
     private javax.swing.JPanel carsTab;
+    private javax.swing.JList<String> dronesList;
+    private javax.swing.JScrollPane dronesScrollPane;
+    private javax.swing.JPanel dronesTab;
+    private javax.swing.JList<String> helicoptersList;
+    private javax.swing.JScrollPane helicoptersScrollPane;
+    private javax.swing.JPanel helicoptersTab;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JList<String> jetPlanesList;
+    private javax.swing.JScrollPane jetPlanesScrollPane;
+    private javax.swing.JPanel jetPlanesTab;
+    private javax.swing.JList<String> jetSkisList;
+    private javax.swing.JScrollPane jetSkisScrollPane;
+    private javax.swing.JPanel jetSkisTab;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton menuButton;
     private javax.swing.JList<String> motorcyclesList;
     private javax.swing.JScrollPane motorcyclesScrollPane;
     private javax.swing.JPanel motorcyclesTab;
+    private javax.swing.JList<String> sailBoatsList;
+    private javax.swing.JScrollPane sailBoatsScrollPane;
+    private javax.swing.JPanel sailBoatsTab;
+    private javax.swing.JList<String> scootersList;
+    private javax.swing.JScrollPane scootersScrollPane;
+    private javax.swing.JPanel scootersTab;
     private javax.swing.JTabbedPane tabbedPanel;
     private javax.swing.JLabel title;
     private javax.swing.JList<String> trucksList;
     private javax.swing.JScrollPane trucksScrollPane;
     private javax.swing.JPanel trucksTab;
+    private javax.swing.JList<String> yachtsList;
+    private javax.swing.JScrollPane yachtsScrollPane;
+    private javax.swing.JPanel yachtsTab;
     // End of variables declaration//GEN-END:variables
 }
