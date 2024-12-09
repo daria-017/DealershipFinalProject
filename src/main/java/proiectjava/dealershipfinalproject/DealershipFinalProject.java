@@ -331,8 +331,8 @@ public class DealershipFinalProject {
         
         
         Boat[] boats = new Boat[10];
-        boats[0] = new Boat(1, "Yamaha", "WaveRunner", (short) 2021, Color.BLUE, 15000.0, 800, boatEngine1, boatTransmission1, null, 200, true, 6.5, true, "Jet Propulsion");
-        boats[1] = new Boat(2, "Sea-Doo", "Spark", (short) 2022, Color.RED, 12000.0, 700, boatEngine2, boatTransmission2, null, 150, true, 7.0, false, "Jet Propulsion");
+        boats[0] = new Boat(1, "Yamaha", "AR195", (short) 2021, Color.BLUE, 29999.50, 1350, boatEngine1, boatTransmission1, null, 200, true, 6.5, true, "Jet Propulsion");
+        boats[1] = new Boat(2, "Sea Ray", "SPX 190", (short) 2023, Color.RED, 35499, 1450, boatEngine2, boatTransmission2, null, 150, true, 7.0, false, "Jet Propulsion");
         boats[2] = new Boat(3, "Bayliner", "Element", (short) 2020, Color.WHITE, 25000.0, 1500, boatEngine1, boatTransmission1, null, 300, false, 8.0, true, "Inboard");
         boats[3] = new Boat(4, "Boston Whaler", "Montauk", (short) 2021, Color.GRAY, 40000.0, 2000, boatEngine2, boatTransmission1, null, 400, true, 5.5, true, "Outboard");
         boats[4] = new Boat(5, "Tracker", "Pro Team", (short) 2022, Color.BLACK, 18000.0, 1200, boatEngine1, boatTransmission2, null, 250, false, 6.8, false, "Outboard");
@@ -365,11 +365,11 @@ public class DealershipFinalProject {
         System.out.println(sailBoat2);
 
         SailBoat sailBoat3 = new SailBoat(
-                1, "Yamaha", "Model X", (short) 2022, Color.BLUE, 25000.0, 1200, sailBoatEngine1,
+                1, "Beneteau", "Oceanis 30.1", (short) 2023, Color.GRAY, 120000.50, 4000, sailBoatEngine1,
                 sailBoatTransmission1, null, 1000, true, 8.5, true, true);
 
         SailBoat sailBoat4 = new SailBoat(
-                2, "Bayliner", "Model Y", (short) 2023, Color.WHITE, 30000.0, 1500, sailBoatEngine2,
+                2, "Jeanneau", "Sun Odyssey 349", (short) 2022, Color.GRAY, 155000, 5350, sailBoatEngine2,
                 sailBoatTransmission2, null, 1500, false, 10.0, false, false);
 
         System.out.println(sailBoat3);
@@ -382,7 +382,7 @@ public class DealershipFinalProject {
         System.out.println(sailBoat6);
         
         SailBoat[] sailBoats = new SailBoat[10];
-        sailBoats[0] = new SailBoat(3, "Hunter", "Model C", (short) 2021, Color.WHITE, 18000.0, 1400, sailBoatEngine1, sailBoatTransmission2, null, 600, true, 12.0, false, true);
+        sailBoats[0] = new SailBoat(3, "Catalina", "275 Sport", (short) 2021, Color.BLUE, 89999.99, 3200, sailBoatEngine1, sailBoatTransmission2, null, 600, true, 12.0, false, true);
         sailBoats[1] = new SailBoat(4, "Jeanneau", "Model D", (short) 2020, Color.YELLOW, 22000.0, 1700, sailBoatEngine2, sailBoatTransmission1, null, 900, false, 9.8, true, true);
         sailBoats[2] = new SailBoat(5, "Beneteau", "Model E", (short) 2019, Color.GRAY, 19000.0, 1600, sailBoatEngine1, sailBoatTransmission2, null, 400, true, 11.2, false, false);
         sailBoats[3] = new SailBoat(6, "Catalina", "Model F", (short) 2021, Color.GREEN, 21000.0, 1550, sailBoatEngine2, sailBoatTransmission1, null, 800, true, 10.0, true, true);
