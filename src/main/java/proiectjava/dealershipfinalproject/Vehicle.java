@@ -10,7 +10,9 @@ package proiectjava.dealershipfinalproject;
  */
 import javax.swing.ImageIcon;
 import java.awt.Color;
+
 public class Vehicle {
+
     private int id;
     private String brand;
     private String model;
@@ -21,46 +23,48 @@ public class Vehicle {
     Engine engine;
     Transmission transmission;
     ImageIcon photo;
-    
-    public Vehicle(){
-        id=0;
-        brand="unknown";
-        model="unknown";
-        year=0;
-        color=null;
-        price=0;
-        weight=0;
-        engine=new Engine();
-        transmission=new Transmission();
-        photo=new ImageIcon();
+
+    public Vehicle() {
+        id = 0;
+        brand = "unknown";
+        model = "unknown";
+        year = 0;
+        color = null;
+        price = 0;
+        weight = 0;
+        engine = new Engine();
+        transmission = new Transmission();
+        photo = new ImageIcon();
     }
-    public Vehicle(int id, String brand, String model, short year, Color color, double price, int weight,  Engine engine,Transmission transmission, ImageIcon photo){
-        this.id=id;
-        this.brand=brand;
-        this.model=model;
-        this.year=year;
-        this.color=color;
-        this.price=price;
-        this.weight=weight;
-        this.engine=new Engine(engine);
-        this.transmission=new Transmission(transmission);
-        this.photo=photo;
-        
+
+    public Vehicle(int id, String brand, String model, short year, Color color, double price, int weight, Engine engine, Transmission transmission, ImageIcon photo) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.price = price;
+        this.weight = weight;
+        this.engine = new Engine(engine);
+        this.transmission = new Transmission(transmission);
+        this.photo = photo;
+
     }
-    public Vehicle(Vehicle vehicle){
-        this.id=vehicle.id;
-        this.brand=vehicle.brand;
-        this.model=vehicle.model;
-        this.year=vehicle.year;
-        this.color=vehicle.color;
-        this.price=vehicle.price;
-        this.weight=vehicle.weight;
-        this.engine=new Engine(vehicle.engine);
-        this.transmission=new Transmission(vehicle.transmission);
-        this.photo=vehicle.photo;
-        
+
+    public Vehicle(Vehicle vehicle) {
+        this.id = vehicle.id;
+        this.brand = vehicle.brand;
+        this.model = vehicle.model;
+        this.year = vehicle.year;
+        this.color = vehicle.color;
+        this.price = vehicle.price;
+        this.weight = vehicle.weight;
+        this.engine = new Engine(vehicle.engine);
+        this.transmission = new Transmission(vehicle.transmission);
+        this.photo = vehicle.photo;
+
     }
-    
+
     public int getId() {
         return id;
     }
@@ -141,9 +145,46 @@ public class Vehicle {
         this.photo = photo;
     }
     
-    public String toString(){
-        return " id: "+id+" brand: "+brand+" model: "+model+" year: "+year+" color: "+color+" price: "+price+" weight(in kg): "+weight+"engine={" + (engine != null ? engine.toString() : "No engine") + "}" +
-           " transmission={" + (transmission != null ? transmission.toString() : "No transmission");
+    @Override
+    public String toString() {
+        return "> General Specifications" + "\nID: " + id + "\nBrand: " + brand + "\nModel: " + model + "\nYear: " + year + 
+                "\nColor: " + normColor(color) + "\nPrice: " + price + " RON" + "\nWeight: " + weight + " KG" + 
+                "\n\n> Engine Specifications" + (engine != null ? engine : "No Engine") +
+                "\n\n> Transmission Specifications" + (transmission != null ? transmission : "No Transmission");
     }
-    
+
+    private String normColor(Color color) {
+        int rgb = color.getRGB();
+        switch (rgb) {
+            case 0xFF000000:
+                return "Black";
+            case 0xFF0000FF:
+                return "Blue";
+            case 0xFF00FFFF:
+                return "Cyan";
+            case 0xFFA9A9A9:
+                return "Dark Gray";
+            case 0xFF808080:
+                return "Gray";
+            case 0xFF00FF00:
+                return "Green";
+            case 0xFFD3D3D3:
+                return "Light Gray";
+            case 0xFFFF00FF:
+                return "Magenta";
+            case 0xFFFFA500:
+                return "Orange";
+            case 0xFFFFC0CB:
+                return "Pink";
+            case 0xFFFF0000:
+                return "Red";
+            case 0xFFFFFFFF:
+                return "White";
+            case 0xFFFFFF00:
+                return "Yellow";
+            default:
+                return "Unknown";
+        }
+    }
+
 }

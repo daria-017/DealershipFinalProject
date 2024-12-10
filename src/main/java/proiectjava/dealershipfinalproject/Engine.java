@@ -52,6 +52,19 @@ public class Engine{
     }
     @Override
     public String toString(){
-        return "Type: "+this.type+ ", Horsepower: "+this.horsepower+", Fuel Capacity: "+this.fuelCapacity+", The Type of Fuel: "+this.typeOfFuel;
+        return "\nType: "+this.type+ "\nHorsepower: "+this.horsepower+"\nFuel Capacity: "+this.fuelCapacity+" L"+"\nType of Fuel: "+this.typeOfFuel;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
