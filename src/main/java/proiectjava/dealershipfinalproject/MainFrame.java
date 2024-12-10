@@ -14,8 +14,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class MainFrame extends JFrame {
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Main Frame");
         frame.setSize(800, 500);
@@ -28,6 +30,7 @@ public class MainFrame extends JFrame {
         final int MAX_HEIGHT = 50;
 
         class HoverButton extends JButton {
+
             private boolean isPressed = false;
             private boolean isHovered = false;
             private Color baseColor = new Color(0, 102, 102);
@@ -98,24 +101,24 @@ public class MainFrame extends JFrame {
         }
 
         JLabel headerLabel = new JLabel("SELECT AN OPTION", JLabel.CENTER);
-        headerLabel.setFont(new Font("Arial", Font.BOLD, 30)); 
-        headerLabel.setForeground(new java.awt.Color(0, 102, 102)); 
+        headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
+        headerLabel.setForeground(new java.awt.Color(0, 102, 102));
 
         HoverButton accountDetailsButton = new HoverButton("Account Details");
         HoverButton buyVehicleButton = new HoverButton("Buy A Vehicle");
 
         accountDetailsButton.addActionListener(e -> {
-             AccountDetailsFrame accountDetailsFrame = new AccountDetailsFrame();
-             accountDetailsFrame.setVisible(true);
+            AccountDetailsFrame accountDetailsFrame = new AccountDetailsFrame();
+            accountDetailsFrame.setVisible(true);
         });
         buyVehicleButton.addActionListener(e -> {
-             BuyVehicleFrame buyVehicleFrame = new BuyVehicleFrame();
-             buyVehicleFrame.setVisible(true);
+            BuyVehicleFrame buyVehicleFrame = new BuyVehicleFrame();
+            buyVehicleFrame.setVisible(true);
         });
 
         JPanel rightPanel = new JPanel();
-        rightPanel.setLayout(null); 
-        headerLabel.setBounds(0, 50, 400, 40); 
+        rightPanel.setLayout(null);
+        headerLabel.setBounds(0, 50, 400, 40);
         rightPanel.setBackground(new Color(216, 214, 196));
         rightPanel.add(headerLabel);
 
@@ -125,10 +128,10 @@ public class MainFrame extends JFrame {
                 int panelWidth = rightPanel.getWidth();
                 int panelHeight = rightPanel.getHeight();
 
-                int buttonWidth = Math.min(Math.max((int) (panelWidth * 0.5), MIN_WIDTH), MAX_WIDTH); 
-                int buttonHeight = Math.min(Math.max((int) (panelHeight * 0.2), MIN_HEIGHT), MAX_HEIGHT); 
-                int buttonX = (panelWidth - buttonWidth) / 2; 
-                int buttonY = (panelHeight - buttonHeight) / 2 -40; // Below header
+                int buttonWidth = Math.min(Math.max((int) (panelWidth * 0.5), MIN_WIDTH), MAX_WIDTH);
+                int buttonHeight = Math.min(Math.max((int) (panelHeight * 0.2), MIN_HEIGHT), MAX_HEIGHT);
+                int buttonX = (panelWidth - buttonWidth) / 2;
+                int buttonY = (panelHeight - buttonHeight) / 2 - 40; // Below header
 
                 accountDetailsButton.setBounds(buttonX, buttonY + 65, buttonWidth, buttonHeight);
                 buyVehicleButton.setBounds(buttonX, buttonY, buttonWidth, buttonHeight);
@@ -140,8 +143,15 @@ public class MainFrame extends JFrame {
 
         JPanel leftPanel = new JPanel();
         leftPanel.setBackground(new Color(0, 102, 102));
+//
+        ImageIcon imageIcon = new ImageIcon("Dealership_logo_200px.png");
+        JLabel imageLabel = new JLabel(imageIcon);
 
+        imageLabel.setBounds(100, 125, 200, 200);
+        frame.add(imageLabel);
+//
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
+
         splitPane.setDividerLocation(400);
         splitPane.setDividerSize(0);
 
@@ -150,5 +160,6 @@ public class MainFrame extends JFrame {
         splitPane.setBounds(0, 0, frame.getWidth(), frame.getHeight());
 
         frame.setVisible(true);
+
     }
 }
