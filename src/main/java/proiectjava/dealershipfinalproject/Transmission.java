@@ -47,6 +47,19 @@ public class Transmission {
     // toString method:
     @Override
     public String toString() {
-        return "Transmission{" + "type=" + this.type + ", numberOfGears=" + this.numberOfGears + '}';
+       return "\nType: " + this.type + "\nNumber of Gears: " + this.numberOfGears;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -45,8 +45,8 @@ public class Boat extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString() + "Nautical Miles = " + nauticalMiles + ", GPS = " + gps + ", Acceleration Time = " + accelerationTime
-                + ", Sonar = " + sonar + ", Propulsion Type = " + propulsionType;
+        return super.toString() +"\n\n> Boat Specifications" + "\nNautical Miles: " + nauticalMiles + "\nGPS: " + (gps ? "Yes" : "No") + "\nAcceleration Time: " + accelerationTime
+                +" s"+ "\nSonar: " + (sonar ? "Yes" : "No") + "\nPropulsion Type: " + propulsionType;
     }
 
     public int getNauticalMiles() {
