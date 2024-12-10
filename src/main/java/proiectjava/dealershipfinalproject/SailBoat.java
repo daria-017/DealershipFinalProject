@@ -1,4 +1,5 @@
 package proiectjava.dealershipfinalproject;
+
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -87,9 +88,8 @@ public class SailBoat extends Vehicle {
     public void setHasLifeBuoy(boolean hasLifeBuoy) {
         this.hasLifeBuoy = hasLifeBuoy;
     }
-    
-    public boolean respectaCerinta(int nauticalMiles, boolean hasLifeBuoy)
-    {
+
+    public boolean respectaCerinta(int nauticalMiles, boolean hasLifeBuoy) {
         return this.nauticalMiles < nauticalMiles && this.hasLifeBuoy == hasLifeBuoy;
     }
 }

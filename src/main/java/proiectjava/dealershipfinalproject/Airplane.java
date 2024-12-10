@@ -157,8 +157,8 @@ public class Airplane extends Vehicle {
     }
     
     //functie
-    public boolean canFlyToLocation(int requiredRange, int requiredAltitude) {
-        if(this.maxRange >= requiredRange && this.maxAltitude >= requiredAltitude){
+    public boolean canFlyToLocation(int requiredRange, int requiredPassengerCapacity) {
+        if(this.maxRange >= requiredRange && this.passengerCapacity >= requiredPassengerCapacity){
             return true;
         }else{
             return false;
