@@ -1,0 +1,507 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package proiectjava.dealershipfinalproject;
+
+import java.awt.Color;
+import javax.swing.ImageIcon;
+
+/**
+ *
+ * @author hcosm
+ */
+public class AtvDroneScooterConditiiFrame extends javax.swing.JFrame {
+    Atv[]atvs = new Atv[10];
+    /**
+     * Creates new form AtvDroneScooterConditiiFrame
+     */
+    public AtvDroneScooterConditiiFrame() {
+        initComponents();
+        
+        Engine atvEngine1 = new Engine("V6", 200, 60, "Diesel");
+        Engine atvEngine2 = new Engine("V4", 120, 40, "Diesel");
+        Engine atvEngine3 = new Engine("V8", 300, 80, "Benzina");
+        Engine atvEngine4 = new Engine("V6", 300, 60, "Petrol");
+        Engine atvEngine5 = new Engine("V8", 450, 70, "Petrol");
+        Engine atvEngine6 = new Engine("Electric", 200, 100, "Electric");
+        Engine atvEngine7 = new Engine("V4", 180, 50, "Petrol");
+        Engine atvEngine8 = new Engine("Inline-6", 350, 65, "Diesel");
+        Engine atvEngine9 = new Engine("Hybrid", 250, 55, "Hybrid");
+        Engine atvEngine10 = new Engine("Boxer-4", 220, 45, "Petrol");
+        
+        Transmission atvTransmission1 = new Transmission("Automatic", 6);
+        Transmission atvTransmission2 = new Transmission("Manual", 6);
+        Transmission atvTransmission3 = new Transmission("Automatic", 5);
+        Transmission atvTransmission4 = new Transmission("Automatic", 8);
+        Transmission atvTransmission5 = new Transmission("Manual", 6);
+        Transmission atvTransmission6 = new Transmission("CVT", 0);
+        Transmission atvTransmission7 = new Transmission("Automatic", 10);
+        Transmission atvTransmission8 = new Transmission("Manual", 5);
+        Transmission atvTransmission9 = new Transmission("Semi-Automatic", 7);
+        Transmission atvTransmission10 = new Transmission("Dual-Clutch", 9);
+        
+
+atvs[0] = new Atv(1, "Honda", "TRX250", (short) 2020, Color.RED, 3000.0, 180,
+        new Engine("Petrol", 250, 25, "Single-cylinder"),
+        new Transmission("Manual", 5),
+        new ImageIcon("atv1.jpg"), "Utility", false, true, 30, "Independent");
+
+atvs[1] = new Atv(2, "Yamaha", "Raptor 700R", (short) 2021, Color.BLUE, 9000.0, 200,
+        new Engine("Petrol", 686, 45, "Single-cylinder"),
+        new Transmission("Automatic", 4),
+        new ImageIcon("atv2.jpg"), "Sport", false, true, 20, "Dual-A-arm");
+
+atvs[2] = new Atv(3, "Can-Am", "Outlander 450", (short) 2022, Color.BLACK, 6500.0, 400,
+        new Engine("Petrol", 427, 38, "Single-cylinder"),
+        new Transmission("CVT", 0),
+        new ImageIcon("atv3.jpg"), "Utility", true, false, 40, "Trailing Arm");
+
+atvs[3] = new Atv(4, "Polaris", "Sportsman 570", (short) 2019, Color.GREEN, 7000.0, 300,
+        new Engine("Petrol", 567, 44, "ProStar"),
+        new Transmission("Automatic", 0),
+        new ImageIcon("atv4.jpg"), "Utility", false, true, 50, "Independent Rear");
+
+atvs[4] = new Atv(5, "Suzuki", "QuadSport Z400", (short) 2020, Color.YELLOW, 6000.0, 280,
+        new Engine("Petrol", 398, 38, "Single-cylinder"),
+        new Transmission("Manual", 5),
+        new ImageIcon("atv5.jpg"), "Sport", false, true, 15, "Swing Arm");
+
+atvs[5] = new Atv(6, "Kawasaki", "Brute Force 300", (short) 2021, Color.ORANGE, 5000.0, 320,
+        new Engine("Petrol", 271, 20, "Single-cylinder"),
+        new Transmission("CVT", 0),
+        new ImageIcon("atv6.jpg"), "Utility", true, false, 25, "Independent Rear");
+
+
+atvs[6] = new Atv(3, "Can-Am", "Outlander 450", (short) 2022, Color.BLACK, 6500.0, 400,
+        new Engine("Petrol", 427, 38, "Single-cylinder"),
+        new Transmission("CVT", 0),
+        new ImageIcon("atv3.jpg"), "Utility", true, false, 40, "Trailing Arm");
+
+atvs[7] = new Atv(4, "Polaris", "Sportsman 570", (short) 2019, Color.GREEN, 7000.0, 300,
+        new Engine("Petrol", 567, 44, "ProStar"),
+        new Transmission("Automatic", 0),
+        new ImageIcon("atv4.jpg"), "Utility", false, true, 50, "Independent Rear");
+
+atvs[8] = new Atv(5, "Suzuki", "QuadSport Z400", (short) 2020, Color.YELLOW, 6000.0, 280,
+        new Engine("Petrol", 398, 38, "Single-cylinder"),
+        new Transmission("Manual", 5),
+        new ImageIcon("atv5.jpg"), "Sport", false, true, 15, "Swing Arm");
+
+atvs[9] = new Atv(6, "Kawasaki", "Brute Force 300", (short) 2021, Color.ORANGE, 5000.0, 320,
+        new Engine("Petrol", 271, 20, "Single-cylinder"),
+        new Transmission("CVT", 0),
+        new ImageIcon("atv6.jpg"), "Utility", true, false, 25, "Independent Rear");
+       
+
+for (Atv atv : atvs) {
+            if(atv.respectaCerinta("Manual",40))
+                System.out.println(atv);      
+        }
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        backgroundPanel = new javax.swing.JPanel();
+        atvPanel = new javax.swing.JPanel();
+        atvTitle = new javax.swing.JLabel();
+        atvTraits2 = new javax.swing.JLabel();
+        atvTraits1 = new javax.swing.JLabel();
+        atvCombo = new javax.swing.JComboBox<>();
+        atvTextField1 = new javax.swing.JTextField();
+        atvButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        atvTextArea1 = new javax.swing.JTextArea();
+        dronePanel = new javax.swing.JPanel();
+        droneTitle = new javax.swing.JLabel();
+        droneTraits2 = new javax.swing.JLabel();
+        droneTraits1 = new javax.swing.JLabel();
+        droneTextField1 = new javax.swing.JTextField();
+        droneTextfield2 = new javax.swing.JTextField();
+        droneButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        droneTextArea = new javax.swing.JTextArea();
+        scooterPanel = new javax.swing.JPanel();
+        scooterTitle = new javax.swing.JLabel();
+        scooterTraits1 = new javax.swing.JLabel();
+        scooterTraits2 = new javax.swing.JLabel();
+        scooterCombo = new javax.swing.JComboBox<>();
+        scooterTextField1 = new javax.swing.JTextField();
+        scooterButton = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        scooterTextArea = new javax.swing.JTextArea();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        backgroundPanel.setBackground(new java.awt.Color(0, 102, 102));
+
+        atvPanel.setBackground(new java.awt.Color(216, 214, 196));
+
+        atvTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        atvTitle.setForeground(new java.awt.Color(0, 102, 102));
+        atvTitle.setText("Atv");
+
+        atvTraits2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        atvTraits2.setForeground(new java.awt.Color(0, 102, 102));
+        atvTraits2.setText("Capacitate incarcatura:");
+
+        atvTraits1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        atvTraits1.setForeground(new java.awt.Color(0, 102, 102));
+        atvTraits1.setText("Tip suspensie:");
+
+        atvCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manual", "Automatic" }));
+        atvCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atvComboActionPerformed(evt);
+            }
+        });
+
+        atvTextField1.setText("0");
+        atvTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atvTextField1ActionPerformed(evt);
+            }
+        });
+
+        atvButton.setText("Introdu");
+        atvButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atvButtonActionPerformed(evt);
+            }
+        });
+
+        atvTextArea1.setColumns(20);
+        atvTextArea1.setRows(5);
+        jScrollPane2.setViewportView(atvTextArea1);
+
+        javax.swing.GroupLayout atvPanelLayout = new javax.swing.GroupLayout(atvPanel);
+        atvPanel.setLayout(atvPanelLayout);
+        atvPanelLayout.setHorizontalGroup(
+            atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(atvPanelLayout.createSequentialGroup()
+                .addGroup(atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(atvPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(atvTitle))
+                    .addGroup(atvPanelLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(atvTraits2)
+                            .addComponent(atvTraits1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(atvCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(atvTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(atvButton))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(atvPanelLayout.createSequentialGroup()
+                    .addGap(312, 312, 312)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                    .addGap(22, 22, 22)))
+        );
+        atvPanelLayout.setVerticalGroup(
+            atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(atvPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(atvTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(atvTraits1)
+                    .addComponent(atvCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(atvTraits2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(atvPanelLayout.createSequentialGroup()
+                        .addComponent(atvTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(atvButton)
+                .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(atvPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(atvPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane2)
+                    .addContainerGap()))
+        );
+
+        dronePanel.setBackground(new java.awt.Color(216, 214, 196));
+
+        droneTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        droneTitle.setForeground(new java.awt.Color(0, 102, 102));
+        droneTitle.setText("Drone");
+
+        droneTraits2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        droneTraits2.setForeground(new java.awt.Color(0, 102, 102));
+        droneTraits2.setText("Numar senzori min.:");
+
+        droneTraits1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        droneTraits1.setForeground(new java.awt.Color(0, 102, 102));
+        droneTraits1.setText("Pret min.:");
+
+        droneTextField1.setText("0");
+
+        droneTextfield2.setText("0");
+
+        droneButton.setText("Introdu");
+
+        droneTextArea.setColumns(20);
+        droneTextArea.setRows(5);
+        jScrollPane1.setViewportView(droneTextArea);
+
+        javax.swing.GroupLayout dronePanelLayout = new javax.swing.GroupLayout(dronePanel);
+        dronePanel.setLayout(dronePanelLayout);
+        dronePanelLayout.setHorizontalGroup(
+            dronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dronePanelLayout.createSequentialGroup()
+                .addGroup(dronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dronePanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(dronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(droneTraits2)
+                            .addComponent(droneTraits1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dronePanelLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(droneTitle)))
+                        .addGap(49, 49, 49)
+                        .addGroup(dronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(droneTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                            .addComponent(droneTextfield2)))
+                    .addGroup(dronePanelLayout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(droneButton)))
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        dronePanelLayout.setVerticalGroup(
+            dronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dronePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(dronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(dronePanelLayout.createSequentialGroup()
+                        .addComponent(droneTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(dronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(droneTraits1)
+                            .addComponent(droneTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(droneTraits2)
+                            .addComponent(droneTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(droneButton)
+                        .addGap(0, 24, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        scooterPanel.setBackground(new java.awt.Color(216, 214, 196));
+
+        scooterTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        scooterTitle.setForeground(new java.awt.Color(0, 102, 102));
+        scooterTitle.setText("Scooter");
+
+        scooterTraits1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        scooterTraits1.setForeground(new java.awt.Color(0, 102, 102));
+        scooterTraits1.setText("Offroad");
+
+        scooterTraits2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        scooterTraits2.setForeground(new java.awt.Color(0, 102, 102));
+        scooterTraits2.setText("An fabricatie");
+
+        scooterCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false", " " }));
+
+        scooterTextField1.setText("0");
+
+        scooterButton.setText("Introdu");
+
+        scooterTextArea.setColumns(20);
+        scooterTextArea.setRows(5);
+        jScrollPane3.setViewportView(scooterTextArea);
+
+        javax.swing.GroupLayout scooterPanelLayout = new javax.swing.GroupLayout(scooterPanel);
+        scooterPanel.setLayout(scooterPanelLayout);
+        scooterPanelLayout.setHorizontalGroup(
+            scooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scooterPanelLayout.createSequentialGroup()
+                .addGroup(scooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(scooterPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(scooterTitle))
+                    .addGroup(scooterPanelLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(scooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(scooterTraits1)
+                            .addComponent(scooterTraits2))
+                        .addGroup(scooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(scooterPanelLayout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addGroup(scooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(scooterCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(scooterPanelLayout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(scooterButton))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scooterPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(scooterTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        scooterPanelLayout.setVerticalGroup(
+            scooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scooterPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(scooterTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(scooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(scooterTraits1)
+                    .addComponent(scooterCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(scooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(scooterTraits2)
+                    .addComponent(scooterTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(scooterButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        javax.swing.GroupLayout backgroundPanelLayout = new javax.swing.GroupLayout(backgroundPanel);
+        backgroundPanel.setLayout(backgroundPanelLayout);
+        backgroundPanelLayout.setHorizontalGroup(
+            backgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(backgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(scooterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dronePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(atvPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        backgroundPanelLayout.setVerticalGroup(
+            backgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(atvPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(dronePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(scooterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(backgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(backgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+ String atvselectedItem="";
+    private void atvComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atvComboActionPerformed
+        atvselectedItem = (String)atvCombo.getSelectedItem();
+        
+        
+    }//GEN-LAST:event_atvComboActionPerformed
+String atvcerinta1="";
+    private void atvButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atvButtonActionPerformed
+       for (Atv atv : atvs) {
+            if(atv.respectaCerinta(atvselectedItem,Integer.parseInt(atvTextField1.getText())))
+                droneTextArea.setText(atv.toString());      
+            
+            
+        }
+       
+       
+       
+       
+    }//GEN-LAST:event_atvButtonActionPerformed
+
+    private void atvTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atvTextField1ActionPerformed
+        atvcerinta1=evt.toString();
+       
+    }//GEN-LAST:event_atvTextField1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AtvDroneScooterConditiiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AtvDroneScooterConditiiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AtvDroneScooterConditiiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AtvDroneScooterConditiiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AtvDroneScooterConditiiFrame().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton atvButton;
+    private javax.swing.JComboBox<String> atvCombo;
+    private javax.swing.JPanel atvPanel;
+    private javax.swing.JTextArea atvTextArea1;
+    private javax.swing.JTextField atvTextField1;
+    private javax.swing.JLabel atvTitle;
+    private javax.swing.JLabel atvTraits1;
+    private javax.swing.JLabel atvTraits2;
+    private javax.swing.JPanel backgroundPanel;
+    private javax.swing.JButton droneButton;
+    private javax.swing.JPanel dronePanel;
+    private javax.swing.JTextArea droneTextArea;
+    private javax.swing.JTextField droneTextField1;
+    private javax.swing.JTextField droneTextfield2;
+    private javax.swing.JLabel droneTitle;
+    private javax.swing.JLabel droneTraits1;
+    private javax.swing.JLabel droneTraits2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton scooterButton;
+    private javax.swing.JComboBox<String> scooterCombo;
+    private javax.swing.JPanel scooterPanel;
+    private javax.swing.JTextArea scooterTextArea;
+    private javax.swing.JTextField scooterTextField1;
+    private javax.swing.JLabel scooterTitle;
+    private javax.swing.JLabel scooterTraits1;
+    private javax.swing.JLabel scooterTraits2;
+    // End of variables declaration//GEN-END:variables
+}
