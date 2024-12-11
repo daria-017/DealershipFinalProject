@@ -1116,20 +1116,50 @@
                           <Color blue="c4" green="d6" red="d8" type="rgb"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="9" rowCount="0">
-                            <Column editable="true" title="Marca" type="java.lang.Object"/>
-                            <Column editable="true" title="Model" type="java.lang.Object"/>
-                            <Column editable="true" title="Capacitate Cilindrica" type="java.lang.Object"/>
-                            <Column editable="true" title="An Fabricatie" type="java.lang.Object"/>
-                            <Column editable="true" title="Pret" type="java.lang.Object"/>
-                            <Column editable="true" title="Stare" type="java.lang.Object"/>
-                            <Column editable="true" title="Caroserie" type="java.lang.Object"/>
-                            <Column editable="true" title="Categorie Permis" type="java.lang.Object"/>
-                            <Column editable="true" title="Seria" type="java.lang.Object"/>
+                          <Table columnCount="14" rowCount="0">
+                            <Column editable="true" title="ID" type="java.lang.Object"/>
+                            <Column editable="true" title="BRAND" type="java.lang.Object"/>
+                            <Column editable="true" title="MODEL" type="java.lang.Object"/>
+                            <Column editable="true" title="YEAR" type="java.lang.Object"/>
+                            <Column editable="true" title="COLOR" type="java.lang.Object"/>
+                            <Column editable="true" title="PRICE" type="java.lang.Object"/>
+                            <Column editable="true" title="WEIGHT" type="java.lang.Object"/>
+                            <Column editable="true" title="ENGINE" type="java.lang.Object"/>
+                            <Column editable="true" title="TRANSMISSION" type="java.lang.Object"/>
+                            <Column editable="true" title="MAX ALTITUDE" type="java.lang.Object"/>
+                            <Column editable="true" title="MAX RANGE" type="java.lang.Object"/>
+                            <Column editable="true" title="MAX SPEED" type="java.lang.Object"/>
+                            <Column editable="true" title="PASSENGER CAPACITY" type="java.lang.Object"/>
+                            <Column editable="true" title="CATEGORY" type="java.lang.Object"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>

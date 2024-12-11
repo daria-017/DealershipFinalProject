@@ -12,7 +12,6 @@ public class Airplane extends Vehicle {
     private int maxRange;    // Distanța maximă (în kilometri)
     private int maxSpeed;    // Viteza maximă (în km/h)
     private int passengerCapacity; // Număr de pasageri
-
     private String category;        // Categoria avionului (business, comercial, etc.)
 
     

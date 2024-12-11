@@ -649,7 +649,7 @@ public class Deposit extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Marca", "Model", "Capacitate Cilindrica", "An Fabricatie", "Pret", "Stare", "Caroserie", "Categorie Permis", "Seria"
+                "ID", "BRAND", "MODEL", "YEAR", "COLOR", "PRICE", "WEIGHT", "ENGINE", "TRANSMISSION", "MAX ALTITUDE", "MAX RANGE", "MAX SPEED", "PASSENGER CAPACITY", "CATEGORY"
             }
         ));
         jScrollPane1.setViewportView(tabelMasini);
@@ -1382,29 +1382,63 @@ public class Deposit extends javax.swing.JFrame {
     }//GEN-LAST:event_marcaCamionActionPerformed
 
     private void butonSalvareMasinainTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSalvareMasinainTabelActionPerformed
-        // TODO add your handling code here:
-        //verificam sa nu fie vreun camp necompletat
-        if(idAirplane.getText().equals("") || brandAirplane.getText().equals("") || modelAirplane.getText().equals("") || yearAirplane.getText().equals("") || colorAirplane.getText().equals("") || priceAirplane.getText().equals("") || weightAirplane.getText().equals("") || engineAirplane.getText().equals("") || transmissionAirplane.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Toate campurile sunt obligatorii!");
-        }else{
-            String date[]={idAirplane.getText(),brandAirplane.getText(),modelAirplane.getText(),yearAirplane.getText(),colorAirplane.getText(),priceAirplane.getText(),weightAirplane.getText(),engineAirplane.getText(),transmissionAirplane.getText()};
+    
+    if (idAirplane.getText().equals("") || 
+        brandAirplane.getText().equals("") || 
+        modelAirplane.getText().equals("") || 
+        yearAirplane.getText().equals("") || 
+        colorAirplane.getText().equals("") || 
+        priceAirplane.getText().equals("") || 
+        weightAirplane.getText().equals("") || 
+        engineAirplane.getText().equals("") || 
+        transmissionAirplane.getText().equals("") || 
+        maxAltitudeAirplane.getText().equals("") || 
+        maxRangeAirplane.getText().equals("") || 
+        maxSpeedAirplane.getText().equals("") || 
+        passengerCapacityAirplane.getText().equals("") || 
+        categoryAirplane.getText().equals("")) {
+        
+        JOptionPane.showMessageDialog(this, "Toate câmpurile sunt obligatorii!");
+    } else {
+        
+        String date[] = {
+            idAirplane.getText(), 
+            brandAirplane.getText(), 
+            modelAirplane.getText(), 
+            yearAirplane.getText(), 
+            colorAirplane.getText(), 
+            priceAirplane.getText(), 
+            weightAirplane.getText(), 
+            engineAirplane.getText(), 
+            transmissionAirplane.getText(), 
+            maxAltitudeAirplane.getText(),
+            maxRangeAirplane.getText(),
+            maxSpeedAirplane.getText(),
+            passengerCapacityAirplane.getText(),
+            categoryAirplane.getText()
+        };
 
-            DefaultTableModel tblModel=(DefaultTableModel)tabelMasini.getModel();
+        
+        DefaultTableModel tblModel = (DefaultTableModel) tabelMasini.getModel();
+        tblModel.addRow(date);
+        JOptionPane.showMessageDialog(this, "Date adăugate cu succes!");
 
-            tblModel.addRow(date);
-            JOptionPane.showMessageDialog(this,"Date adaugate cu succes!");
-
-            idAirplane.setText("");
-            brandAirplane.setText("");
-            modelAirplane.setText("");
-            yearAirplane.setText("");
-            colorAirplane.setText("");
-            priceAirplane.setText("");
-            weightAirplane.setText("");
-            engineAirplane.setText("");
-            transmissionAirplane.setText("");
-
-        }
+        
+        idAirplane.setText("");
+        brandAirplane.setText("");
+        modelAirplane.setText("");
+        yearAirplane.setText("");
+        colorAirplane.setText("");
+        priceAirplane.setText("");
+        weightAirplane.setText("");
+        engineAirplane.setText("");
+        transmissionAirplane.setText("");
+        maxAltitudeAirplane.setText("");
+        maxRangeAirplane.setText("");
+        maxSpeedAirplane.setText("");
+        passengerCapacityAirplane.setText("");
+        categoryAirplane.setText("");
+    }
     }//GEN-LAST:event_butonSalvareMasinainTabelActionPerformed
 
     private void butonIncarcareDateDinFisierInTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonIncarcareDateDinFisierInTabelActionPerformed

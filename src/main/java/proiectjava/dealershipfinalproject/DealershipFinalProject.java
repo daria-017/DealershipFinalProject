@@ -596,8 +596,7 @@ public class DealershipFinalProject {
         System.out.println("Helicopter:");
         Helicopter helicopter1 = new Helicopter();
         Helicopter helicopter2 = new Helicopter(1, "Bell", "206", (short) 2020, Color.GREEN, 1200000, 800,
-                airplaneEngine1, airplaneTransmission1, null, 4000, 220, 250, (short) 1, 800, 2, true,
-                true, "Main Rotor");
+                airplaneEngine1, airplaneTransmission1, null, 4000, 220, 250, 800, "Main Rotor");
         Helicopter helicopter3 = new Helicopter(helicopter2);
 
         System.out.println("\n\n"+helicopter1);
@@ -607,35 +606,25 @@ public class DealershipFinalProject {
      
         Helicopter[] allHelicopters = new Helicopter[10];
         allHelicopters[0] = new Helicopter(2, "Eurocopter", "AS350", (short) 2018, Color.BLUE, 900000, 700,
-                airplaneEngine2, airplaneTransmission2, null, 3500, 210, 230, (short) 1, 750, 1, true,
-                false, "Main Rotor");
+                airplaneEngine2, airplaneTransmission2, null, 3500, 210, 230,750, "Main Rotor");
         allHelicopters[1] = new Helicopter(3, "Sikorsky", "UH-60", (short) 2015, Color.BLACK, 15000000, 3000,
-                airplaneEngine3, airplaneTransmission3, null, 8000, 295, 315, (short) 4, 900, 4, true,
-                true, "Main Rotor");
+                airplaneEngine3, airplaneTransmission3, null, 8000, 295, 315,  900,"Main Rotor");
         allHelicopters[2] = new Helicopter(4, "AgustaWestland", "AW139", (short) 2022, Color.RED, 10000000, 1200,
-                airplaneEngine4, airplaneTransmission4, null, 5000, 290, 310, (short) 3, 850, 3, true,
-                false, "Coaxial Rotor");
+                airplaneEngine4, airplaneTransmission4, null, 5000, 290, 310,850, "Coaxial Rotor");
         allHelicopters[3] = new Helicopter(5, "Robinson", "R44", (short) 2021, Color.WHITE, 350000, 400,
-                airplaneEngine5, airplaneTransmission5, null, 2000, 200, 220, (short) 2, 600, 1, false,
-                false, "Main Rotor");
+                airplaneEngine5, airplaneTransmission5, null, 2000, 200, 220,600, "Main Rotor");
         allHelicopters[4] = new Helicopter(6, "Kamov", "Ka-52", (short) 2019, Color.GRAY, 18000000, 2500,
-                airplaneEngine6, airplaneTransmission6, null, 6000, 310, 340, (short) 6, 1000, 3, true,
-                true, "Coaxial Rotor");
+                airplaneEngine6, airplaneTransmission6, null, 6000, 310, 340,  1000,"Coaxial Rotor");
         allHelicopters[5] = new Helicopter(7, "Boeing", "AH-64 Apache", (short) 2017, Color.GREEN, 20000000, 3000,
-                airplaneEngine7, airplaneTransmission7, null, 7000, 280, 300, (short) 4, 950, 4, true,
-                true, "Main Rotor");
+                airplaneEngine7, airplaneTransmission7, null, 7000, 280, 300,  950,"Main Rotor");
         allHelicopters[6] = new Helicopter(8, "Mil", "Mi-26", (short) 2015, Color.GRAY, 25000000, 2000,
-                airplaneEngine8, airplaneTransmission8, null, 15000, 250, 270, (short) 8, 1200, 6, true,
-                true, "Main Rotor");
+                airplaneEngine8, airplaneTransmission8, null, 15000, 250, 270,1200,"Main Rotor");
         allHelicopters[7] = new Helicopter(9, "Airbus", "H125", (short) 2020, Color.BLUE, 3000000, 900,
-                airplaneEngine9, airplaneTransmission9, null, 4000, 245, 265, (short) 2, 700, 2, true,
-                false, "Main Rotor");
+                airplaneEngine9, airplaneTransmission9, null, 4000, 245, 265, 700,"Main Rotor");
         allHelicopters[8] = new Helicopter(10, "Leonardo", "AW609", (short) 2021, Color.WHITE, 12000000, 1500,
-                airplaneEngine10, airplaneTransmission10, null, 7000, 300, 300, (short) 4, 850, 3, true,
-                true, "Tilt Rotor");
+                airplaneEngine10, airplaneTransmission10, null, 7000, 300, 300, 850, "Tilt Rotor");
         allHelicopters[9] = new Helicopter(11, "Kaman", "K-MAX", (short) 2018, Color.YELLOW, 6000000, 500,
-                airplaneEngine1, airplaneTransmission1, null, 4000, 200, 220, (short) 2, 600, 1, true,
-                false, "Intermeshing Rotor");
+                airplaneEngine1, airplaneTransmission1, null, 4000, 200, 220, 600, "Intermeshing Rotor");
 
         for (Helicopter helicopter : allHelicopters) {
             System.out.println(helicopter);
@@ -644,8 +633,7 @@ public class DealershipFinalProject {
         System.out.println("JetPlane:");
         JetPlane jetPlane1 = new JetPlane();
         JetPlane jetPlane2 = new JetPlane(1, "Concorde", "Type A", (short) 1976, Color.WHITE, 50000000, 40000,
-                airplaneEngine1, airplaneTransmission1, null, 120000, 2200, 2400, true, false, "Commercial", true,
-                2);
+                airplaneEngine1, airplaneTransmission1, null, 120000, 2200, 2400,800, "Commercial");
         JetPlane jetPlane3 = new JetPlane(jetPlane2);
 
         System.out.println("\n\n"+jetPlane1);
@@ -655,35 +643,25 @@ public class DealershipFinalProject {
        
         JetPlane[] allJetPlanes = new JetPlane[10];
         allJetPlanes[0] = new JetPlane(2, "Boeing", "747", (short) 1990, Color.WHITE, 150000000, 80000,
-                airplaneEngine2, airplaneTransmission2, null, 13000, 14000, 1000, false, true, "Turbofan", false,
-                2);
+                airplaneEngine2, airplaneTransmission2, null, 13000, 14000, 1000, 2000 , "Turbofan");
         allJetPlanes[1] = new JetPlane(3, "Airbus", "A380", (short) 2010, Color.BLUE, 300000000, 120000,
-                airplaneEngine3, airplaneTransmission3, null, 13100, 15200, 1020, false, true, "Turbofan", false,
-                4);
+                airplaneEngine3, airplaneTransmission3, null, 13100, 15200, 1020,2000 , "Turbofan");
         allJetPlanes[2] = new JetPlane(4, "Lockheed", "SR-71", (short) 1966, Color.BLACK, 34000000, 30000,
-                airplaneEngine4, airplaneTransmission4, null, 26000, 5400, 3700, true, false, "Turbojet", true,
-                2);
+                airplaneEngine4, airplaneTransmission4, null, 26000, 5400, 3700, 4000, "Turbojet");
         allJetPlanes[3] = new JetPlane(5, "McDonnell Douglas", "F-15", (short) 1980, Color.GRAY, 29000000, 25000,
-                airplaneEngine5, airplaneTransmission5, null, 15000, 3800, 2650, true, false, "Turbofan", true,
-                2);
+                airplaneEngine5, airplaneTransmission5, null, 15000, 3800, 2650,2000 , "Turbofan");
         allJetPlanes[4] = new JetPlane(6, "Northrop", "B-2 Spirit", (short) 1997, Color.BLACK, 2000000000, 170000,
-                airplaneEngine6, airplaneTransmission6, null, 15000, 11000, 1010, true, true, "Turbofan", false,
-                4);
+                airplaneEngine6, airplaneTransmission6, null, 15000, 11000, 1010,2000 , "Turbofan");
         allJetPlanes[5] = new JetPlane(7, "Dassault", "Rafale", (short) 2015, Color.GRAY, 85000000, 24000,
-                airplaneEngine7, airplaneTransmission7, null, 15200, 3700, 2120, true, false, "Turbofan", true,
-                2);
+                airplaneEngine7, airplaneTransmission7, null, 15200, 3700, 2120,2000 , "Turbofan");
         allJetPlanes[6] = new JetPlane(8, "Tupolev", "Tu-160", (short) 1987, Color.WHITE, 150000000, 275000,
-                airplaneEngine8, airplaneTransmission8, null, 12500, 12300, 2220, true, true, "Turbofan", false,
-                4);
+                airplaneEngine8, airplaneTransmission8, null, 12500, 12300, 2220, 2000 , "Turbofan");
         allJetPlanes[7] = new JetPlane(9, "Saab", "Gripen", (short) 2018, Color.GRAY, 85000000, 14000,
-                airplaneEngine9, airplaneTransmission9, null, 15000, 3000, 2450, true, false, "Turbofan", true,
-                1);
+                airplaneEngine9, airplaneTransmission9, null, 15000, 3000, 2450,2000 , "Turbofan");
         allJetPlanes[8] = new JetPlane(10, "Boeing", "777", (short) 2016, Color.WHITE, 350000000, 77500,
-                airplaneEngine10, airplaneTransmission10, null, 13100, 14300, 905, false, true, "Turbofan", false,
-                2);
+                airplaneEngine10, airplaneTransmission10, null, 13100, 14300, 905,2000 , "Turbofan");
         allJetPlanes[9] = new JetPlane(11, "Mikoyan", "MiG-29", (short) 1983, Color.GRAY, 29000000, 11000,
-                airplaneEngine1, airplaneTransmission1, null, 18000, 3200, 2445, true, false, "Turbofan", true,
-                2);
+                airplaneEngine1, airplaneTransmission1, null, 18000, 3200, 2445,2000 , "Turbofan");
 
         for (JetPlane jetPlane : allJetPlanes) {
             System.out.println(jetPlane);
