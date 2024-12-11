@@ -520,13 +520,10 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
                 maxAltitude = Integer.parseInt(parts[15]);
                 maxRange = Integer.parseInt(parts[16]);
                 maxSpeed = Integer.parseInt(parts[17]);
-                militaryAircraft = Boolean.parseBoolean(parts[18]);
-                luggageCapacity = Boolean.parseBoolean(parts[19]);
-                propulsionSystem = parts[20];
-                highSpeed = Boolean.parseBoolean(parts[21]);
-                engineCycles = Integer.parseInt(parts[22]);
+                engineCycles = Integer.parseInt(parts[18]);
+                propulsionSystem = parts[19];
                 JetPlane jetPlane = new JetPlane(id, brand, model, year, color, price, weight, engine, transmission, photo,
-                        maxAltitude, maxRange, maxSpeed, militaryAircraft, luggageCapacity, propulsionSystem, highSpeed, engineCycles);
+                        maxAltitude, maxRange, maxSpeed, engineCycles, propulsionSystem);
                 moreText.setText(jetPlane.toString());
                 moreText.setCaretPosition(0);
                 moreText.getCaret().setVisible(false);
@@ -537,15 +534,9 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
                 maxRange = Integer.parseInt(parts[16]);
                 maxSpeed = Integer.parseInt(parts[17]);
                 passengerCapacity = Integer.parseInt(parts[18]);
-                numberOfWings = Integer.parseInt(parts[19]);
-                luggageCapacity = Boolean.parseBoolean(parts[20]);
-                cargo = Boolean.parseBoolean(parts[21]);
-                highSpeed = Boolean.parseBoolean(parts[22]);
-                category = parts[23];
-                engineCycles = Integer.parseInt(parts[24]);
+                category = parts[19];
                 Airplane airplane = new Airplane(id, brand, model, year, color, price, weight, engine, transmission, photo,
-                        maxAltitude, maxRange, maxSpeed, passengerCapacity, numberOfWings, luggageCapacity, cargo,
-                        highSpeed, category, engineCycles);
+                        maxAltitude, maxRange, maxSpeed, passengerCapacity, category);
                 moreText.setText(airplane.toString());
                 moreText.setCaretPosition(0);
                 moreText.getCaret().setVisible(false);
@@ -555,14 +546,10 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
                 maxAltitude = Integer.parseInt(parts[15]);
                 maxRange = Integer.parseInt(parts[16]);
                 maxSpeed = Integer.parseInt(parts[17]);
-                numberOfBlades = Short.parseShort(parts[18]);
-                loudness = Integer.parseInt(parts[19]);
-                engineCycles = Integer.parseInt(parts[20]);
-                militaryAircraft = Boolean.parseBoolean(parts[21]);
-                cargo = Boolean.parseBoolean(parts[22]);
+                engineCycles = Integer.parseInt(parts[18]);
                 rotorType = parts[23];
                 Helicopter helicopter = new Helicopter(id, brand, model, year, color, price, weight, engine, transmission, photo,
-                        maxAltitude, maxRange, maxSpeed, numberOfBlades, loudness, engineCycles, militaryAircraft, cargo, rotorType);
+                        maxAltitude, maxRange, maxSpeed, engineCycles, rotorType);
                 moreText.setText(helicopter.toString());
                 moreText.setCaretPosition(0);
                 moreText.getCaret().setVisible(false);
