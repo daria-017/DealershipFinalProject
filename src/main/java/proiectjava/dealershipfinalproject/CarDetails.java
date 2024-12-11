@@ -6,10 +6,6 @@ package proiectjava.dealershipfinalproject;
 
 import java.awt.Color;
 
-/**
- *
- * @author Alex
- */
 public class CarDetails extends javax.swing.JFrame {
 
     /**
@@ -55,16 +51,16 @@ public class CarDetails extends javax.swing.JFrame {
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addContainerGap(654, Short.MAX_VALUE)
+                .addContainerGap(514, Short.MAX_VALUE)
                 .addComponent(idLabel)
-                .addGap(129, 129, 129))
+                .addGap(269, 269, 269))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(94, 94, 94)
                 .addComponent(idLabel)
-                .addContainerGap(335, Short.MAX_VALUE))
+                .addContainerGap(281, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
