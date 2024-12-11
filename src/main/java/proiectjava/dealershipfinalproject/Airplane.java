@@ -12,11 +12,6 @@ public class Airplane extends Vehicle {
     private int maxRange;    // Distanța maximă (în kilometri)
     private int maxSpeed;    // Viteza maximă (în km/h)
     private int passengerCapacity; // Număr de pasageri
-    private int numberOfWings;     // Număr de aripi
-    private int engineCycles;      // Număr de cicluri ale motorului
-    private boolean luggageCapacity; // Are capacitate pentru bagaje?
-    private boolean cargo;          // Este destinat transportului de mărfuri?
-    private boolean highSpeed;      // Este un avion de mare viteză?
     private String category;        // Categoria avionului (business, comercial, etc.)
 
     
@@ -26,30 +21,22 @@ public class Airplane extends Vehicle {
         this.maxRange = 0;
         this.maxSpeed = 0;
         this.passengerCapacity = 0;
-        this.numberOfWings = 0;
-        this.engineCycles = 0;
-        this.luggageCapacity = false;
-        this.cargo = false;
-        this.highSpeed = false;
+
         this.category = "unknown";
     }
 
     
      public Airplane(int id, String brand, String model, short year, Color color, double price, int weight,  Engine engine,Transmission transmission, ImageIcon photo, int maxAltitude,
-                    int maxRange, int maxSpeed, int passengerCapacity, int numberOfWings, 
-                    boolean luggageCapacity, boolean cargo, boolean highSpeed, String category,
-                    int engineCycles) {
+                    int maxRange, int maxSpeed, int passengerCapacity, String category
+                    ) {
         super(id, brand, model, year, color, price, weight, engine, transmission, photo);
         this.maxAltitude = maxAltitude;
         this.maxRange = maxRange;
         this.maxSpeed = maxSpeed;
         this.passengerCapacity = passengerCapacity;
-        this.numberOfWings = numberOfWings;
-        this.luggageCapacity = luggageCapacity;
-        this.cargo = cargo;
-        this.highSpeed = highSpeed;
+
         this.category = category;
-        this.engineCycles = engineCycles;
+       
     }
     
     public Airplane(Airplane other) {
@@ -58,12 +45,8 @@ public class Airplane extends Vehicle {
         this.maxRange = other.maxRange;
         this.maxSpeed = other.maxSpeed;
         this.passengerCapacity = other.passengerCapacity;
-        this.numberOfWings = other.numberOfWings;
-        this.luggageCapacity = other.luggageCapacity;
-        this.cargo = other.cargo;
-        this.highSpeed = other.highSpeed;
+
         this.category = other.category;
-        this.engineCycles = other.engineCycles;
     }
 
 
@@ -101,45 +84,10 @@ public class Airplane extends Vehicle {
         this.passengerCapacity = passengerCapacity;
     }
 
-    public int getNumberOfWings() {
-        return numberOfWings;
-    }
 
-    public void setNumberOfWings(int numberOfWings) {
-        this.numberOfWings = numberOfWings;
-    }
+    
 
-    public int getEngineCycles() {
-        return engineCycles;
-    }
 
-    public void setEngineCycles(int engineCycles) {
-        this.engineCycles = engineCycles;
-    }
-
-    public boolean hasLuggageCapacity() {
-        return luggageCapacity;
-    }
-
-    public void setLuggageCapacity(boolean luggageCapacity) {
-        this.luggageCapacity = luggageCapacity;
-    }
-
-    public boolean isCargo() {
-        return cargo;
-    }
-
-    public void setCargo(boolean cargo) {
-        this.cargo = cargo;
-    }
-
-    public boolean isHighSpeed() {
-        return highSpeed;
-    }
-
-    public void setHighSpeed(boolean highSpeed) {
-        this.highSpeed = highSpeed;
-    }
 
     public String getCategory() {
         return category;
@@ -152,13 +100,13 @@ public class Airplane extends Vehicle {
     
     @Override
     public String toString() {
-        return "AirPlane "+super.toString()+"max altitude: "+maxAltitude+" max range: "+maxRange+" max speed: "+maxSpeed+" passenger capacity: "+passengerCapacity+
-                "number of wings"+numberOfWings+" luggage capacity: "+luggageCapacity+" cargo: "+cargo+" high speed: "+highSpeed+" category: "+category;
+        return "\nAirPlane "+super.toString()+"\nmax altitude: "+maxAltitude+"\nmax range: "+maxRange+"\nmax speed: "+maxSpeed+"\npassenger capacity: "+passengerCapacity+
+                "\ncategory: "+category;
     }
     
     //functie
     public boolean canFlyToLocation(int requiredRange, int requiredPassengerCapacity) {
-        if(this.maxRange >= requiredRange && this.passengerCapacity >= requiredPassengerCapacity){
+        if((this.maxRange >= requiredRange && this.maxRange<=requiredRange*100) || this.passengerCapacity != requiredPassengerCapacity){
             return true;
         }else{
             return false;
