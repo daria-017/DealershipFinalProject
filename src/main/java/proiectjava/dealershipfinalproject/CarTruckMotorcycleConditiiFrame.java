@@ -2,7 +2,6 @@ package proiectjava.dealershipfinalproject;
 
 import java.awt.Color;
 import javax.swing.DefaultListModel;
-import javax.swing.ListModel;
 
 public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
     private final Car[] cars;
