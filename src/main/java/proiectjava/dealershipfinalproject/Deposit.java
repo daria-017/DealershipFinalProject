@@ -1325,7 +1325,7 @@ public class Deposit extends javax.swing.JFrame {
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         //de adaugat 
-        LoginFrame LoginFrame = new LoginFrame();
+        AdminAccessOnly adminAccesOnly = new AdminAccessOnly();
         this.dispose();
     }//GEN-LAST:event_logoutButtonActionPerformed
 
