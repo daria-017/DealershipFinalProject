@@ -108,7 +108,7 @@ public class Car extends Vehicle {
     // toString method:
     @Override
     public String toString() {
-        return super.toString() + " Car{" + "mileage=" + this.mileage + ", topSpeed=" + this.topSpeed + ", isConvertible=" + this.isConvertible + ", abs=" + this.abs + ", gps=" + this.gps + ", body=" + this.body + '}';
+        return super.toString() + "\n\n> Car Specifications" + "\nMileage: " + this.mileage + "\nTopSpeed: " + this.topSpeed + "\nConvertible: " + (this.isConvertible ? "Yes" : "No") + "\nAbs: " + (this.abs ? "Yes" : "No") + "\nGps: " + (this.gps ? "Yes" : "No") + "\nCaroserie: " + this.body;
     }
     
 

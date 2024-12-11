@@ -94,6 +94,6 @@ public class Motorcycle extends Vehicle {
     // toString method:
     @Override
     public String toString() {
-        return super.toString() + " Motorcycle{" + "mileage=" + this.mileage + ", topSpeed=" + this.topSpeed + ", abs=" + this.abs + ", sport=" + this.sport + ", type=" + this.type + '}';
+        return super.toString() + "\n\n> Motorcycle Specifications" + "\nMileage: " + this.mileage + "\nTopSpeed: " + this.topSpeed + "\nAbs: " + (this.abs ? "Yes" : "No") + "\nSport: " + (this.sport ? "Yes" : "No") + "\nType: " + this.type;
     }
 }
