@@ -109,38 +109,46 @@ public class LoginFrame {
         signUpButton.setBounds(270, 360, 95, 40); // Poziționat lângă label
         leftPanel.add(signUpButton);
 
-        // Adăugare acțiuni pentru butoane
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String email = emailField.getText();
-                String password = new String(passwordField.getPassword());
+ loginButton.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String email = emailField.getText();
+        String password = new String(passwordField.getPassword());
 
-                // Citire date din fișier și verificare autentificare
-                boolean loginSuccess = false;
-                try (BufferedReader reader = new BufferedReader(new FileReader("accounts.txt"))) {
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        String[] userDetails = line.split(",");
-                        if (userDetails.length == 5 && userDetails[2].equals(email) && userDetails[3].equals(password)) {
-                            loginSuccess = true;
-                            break;
-                        }
-                    }
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(frame, "Error reading from file!", "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
+        // Verificare autentificare pentru administrator
+        if (email.equals("admin@dealership.company") && password.equals("AdminAccessOnly")) {
+            JOptionPane.showMessageDialog(frame, "Admin login successful!");
+            frame.dispose(); // Închide fereastra curentă
+            new AdminAccessOnly(); // Deschide fereastra pentru administratori
+           return;
+        }
 
-                if (loginSuccess) {
-                    JOptionPane.showMessageDialog(frame, "Login successful!");
-                    frame.dispose(); // Închide fereastra curentă
-                    MainFrame.main(null); // Deschide fereastra principală
-                } else {
-                    JOptionPane.showMessageDialog(frame, "Invalid email or password!", "Error", JOptionPane.ERROR_MESSAGE);
+        // Verificare autentificare pentru utilizatorii obișnuiți
+        boolean loginSuccess = false;
+        try (BufferedReader reader = new BufferedReader(new FileReader("accounts.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] userDetails = line.split(",");
+                if (userDetails.length == 5 && userDetails[2].equals(email) && userDetails[3].equals(password)) {
+                    loginSuccess = true;
+                    break;
                 }
             }
-        });
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(frame, "Error reading from file!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (loginSuccess) {
+            JOptionPane.showMessageDialog(frame, "Login successful!");
+            frame.dispose(); // Închide fereastra curentă
+            MainFrame.main(null); // Deschide fereastra principală
+        } else {
+            JOptionPane.showMessageDialog(frame, "Invalid email or password!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+});
+
 
         signUpButton.addActionListener(new ActionListener() {
             @Override

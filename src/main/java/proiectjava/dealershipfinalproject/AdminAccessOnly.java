@@ -153,6 +153,7 @@ public class AdminAccessOnly extends javax.swing.JFrame {
         // Deschidem CarTruckMotorcycleConditiiFrame
         CarTruckMotorcycleConditiiFrame conditionsFrame = new CarTruckMotorcycleConditiiFrame();
         conditionsFrame.setVisible(true);
+        //de adaugat si la restul
     }
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
