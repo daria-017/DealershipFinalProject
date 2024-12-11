@@ -15,6 +15,7 @@ public class AdminAccessOnly extends javax.swing.JFrame {
      */
     public AdminAccessOnly() {
         initComponents();
+        
     }
 
     /**
@@ -144,15 +145,15 @@ public class AdminAccessOnly extends javax.swing.JFrame {
         this.dispose(); // Închide JFrame-ul curent
 
         // Deschidem Deposit
-        Deposit depositFrame = new Deposit();
-        depositFrame.setVisible(true);
+        new Deposit();
+        
     } else if (selectedOption.equals("Alex")) {
         // Închidem AdminAccessOnly
         this.dispose();
 
         // Deschidem CarTruckMotorcycleConditiiFrame
-        CarTruckMotorcycleConditiiFrame conditionsFrame = new CarTruckMotorcycleConditiiFrame();
-        conditionsFrame.setVisible(true);
+        new CarTruckMotorcycleConditiiFrame();
+        
         //de adaugat si la restul
     }
         
@@ -188,7 +189,8 @@ public class AdminAccessOnly extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminAccessOnly().setVisible(true);
+                
+                new AdminAccessOnly();
             }
         });
     }
