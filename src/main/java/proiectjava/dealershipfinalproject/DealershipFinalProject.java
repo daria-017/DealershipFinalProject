@@ -548,8 +548,8 @@ public class DealershipFinalProject {
         
         Airplane airplane1 = new Airplane();
         Airplane airplane2 = new Airplane(2, "Boeing", "737", (short) 2019, Color.WHITE, 1200000, 2000,
-                airplaneEngine1, airplaneTransmission1, null, 80000, 900, 1000, 150, 2, true, false, true,
-                "Commercial", 800);
+                airplaneEngine1, airplaneTransmission1, null, 80000, 900, 1000, 150, 
+                "Commercial");
         Airplane airplane3 = new Airplane(airplane2);
 
         System.out.println(airplane1);
@@ -559,35 +559,35 @@ public class DealershipFinalProject {
        
         Airplane[] allAirplanes = new Airplane[10];
         allAirplanes[0] = new Airplane(1, "Boeing", "747", (short) 2020, Color.GRAY, 25000000, 30000,
-                airplaneEngine1, airplaneTransmission2, null, 13000, 14000, 1000, 800, 4, true, false, true,
-                "Commercial", 1200);
+                airplaneEngine1, airplaneTransmission2, null, 13000, 14000, 1000, 800, 
+                "Commercial");
         allAirplanes[1] = new Airplane(2, "Airbus", "A320", (short) 2018, Color.BLUE, 20000000, 25000,
-                airplaneEngine2, airplaneTransmission3, null, 12000, 7000, 900, 220, 2, true, false, true,
-                "Commercial", 600);
+                airplaneEngine2, airplaneTransmission3, null, 12000, 7000, 900, 220, 
+                "Commercial");
         allAirplanes[2] = new Airplane(3, "Cessna", "172", (short) 2015, Color.RED, 300000, 1200,
-                airplaneEngine3, airplaneTransmission4, null, 4500, 960, 300, 4, 1, false, true, false,
-                "Private", 300);
+                airplaneEngine3, airplaneTransmission4, null, 4500, 960, 300, 4, 
+                "Private");
         allAirplanes[3] = new Airplane(4, "Piper", "Cherokee", (short) 2019, Color.YELLOW, 250000, 1100,
-                airplaneEngine4, airplaneTransmission5, null, 3400, 967, 237, 4, 1, false, true, false,
-                "Private", 400);
+                airplaneEngine4, airplaneTransmission5, null, 3400, 967, 237, 4,
+                "Private");
         allAirplanes[4] = new Airplane(5, "Bombardier", "Global 7500", (short) 2022, Color.WHITE, 45000000, 35000,
-                airplaneEngine5, airplaneTransmission6, null, 15500, 14200, 1100, 20, 2, true, false, true,
-                "Business", 800);
+                airplaneEngine5, airplaneTransmission6, null, 15500, 14200, 1100, 20, 
+                "Business");
         allAirplanes[5] = new Airplane(6, "Gulfstream", "G700", (short) 2023, Color.BLACK, 65000000, 40000,
-                airplaneEngine6, airplaneTransmission7, null, 15500, 12070, 1150, 25, 2, true, false, true,
-                "Business", 900);
+                airplaneEngine6, airplaneTransmission7, null, 15500, 12070, 1150, 25, 
+                "Business");
         allAirplanes[6] = new Airplane(7, "Lockheed", "SR-71", (short) 1976, Color.WHITE, 120000000, 15000,
-                airplaneEngine7, airplaneTransmission8, null, 25000, 4828, 3500, 1, 1, true, false, true,
-                "Military", 1500);
+                airplaneEngine7, airplaneTransmission8, null, 25000, 4828, 3500, 1,
+                "Military");
         allAirplanes[7] = new Airplane(8, "Antonov", "An-225", (short) 1988, Color.GRAY, 300000000, 60000,
-                airplaneEngine8, airplaneTransmission9, null, 10972, 15000, 900, 70, 6, true, true, true,
-                "Cargo", 500);
+                airplaneEngine8, airplaneTransmission9, null, 10972, 15000, 900, 70, 
+                "Cargo");
         allAirplanes[8] = new Airplane(9, "Embraer", "E195", (short) 2021, Color.WHITE, 15000000, 20000,
-                airplaneEngine9, airplaneTransmission10, null, 12500, 4800, 800, 132, 2, true, false, true,
-                "Commercial", 600);
+                airplaneEngine9, airplaneTransmission10, null, 12500, 4800, 800, 132, 
+                "Commercial");
         allAirplanes[9] = new Airplane(10, "Dassault", "Falcon 8X", (short) 2023, Color.BLUE, 50000000, 30000,
-                airplaneEngine10, airplaneTransmission1, null, 15545, 11945, 1000, 20, 2, true, false, true,
-                "Business", 700);
+                airplaneEngine10, airplaneTransmission1, null, 15545, 11945, 1000, 20, 
+                "Business");
 
         for (Airplane airplane : allAirplanes) {
             System.out.println(airplane);
