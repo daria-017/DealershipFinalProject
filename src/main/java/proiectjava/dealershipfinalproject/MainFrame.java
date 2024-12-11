@@ -107,13 +107,25 @@ public class MainFrame extends JFrame {
         HoverButton accountDetailsButton = new HoverButton("Account Details");
         HoverButton buyVehicleButton = new HoverButton("Buy A Vehicle");
 
+        
         accountDetailsButton.addActionListener(e -> {
-            AccountDetailsFrame accountDetailsFrame = new AccountDetailsFrame();
-            accountDetailsFrame.setVisible(true);
+            //AccountDetails vechi
+//            AccountDetailsFrame accountDetailsFrame = new AccountDetailsFrame();
+//            accountDetailsFrame.setVisible(true);
+   //AccountDetails redesign
+    AccountDetails accountDetails = new AccountDetails();
+    accountDetails.setVisible(true);
         });
+
         buyVehicleButton.addActionListener(e -> {
-            BuyVehicleFrame buyVehicleFrame = new BuyVehicleFrame();
-            buyVehicleFrame.setVisible(true);
+            
+//BuyVehicleFrame vechi
+//            BuyVehicleFrame buyVehicleFrame = new BuyVehicleFrame();
+//            buyVehicleFrame.setVisible(true);
+
+//BuyVehicleFrame redesign
+            BuyVehicleDesignNou buyVehicleFrame = new BuyVehicleDesignNou();
+        
         });
 
         JPanel rightPanel = new JPanel();
