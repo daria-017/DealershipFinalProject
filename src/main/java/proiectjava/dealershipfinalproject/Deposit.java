@@ -5,12 +5,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -39,25 +43,7 @@ public class Deposit extends javax.swing.JFrame {
         logoutButton = new javax.swing.JButton();
         separator = new javax.swing.JSeparator();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        vizualizare = new javax.swing.JPanel();
-        left = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        right = new javax.swing.JPanel();
-        selectareVehicul = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        selectareVehicul1 = new javax.swing.JComboBox<>();
-        Masina = new javax.swing.JPanel();
+        Airplane = new javax.swing.JPanel();
         panelMasina = new javax.swing.JPanel();
         Titlu1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -78,8 +64,8 @@ public class Deposit extends javax.swing.JFrame {
         weightAirplane = new javax.swing.JTextField();
         engineAirplane = new javax.swing.JTextField();
         transmissionAirplane = new javax.swing.JTextField();
-        butonSalvareMasinaInFisier = new javax.swing.JButton();
-        butonIncarcareDateDinFisierInTabel = new javax.swing.JButton();
+        saveAirplaneInAFile = new javax.swing.JButton();
+        uploadAirplanesInTheTable = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
         maxAltitudeAirplane = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
@@ -91,13 +77,14 @@ public class Deposit extends javax.swing.JFrame {
         categoryAirplane = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelMasini = new javax.swing.JTable();
-        butonSalvareMasinainTabel = new javax.swing.JButton();
+        tableAirplanes = new javax.swing.JTable();
+        saveAirplaneInTable = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        Camion = new javax.swing.JPanel();
-        panelCamion = new javax.swing.JPanel();
+        Jetplane = new javax.swing.JPanel();
+        panelMasina1 = new javax.swing.JPanel();
         Titlu2 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -105,44 +92,71 @@ public class Deposit extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        marcaCamion = new javax.swing.JTextField();
-        anFabricatieCamion = new javax.swing.JTextField();
-        modelCamion = new javax.swing.JTextField();
-        capacitateCilindricaCamion = new javax.swing.JTextField();
-        capacitateTractareCamion = new javax.swing.JTextField();
-        pretCamion = new javax.swing.JTextField();
-        categoriePermisCamion = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        stareCamion = new javax.swing.JTextField();
+        idJetplane = new javax.swing.JTextField();
+        yearJetplane = new javax.swing.JTextField();
+        brandJetplane = new javax.swing.JTextField();
+        modelJetplane = new javax.swing.JTextField();
+        priceJetplane = new javax.swing.JTextField();
+        colorJetplane = new javax.swing.JTextField();
+        weightJetplane = new javax.swing.JTextField();
+        engineJetplane = new javax.swing.JTextField();
+        transmissionJetplane = new javax.swing.JTextField();
+        saveJetplaneInAFile = new javax.swing.JButton();
+        uploadJetplanesInTheTable = new javax.swing.JButton();
+        jLabel46 = new javax.swing.JLabel();
+        maxAltitudeJetplane = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
+        maxRangeJetplane = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        maxSpeedJetplane = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        engineCyclesJetplane = new javax.swing.JTextField();
+        propulsionSystemJetplane = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tabelCamioane = new javax.swing.JTable();
-        butonIncarcareDateFinFisierInTabel = new javax.swing.JButton();
-        butonSalvareCamionInFisier = new javax.swing.JButton();
-        butonSalvareCamionInTabel = new javax.swing.JButton();
-        butonStergeRandCamion = new javax.swing.JButton();
-        Tractor = new javax.swing.JPanel();
-        panelTractor = new javax.swing.JPanel();
-        Titlu3 = new javax.swing.JLabel();
+        tableJetplanes = new javax.swing.JTable();
+        saveJetplaneInTable = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        Airplane2 = new javax.swing.JPanel();
+        panelMasina2 = new javax.swing.JPanel();
+        Titlu3 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        marcaTractor = new javax.swing.JTextField();
-        anFabricatieTractor = new javax.swing.JTextField();
-        modelTractor = new javax.swing.JTextField();
-        capacitateCilindricaTractor = new javax.swing.JTextField();
-        greutateTractor = new javax.swing.JTextField();
-        pretTractor = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        stareTractor = new javax.swing.JTextField();
-        butonSalvareTractorInFisier = new javax.swing.JButton();
-        butonIncarcareDateTractorInFisierInTabel = new javax.swing.JButton();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        idHelicopter = new javax.swing.JTextField();
+        yearHelicopter = new javax.swing.JTextField();
+        brandHelicopter = new javax.swing.JTextField();
+        modelHelicopter = new javax.swing.JTextField();
+        priceHelicopter = new javax.swing.JTextField();
+        colorHelicopter = new javax.swing.JTextField();
+        weightHelicopter = new javax.swing.JTextField();
+        engineHelicopter = new javax.swing.JTextField();
+        transmissionHelicopter = new javax.swing.JTextField();
+        saveHelicopterInAFile = new javax.swing.JButton();
+        uploadHelicoptersInTheTable = new javax.swing.JButton();
+        jLabel53 = new javax.swing.JLabel();
+        maxAltitudeHelicopter = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        maxRangeHelicopter = new javax.swing.JTextField();
+        jLabel55 = new javax.swing.JLabel();
+        maxSpeedHelicopter = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        engineCyclesHelicopter = new javax.swing.JTextField();
+        rotorTypeHelicopter = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tabelTractoare = new javax.swing.JTable();
-        butonSalvareTractorInTabel = new javax.swing.JButton();
-        butonStergeRandTractor = new javax.swing.JButton();
+        tableHelicopters = new javax.swing.JTable();
+        saveHelicopterInTable = new javax.swing.JButton();
+        jLabel58 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -153,7 +167,7 @@ public class Deposit extends javax.swing.JFrame {
         logoutButton.setBackground(new java.awt.Color(204, 0, 0));
         logoutButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         logoutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logoutButton.setText("LOGOUT");
+        logoutButton.setText("GO BACK");
         logoutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,200 +178,8 @@ public class Deposit extends javax.swing.JFrame {
         jTabbedPane1.setBackground(new java.awt.Color(0, 102, 102));
         jTabbedPane1.setForeground(new java.awt.Color(216, 214, 196));
 
-        vizualizare.setBackground(new java.awt.Color(216, 214, 196));
-        vizualizare.setForeground(new java.awt.Color(0, 102, 102));
-
-        left.setBackground(new java.awt.Color(0, 102, 102));
-        left.setForeground(new java.awt.Color(216, 214, 196));
-
-        jLabel4.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(216, 214, 196));
-        jLabel4.setText("© Dealership. All rights reserved.");
-
-        jLabel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel6.setText("Brand:");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("Model");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setText("Capacitate Cilindrica");
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setText("Pret");
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setText("Seria");
-
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout leftLayout = new javax.swing.GroupLayout(left);
-        left.setLayout(leftLayout);
-        leftLayout.setHorizontalGroup(
-            leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftLayout.createSequentialGroup()
-                .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(leftLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(leftLayout.createSequentialGroup()
-                                .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(leftLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(jLabel9)))
-                    .addGroup(leftLayout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(140, Short.MAX_VALUE))
-        );
-        leftLayout.setVerticalGroup(
-            leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(leftLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)))
-                    .addGroup(leftLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addContainerGap())
-        );
-
-        right.setBackground(new java.awt.Color(216, 214, 196));
-        right.setForeground(new java.awt.Color(0, 102, 102));
-
-        selectareVehicul.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        selectareVehicul.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecteaza tipul de vehicul", "Masina", "Camion", "Tractor", "Motocicleta" }));
-        selectareVehicul.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selectareVehiculActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setBackground(new java.awt.Color(216, 214, 196));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel1.setText("DEALERSHIP");
-
-        selectareVehicul1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        selectareVehicul1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selectareVehicul1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout rightLayout = new javax.swing.GroupLayout(right);
-        right.setLayout(rightLayout);
-        rightLayout.setHorizontalGroup(
-            rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightLayout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
-                .addGroup(rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(111, 111, 111))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightLayout.createSequentialGroup()
-                        .addComponent(selectareVehicul1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))))
-            .addGroup(rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightLayout.createSequentialGroup()
-                    .addContainerGap(52, Short.MAX_VALUE)
-                    .addComponent(selectareVehicul, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(33, 33, 33)))
-        );
-        rightLayout.setVerticalGroup(
-            rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightLayout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(264, 264, 264)
-                .addComponent(selectareVehicul1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106))
-            .addGroup(rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightLayout.createSequentialGroup()
-                    .addContainerGap(324, Short.MAX_VALUE)
-                    .addComponent(selectareVehicul, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(179, 179, 179)))
-        );
-
-        javax.swing.GroupLayout vizualizareLayout = new javax.swing.GroupLayout(vizualizare);
-        vizualizare.setLayout(vizualizareLayout);
-        vizualizareLayout.setHorizontalGroup(
-            vizualizareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(vizualizareLayout.createSequentialGroup()
-                .addComponent(left, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(right, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        vizualizareLayout.setVerticalGroup(
-            vizualizareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(left, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(right, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Vehicule", vizualizare);
-
-        Masina.setBackground(new java.awt.Color(211, 210, 196));
-        Masina.setForeground(new java.awt.Color(211, 210, 190));
+        Airplane.setBackground(new java.awt.Color(211, 210, 196));
+        Airplane.setForeground(new java.awt.Color(211, 210, 190));
 
         panelMasina.setBackground(new java.awt.Color(211, 210, 190));
         panelMasina.setForeground(new java.awt.Color(0, 0, 0));
@@ -444,25 +266,25 @@ public class Deposit extends javax.swing.JFrame {
         transmissionAirplane.setBackground(new java.awt.Color(211, 210, 190));
         transmissionAirplane.setForeground(new java.awt.Color(0, 0, 0));
 
-        butonSalvareMasinaInFisier.setBackground(new java.awt.Color(0, 0, 0));
-        butonSalvareMasinaInFisier.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonSalvareMasinaInFisier.setForeground(new java.awt.Color(211, 210, 190));
-        butonSalvareMasinaInFisier.setText("SALVEAZA ");
-        butonSalvareMasinaInFisier.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonSalvareMasinaInFisier.addActionListener(new java.awt.event.ActionListener() {
+        saveAirplaneInAFile.setBackground(new java.awt.Color(0, 0, 0));
+        saveAirplaneInAFile.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        saveAirplaneInAFile.setForeground(new java.awt.Color(211, 210, 190));
+        saveAirplaneInAFile.setText("SAVE");
+        saveAirplaneInAFile.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveAirplaneInAFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonSalvareMasinaInFisierActionPerformed(evt);
+                saveAirplaneInAFileActionPerformed(evt);
             }
         });
 
-        butonIncarcareDateDinFisierInTabel.setBackground(new java.awt.Color(0, 0, 0));
-        butonIncarcareDateDinFisierInTabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonIncarcareDateDinFisierInTabel.setForeground(new java.awt.Color(211, 210, 190));
-        butonIncarcareDateDinFisierInTabel.setText("INCARCA");
-        butonIncarcareDateDinFisierInTabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonIncarcareDateDinFisierInTabel.addActionListener(new java.awt.event.ActionListener() {
+        uploadAirplanesInTheTable.setBackground(new java.awt.Color(0, 0, 0));
+        uploadAirplanesInTheTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        uploadAirplanesInTheTable.setForeground(new java.awt.Color(211, 210, 190));
+        uploadAirplanesInTheTable.setText("UPLOAD");
+        uploadAirplanesInTheTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        uploadAirplanesInTheTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonIncarcareDateDinFisierInTabelActionPerformed(evt);
+                uploadAirplanesInTheTableActionPerformed(evt);
             }
         });
 
@@ -517,38 +339,6 @@ public class Deposit extends javax.swing.JFrame {
                         .addComponent(Titlu1))
                     .addGroup(panelMasinaLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(butonSalvareMasinaInFisier)
-                                .addGroup(panelMasinaLayout.createSequentialGroup()
-                                    .addComponent(jLabel23)
-                                    .addGap(55, 55, 55)))
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel22))
-                        .addGap(37, 37, 37)
-                        .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(weightAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(priceAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(colorAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(yearAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modelAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(brandAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(transmissionAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(engineAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(maxAltitudeAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(maxRangeAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(maxSpeedAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(butonIncarcareDateDinFisierInTabel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(panelMasinaLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel24))
                     .addGroup(panelMasinaLayout.createSequentialGroup()
                         .addContainerGap()
@@ -570,8 +360,38 @@ public class Deposit extends javax.swing.JFrame {
                             .addGroup(panelMasinaLayout.createSequentialGroup()
                                 .addGap(146, 146, 146)
                                 .addComponent(categoryAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel45))))
+                            .addComponent(jLabel45)
+                            .addGroup(panelMasinaLayout.createSequentialGroup()
+                                .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22))
+                                .addGap(88, 88, 88)
+                                .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(weightAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(priceAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(colorAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(yearAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(modelAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(brandAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(idAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(transmissionAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(engineAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxAltitudeAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxRangeAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxSpeedAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMasinaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(saveAirplaneInAFile)
+                .addGap(44, 44, 44)
+                .addComponent(uploadAirplanesInTheTable, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
         );
         panelMasinaLayout.setVerticalGroup(
             panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -636,15 +456,16 @@ public class Deposit extends javax.swing.JFrame {
                     .addComponent(categoryAirplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butonSalvareMasinaInFisier)
-                    .addComponent(butonIncarcareDateDinFisierInTabel)))
+                    .addComponent(uploadAirplanesInTheTable)
+                    .addComponent(saveAirplaneInAFile))
+                .addGap(32, 32, 32))
         );
 
-        tabelMasini.setAutoCreateRowSorter(true);
-        tabelMasini.setBackground(new java.awt.Color(0, 102, 102));
-        tabelMasini.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tabelMasini.setForeground(new java.awt.Color(216, 214, 196));
-        tabelMasini.setModel(new javax.swing.table.DefaultTableModel(
+        tableAirplanes.setAutoCreateRowSorter(true);
+        tableAirplanes.setBackground(new java.awt.Color(0, 102, 102));
+        tableAirplanes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tableAirplanes.setForeground(new java.awt.Color(216, 214, 196));
+        tableAirplanes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -652,16 +473,16 @@ public class Deposit extends javax.swing.JFrame {
                 "ID", "BRAND", "MODEL", "YEAR", "COLOR", "PRICE", "WEIGHT", "ENGINE", "TRANSMISSION", "MAX ALTITUDE", "MAX RANGE", "MAX SPEED", "PASSENGER CAPACITY", "CATEGORY"
             }
         ));
-        jScrollPane1.setViewportView(tabelMasini);
+        jScrollPane1.setViewportView(tableAirplanes);
 
-        butonSalvareMasinainTabel.setBackground(new java.awt.Color(216, 214, 196));
-        butonSalvareMasinainTabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonSalvareMasinainTabel.setForeground(new java.awt.Color(0, 0, 0));
-        butonSalvareMasinainTabel.setText("SALVEAZA IN TABEL");
-        butonSalvareMasinainTabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonSalvareMasinainTabel.addActionListener(new java.awt.event.ActionListener() {
+        saveAirplaneInTable.setBackground(new java.awt.Color(216, 214, 196));
+        saveAirplaneInTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        saveAirplaneInTable.setForeground(new java.awt.Color(0, 0, 0));
+        saveAirplaneInTable.setText("SAVE IN TABLE");
+        saveAirplaneInTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveAirplaneInTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonSalvareMasinainTabelActionPerformed(evt);
+                saveAirplaneInTableActionPerformed(evt);
             }
         });
 
@@ -671,550 +492,786 @@ public class Deposit extends javax.swing.JFrame {
         jLabel31.setText("SORT BY:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Featured", "Price: Low to High", "Price: High to Low" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout MasinaLayout = new javax.swing.GroupLayout(Masina);
-        Masina.setLayout(MasinaLayout);
-        MasinaLayout.setHorizontalGroup(
-            MasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MasinaLayout.createSequentialGroup()
+        javax.swing.GroupLayout AirplaneLayout = new javax.swing.GroupLayout(Airplane);
+        Airplane.setLayout(AirplaneLayout);
+        AirplaneLayout.setHorizontalGroup(
+            AirplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AirplaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelMasina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MasinaLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(MasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(MasinaLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(butonSalvareMasinainTabel)
-                                .addGap(244, 244, 244))
-                            .addGroup(MasinaLayout.createSequentialGroup()
-                                .addComponent(jLabel31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(MasinaLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                        .addContainerGap())))
+                .addGroup(AirplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AirplaneLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(AirplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AirplaneLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AirplaneLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(saveAirplaneInTable)
+                                .addGap(263, 263, 263))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AirplaneLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(215, 215, 215))))
         );
-        MasinaLayout.setVerticalGroup(
-            MasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MasinaLayout.createSequentialGroup()
+        AirplaneLayout.setVerticalGroup(
+            AirplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AirplaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(MasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MasinaLayout.createSequentialGroup()
-                        .addComponent(panelMasina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(MasinaLayout.createSequentialGroup()
+                .addGroup(AirplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelMasina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(AirplaneLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(butonSalvareMasinainTabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addGroup(MasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(saveAirplaneInTable)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(AirplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43))))
+                        .addGap(0, 39, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Airplane", Masina);
+        jTabbedPane1.addTab("Airplanes", Airplane);
 
-        Camion.setBackground(new java.awt.Color(0, 102, 102));
+        Jetplane.setBackground(new java.awt.Color(211, 210, 196));
+        Jetplane.setForeground(new java.awt.Color(211, 210, 190));
 
-        panelCamion.setBackground(new java.awt.Color(211, 210, 190));
-        panelCamion.setForeground(new java.awt.Color(0, 0, 0));
+        panelMasina1.setBackground(new java.awt.Color(211, 210, 190));
+        panelMasina1.setForeground(new java.awt.Color(0, 0, 0));
 
         Titlu2.setBackground(new java.awt.Color(211, 210, 190));
         Titlu2.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         Titlu2.setForeground(new java.awt.Color(0, 0, 0));
         Titlu2.setText("Add Jetplane");
 
+        jLabel13.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("ID");
+
         jLabel25.setBackground(new java.awt.Color(211, 210, 190));
         jLabel25.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel25.setText("Marca");
+        jLabel25.setText("BRAND");
 
         jLabel26.setBackground(new java.awt.Color(211, 210, 190));
         jLabel26.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel26.setText("Model");
+        jLabel26.setText("MODEL");
 
         jLabel27.setBackground(new java.awt.Color(211, 210, 190));
         jLabel27.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel27.setText("Capacitate Cilindrica");
+        jLabel27.setText("YEAR");
 
         jLabel28.setBackground(new java.awt.Color(211, 210, 190));
         jLabel28.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel28.setText("An Fabricatie");
+        jLabel28.setText("COLOR");
 
         jLabel29.setBackground(new java.awt.Color(211, 210, 190));
         jLabel29.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel29.setText("Pret");
+        jLabel29.setText("PRICE");
 
         jLabel30.setBackground(new java.awt.Color(211, 210, 190));
         jLabel30.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel30.setText("Capacitate Tractare");
+        jLabel30.setText("WEIGHT");
 
         jLabel32.setBackground(new java.awt.Color(211, 210, 190));
         jLabel32.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel32.setText("Categorie Permis");
-
-        marcaCamion.setBackground(new java.awt.Color(211, 210, 190));
-        marcaCamion.setForeground(new java.awt.Color(0, 0, 0));
-        marcaCamion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                marcaCamionActionPerformed(evt);
-            }
-        });
-
-        anFabricatieCamion.setBackground(new java.awt.Color(211, 210, 190));
-        anFabricatieCamion.setForeground(new java.awt.Color(0, 0, 0));
-
-        modelCamion.setBackground(new java.awt.Color(211, 210, 190));
-        modelCamion.setForeground(new java.awt.Color(0, 0, 0));
-
-        capacitateCilindricaCamion.setBackground(new java.awt.Color(211, 210, 190));
-        capacitateCilindricaCamion.setForeground(new java.awt.Color(0, 0, 0));
-
-        capacitateTractareCamion.setBackground(new java.awt.Color(211, 210, 190));
-        capacitateTractareCamion.setForeground(new java.awt.Color(0, 0, 0));
-
-        pretCamion.setBackground(new java.awt.Color(211, 210, 190));
-        pretCamion.setForeground(new java.awt.Color(0, 0, 0));
-
-        categoriePermisCamion.setBackground(new java.awt.Color(211, 210, 190));
-        categoriePermisCamion.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel32.setText("ENGINE");
 
         jLabel33.setBackground(new java.awt.Color(211, 210, 190));
         jLabel33.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel33.setText("Stare");
+        jLabel33.setText("TRANSMISSION");
 
-        stareCamion.setBackground(new java.awt.Color(211, 210, 190));
-        stareCamion.setForeground(new java.awt.Color(0, 0, 0));
+        idJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        idJetplane.setForeground(new java.awt.Color(0, 0, 0));
 
-        tabelCamioane.setBackground(new java.awt.Color(0, 102, 102));
-        tabelCamioane.setForeground(new java.awt.Color(216, 214, 196));
-        tabelCamioane.setModel(new javax.swing.table.DefaultTableModel(
+        yearJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        yearJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        brandJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        brandJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        modelJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        modelJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        priceJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        priceJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        colorJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        colorJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        weightJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        weightJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        engineJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        engineJetplane.setForeground(new java.awt.Color(0, 0, 0));
+        engineJetplane.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                engineJetplaneActionPerformed(evt);
+            }
+        });
+
+        transmissionJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        transmissionJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        saveJetplaneInAFile.setBackground(new java.awt.Color(0, 0, 0));
+        saveJetplaneInAFile.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        saveJetplaneInAFile.setForeground(new java.awt.Color(211, 210, 190));
+        saveJetplaneInAFile.setText("SAVE");
+        saveJetplaneInAFile.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveJetplaneInAFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveJetplaneInAFileActionPerformed(evt);
+            }
+        });
+
+        uploadJetplanesInTheTable.setBackground(new java.awt.Color(0, 0, 0));
+        uploadJetplanesInTheTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        uploadJetplanesInTheTable.setForeground(new java.awt.Color(211, 210, 190));
+        uploadJetplanesInTheTable.setText("UPLOAD");
+        uploadJetplanesInTheTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        uploadJetplanesInTheTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uploadJetplanesInTheTableActionPerformed(evt);
+            }
+        });
+
+        jLabel46.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel46.setText("MAX ALTITUDE");
+
+        maxAltitudeJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        maxAltitudeJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel47.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel47.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel47.setText("MAX RANGE");
+
+        maxRangeJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        maxRangeJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel48.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel48.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel48.setText("MAX SPEED");
+
+        maxSpeedJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        maxSpeedJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel49.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel49.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel49.setText("ENGINE CYCLES");
+
+        engineCyclesJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        engineCyclesJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        propulsionSystemJetplane.setBackground(new java.awt.Color(211, 210, 190));
+        propulsionSystemJetplane.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel50.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel50.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel50.setText("PROPULSION SYSTEM");
+
+        javax.swing.GroupLayout panelMasina1Layout = new javax.swing.GroupLayout(panelMasina1);
+        panelMasina1.setLayout(panelMasina1Layout);
+        panelMasina1Layout.setHorizontalGroup(
+            panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMasina1Layout.createSequentialGroup()
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(Titlu2))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel33))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel46))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel47))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel48))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(engineCyclesJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panelMasina1Layout.createSequentialGroup()
+                                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addGap(10, 10, 10)
+                                .addComponent(propulsionSystemJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelMasina1Layout.createSequentialGroup()
+                                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel32)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel30))
+                                .addGap(88, 88, 88)
+                                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(weightJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(priceJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(colorJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(yearJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(modelJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(brandJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(idJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(transmissionJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(engineJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxAltitudeJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxRangeJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxSpeedJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMasina1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(saveJetplaneInAFile)
+                .addGap(44, 44, 44)
+                .addComponent(uploadJetplanesInTheTable, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
+        );
+        panelMasina1Layout.setVerticalGroup(
+            panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMasina1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Titlu2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(idJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(brandJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(modelJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(yearJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(colorJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(priceJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(weightJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(engineJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(transmissionJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(maxAltitudeJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(maxRangeJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel48)
+                    .addComponent(maxSpeedJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(engineCyclesJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(propulsionSystemJetplane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(uploadJetplanesInTheTable)
+                    .addComponent(saveJetplaneInAFile))
+                .addGap(32, 32, 32))
+        );
+
+        tableJetplanes.setAutoCreateRowSorter(true);
+        tableJetplanes.setBackground(new java.awt.Color(0, 102, 102));
+        tableJetplanes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tableJetplanes.setForeground(new java.awt.Color(216, 214, 196));
+        tableJetplanes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Mercedes-Benz", "Actros", "12000", "2020", "120000", "40000", "C+E", "Fara accidente"}
+
             },
             new String [] {
-                "Marca", "Model", "Capacitate Cilindrica", "An Fabricatie", "Pret", "Capacitate Tractare", "Categorie Permis", "Stare"
+                "ID", "BRAND", "MODEL", "YEAR", "COLOR", "PRICE", "WEIGHT", "ENGINE", "TRANSMISSION", "MAX ALTITUDE", "MAX RANGE", "MAX SPEED", "ENGINE CYCLES", "PROPULSION SYSTEM"
             }
         ));
-        jScrollPane2.setViewportView(tabelCamioane);
+        jScrollPane2.setViewportView(tableJetplanes);
 
-        butonIncarcareDateFinFisierInTabel.setBackground(new java.awt.Color(0, 0, 0));
-        butonIncarcareDateFinFisierInTabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonIncarcareDateFinFisierInTabel.setForeground(new java.awt.Color(211, 210, 190));
-        butonIncarcareDateFinFisierInTabel.setText("INCARCA");
-        butonIncarcareDateFinFisierInTabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonIncarcareDateFinFisierInTabel.addActionListener(new java.awt.event.ActionListener() {
+        saveJetplaneInTable.setBackground(new java.awt.Color(216, 214, 196));
+        saveJetplaneInTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        saveJetplaneInTable.setForeground(new java.awt.Color(0, 0, 0));
+        saveJetplaneInTable.setText("SAVE IN TABLE");
+        saveJetplaneInTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveJetplaneInTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonIncarcareDateFinFisierInTabelActionPerformed(evt);
+                saveJetplaneInTableActionPerformed(evt);
             }
         });
-
-        butonSalvareCamionInFisier.setBackground(new java.awt.Color(0, 0, 0));
-        butonSalvareCamionInFisier.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonSalvareCamionInFisier.setForeground(new java.awt.Color(211, 210, 190));
-        butonSalvareCamionInFisier.setText("SALVEAZA ");
-        butonSalvareCamionInFisier.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonSalvareCamionInFisier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonSalvareCamionInFisierActionPerformed(evt);
-            }
-        });
-
-        butonSalvareCamionInTabel.setBackground(new java.awt.Color(216, 214, 196));
-        butonSalvareCamionInTabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonSalvareCamionInTabel.setForeground(new java.awt.Color(0, 0, 0));
-        butonSalvareCamionInTabel.setText("SALVEAZA IN TABEL");
-        butonSalvareCamionInTabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonSalvareCamionInTabel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonSalvareCamionInTabelActionPerformed(evt);
-            }
-        });
-
-        butonStergeRandCamion.setBackground(new java.awt.Color(216, 214, 196));
-        butonStergeRandCamion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonStergeRandCamion.setForeground(new java.awt.Color(0, 0, 0));
-        butonStergeRandCamion.setText("STERGE RAND ALES");
-        butonStergeRandCamion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonStergeRandCamion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                butonStergeRandCamionMouseClicked(evt);
-            }
-        });
-        butonStergeRandCamion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonStergeRandCamionActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelCamionLayout = new javax.swing.GroupLayout(panelCamion);
-        panelCamion.setLayout(panelCamionLayout);
-        panelCamionLayout.setHorizontalGroup(
-            panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCamionLayout.createSequentialGroup()
-                .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelCamionLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel32)
-                            .addComponent(jLabel33)
-                            .addComponent(jLabel30))
-                        .addGap(37, 37, 37)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(stareCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(capacitateTractareCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(anFabricatieCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(marcaCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modelCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(capacitateCilindricaCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pretCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(categoriePermisCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelCamionLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(Titlu2))
-                    .addGroup(panelCamionLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelCamionLayout.createSequentialGroup()
-                                .addGap(158, 158, 158)
-                                .addComponent(butonIncarcareDateFinFisierInTabel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(butonSalvareCamionInFisier))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelCamionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(butonSalvareCamionInTabel)
-                .addGap(191, 191, 191)
-                .addComponent(butonStergeRandCamion, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
-        panelCamionLayout.setVerticalGroup(
-            panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCamionLayout.createSequentialGroup()
-                .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(panelCamionLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Titlu2)
-                        .addGap(18, 18, 18)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel25)
-                            .addComponent(marcaCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel26)
-                            .addComponent(modelCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27)
-                            .addComponent(capacitateCilindricaCamion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel28)
-                            .addComponent(anFabricatieCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel29)
-                            .addComponent(pretCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel30)
-                            .addComponent(capacitateTractareCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(categoriePermisCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel32))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(stareCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel33))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(butonSalvareCamionInFisier)
-                            .addComponent(butonIncarcareDateFinFisierInTabel)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(panelCamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butonSalvareCamionInTabel)
-                    .addComponent(butonStergeRandCamion))
-                .addGap(33, 33, 33))
-        );
-
-        javax.swing.GroupLayout CamionLayout = new javax.swing.GroupLayout(Camion);
-        Camion.setLayout(CamionLayout);
-        CamionLayout.setHorizontalGroup(
-            CamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CamionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelCamion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        CamionLayout.setVerticalGroup(
-            CamionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CamionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelCamion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Jetplane", Camion);
-
-        Tractor.setBackground(new java.awt.Color(211, 210, 196));
-        Tractor.setForeground(new java.awt.Color(0, 102, 102));
-
-        panelTractor.setBackground(new java.awt.Color(211, 210, 190));
-        panelTractor.setForeground(new java.awt.Color(0, 0, 0));
-
-        Titlu3.setBackground(new java.awt.Color(211, 210, 190));
-        Titlu3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        Titlu3.setForeground(new java.awt.Color(0, 0, 0));
-        Titlu3.setText("Add helicopter");
 
         jLabel34.setBackground(new java.awt.Color(211, 210, 190));
         jLabel34.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel34.setText("Marca");
+        jLabel34.setText("SORT BY:");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Featured", "Price: Low to High", "Price: High to Low" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JetplaneLayout = new javax.swing.GroupLayout(Jetplane);
+        Jetplane.setLayout(JetplaneLayout);
+        JetplaneLayout.setHorizontalGroup(
+            JetplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JetplaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelMasina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(JetplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JetplaneLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JetplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JetplaneLayout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JetplaneLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(saveJetplaneInTable)
+                                .addGap(263, 263, 263))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JetplaneLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(215, 215, 215))))
+        );
+        JetplaneLayout.setVerticalGroup(
+            JetplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JetplaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(JetplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelMasina1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(JetplaneLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(saveJetplaneInTable)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JetplaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 39, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Jetplanes", Jetplane);
+
+        Airplane2.setBackground(new java.awt.Color(211, 210, 196));
+        Airplane2.setForeground(new java.awt.Color(211, 210, 190));
+
+        panelMasina2.setBackground(new java.awt.Color(211, 210, 190));
+        panelMasina2.setForeground(new java.awt.Color(0, 0, 0));
+
+        Titlu3.setBackground(new java.awt.Color(211, 210, 190));
+        Titlu3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        Titlu3.setForeground(new java.awt.Color(0, 0, 0));
+        Titlu3.setText("Add Helicopters");
+
+        jLabel14.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("ID");
 
         jLabel35.setBackground(new java.awt.Color(211, 210, 190));
         jLabel35.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel35.setText("Model");
+        jLabel35.setText("BRAND");
 
         jLabel36.setBackground(new java.awt.Color(211, 210, 190));
         jLabel36.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel36.setText("Capacitate Cilindrica");
+        jLabel36.setText("MODEL");
 
         jLabel37.setBackground(new java.awt.Color(211, 210, 190));
         jLabel37.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel37.setText("An Fabricatie");
+        jLabel37.setText("YEAR");
 
         jLabel38.setBackground(new java.awt.Color(211, 210, 190));
         jLabel38.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel38.setText("Pret");
+        jLabel38.setText("COLOR");
 
         jLabel39.setBackground(new java.awt.Color(211, 210, 190));
         jLabel39.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel39.setText("Stare");
-
-        marcaTractor.setBackground(new java.awt.Color(211, 210, 190));
-        marcaTractor.setForeground(new java.awt.Color(0, 0, 0));
-
-        anFabricatieTractor.setBackground(new java.awt.Color(211, 210, 190));
-        anFabricatieTractor.setForeground(new java.awt.Color(0, 0, 0));
-
-        modelTractor.setBackground(new java.awt.Color(211, 210, 190));
-        modelTractor.setForeground(new java.awt.Color(0, 0, 0));
-
-        capacitateCilindricaTractor.setBackground(new java.awt.Color(211, 210, 190));
-        capacitateCilindricaTractor.setForeground(new java.awt.Color(0, 0, 0));
-
-        greutateTractor.setBackground(new java.awt.Color(211, 210, 190));
-        greutateTractor.setForeground(new java.awt.Color(0, 0, 0));
-
-        pretTractor.setBackground(new java.awt.Color(211, 210, 190));
-        pretTractor.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel39.setText("PRICE");
 
         jLabel40.setBackground(new java.awt.Color(211, 210, 190));
         jLabel40.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel40.setText("Greutate");
+        jLabel40.setText("WEIGHT");
 
-        stareTractor.setBackground(new java.awt.Color(211, 210, 190));
-        stareTractor.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel51.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel51.setText("ENGINE");
 
-        butonSalvareTractorInFisier.setBackground(new java.awt.Color(0, 0, 0));
-        butonSalvareTractorInFisier.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonSalvareTractorInFisier.setForeground(new java.awt.Color(211, 210, 190));
-        butonSalvareTractorInFisier.setText("SALVEAZA ");
-        butonSalvareTractorInFisier.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonSalvareTractorInFisier.addActionListener(new java.awt.event.ActionListener() {
+        jLabel52.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel52.setText("TRANSMISSION");
+
+        idHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        idHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        yearHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        yearHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        brandHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        brandHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        modelHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        modelHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        priceHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        priceHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        colorHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        colorHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        weightHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        weightHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        engineHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        engineHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+        engineHelicopter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonSalvareTractorInFisierActionPerformed(evt);
+                engineHelicopterActionPerformed(evt);
             }
         });
 
-        butonIncarcareDateTractorInFisierInTabel.setBackground(new java.awt.Color(0, 0, 0));
-        butonIncarcareDateTractorInFisierInTabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonIncarcareDateTractorInFisierInTabel.setForeground(new java.awt.Color(211, 210, 190));
-        butonIncarcareDateTractorInFisierInTabel.setText("INCARCA");
-        butonIncarcareDateTractorInFisierInTabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonIncarcareDateTractorInFisierInTabel.addActionListener(new java.awt.event.ActionListener() {
+        transmissionHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        transmissionHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        saveHelicopterInAFile.setBackground(new java.awt.Color(0, 0, 0));
+        saveHelicopterInAFile.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        saveHelicopterInAFile.setForeground(new java.awt.Color(211, 210, 190));
+        saveHelicopterInAFile.setText("SAVE");
+        saveHelicopterInAFile.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveHelicopterInAFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonIncarcareDateTractorInFisierInTabelActionPerformed(evt);
+                saveHelicopterInAFileActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panelTractorLayout = new javax.swing.GroupLayout(panelTractor);
-        panelTractor.setLayout(panelTractorLayout);
-        panelTractorLayout.setHorizontalGroup(
-            panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTractorLayout.createSequentialGroup()
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelTractorLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel34)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel36)
-                            .addComponent(jLabel37)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel40))
-                        .addGap(37, 37, 37)
-                        .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(greutateTractor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(anFabricatieTractor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(marcaTractor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modelTractor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(capacitateCilindricaTractor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pretTractor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stareTractor, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelTractorLayout.createSequentialGroup()
-                        .addGap(109, 109, 109)
+        uploadHelicoptersInTheTable.setBackground(new java.awt.Color(0, 0, 0));
+        uploadHelicoptersInTheTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        uploadHelicoptersInTheTable.setForeground(new java.awt.Color(211, 210, 190));
+        uploadHelicoptersInTheTable.setText("UPLOAD");
+        uploadHelicoptersInTheTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        uploadHelicoptersInTheTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uploadHelicoptersInTheTableActionPerformed(evt);
+            }
+        });
+
+        jLabel53.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel53.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel53.setText("MAX ALTITUDE");
+
+        maxAltitudeHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        maxAltitudeHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel54.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel54.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel54.setText("MAX RANGE");
+
+        maxRangeHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        maxRangeHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel55.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel55.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel55.setText("MAX SPEED");
+
+        maxSpeedHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        maxSpeedHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel56.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel56.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel56.setText("ENGINE CYCLES");
+
+        engineCyclesHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        engineCyclesHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        rotorTypeHelicopter.setBackground(new java.awt.Color(211, 210, 190));
+        rotorTypeHelicopter.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel57.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel57.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel57.setText("ROTOR TYPE");
+
+        javax.swing.GroupLayout panelMasina2Layout = new javax.swing.GroupLayout(panelMasina2);
+        panelMasina2.setLayout(panelMasina2Layout);
+        panelMasina2Layout.setHorizontalGroup(
+            panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMasina2Layout.createSequentialGroup()
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelMasina2Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
                         .addComponent(Titlu3))
-                    .addGroup(panelTractorLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelTractorLayout.createSequentialGroup()
-                                .addGap(158, 158, 158)
-                                .addComponent(butonIncarcareDateTractorInFisierInTabel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(butonSalvareTractorInFisier))))
-                .addContainerGap(107, Short.MAX_VALUE))
+                    .addGroup(panelMasina2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel52))
+                    .addGroup(panelMasina2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel53))
+                    .addGroup(panelMasina2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel54))
+                    .addGroup(panelMasina2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel55))
+                    .addGroup(panelMasina2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(engineCyclesHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelMasina2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelMasina2Layout.createSequentialGroup()
+                                .addGap(146, 146, 146)
+                                .addComponent(rotorTypeHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel57)
+                            .addGroup(panelMasina2Layout.createSequentialGroup()
+                                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel51)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel35)
+                                    .addComponent(jLabel36)
+                                    .addComponent(jLabel37)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel39)
+                                    .addComponent(jLabel40))
+                                .addGap(88, 88, 88)
+                                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(weightHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(priceHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(colorHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(yearHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(modelHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(brandHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(idHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(transmissionHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(engineHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxAltitudeHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxRangeHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maxSpeedHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMasina2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(saveHelicopterInAFile)
+                .addGap(44, 44, 44)
+                .addComponent(uploadHelicoptersInTheTable, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
         );
-        panelTractorLayout.setVerticalGroup(
-            panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTractorLayout.createSequentialGroup()
+        panelMasina2Layout.setVerticalGroup(
+            panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMasina2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Titlu3)
-                .addGap(18, 18, 18)
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34)
-                    .addComponent(marcaTractor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(idHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(modelTractor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(brandHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
-                    .addComponent(capacitateCilindricaTractor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(modelHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
-                    .addComponent(anFabricatieTractor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(yearHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
-                    .addComponent(pretTractor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(greutateTractor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel40))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stareTractor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel39))
-                .addGap(101, 101, 101)
-                .addGroup(panelTractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butonSalvareTractorInFisier)
-                    .addComponent(butonIncarcareDateTractorInFisierInTabel))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(colorHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(priceHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(weightHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(engineHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(transmissionHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(maxAltitudeHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(maxRangeHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(maxSpeedHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(engineCyclesHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57)
+                    .addComponent(rotorTypeHelicopter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelMasina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(uploadHelicoptersInTheTable)
+                    .addComponent(saveHelicopterInAFile))
+                .addGap(32, 32, 32))
         );
 
-        tabelTractoare.setBackground(new java.awt.Color(0, 102, 102));
-        tabelTractoare.setForeground(new java.awt.Color(216, 214, 196));
-        tabelTractoare.setModel(new javax.swing.table.DefaultTableModel(
+        tableHelicopters.setAutoCreateRowSorter(true);
+        tableHelicopters.setBackground(new java.awt.Color(0, 102, 102));
+        tableHelicopters.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tableHelicopters.setForeground(new java.awt.Color(216, 214, 196));
+        tableHelicopters.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"John Deere", "8R 410", "9000", "2022", "250000", "11000", "Fara accidente"}
+
             },
             new String [] {
-                "Marca", "Model", "Capacitate Cilindrica", "An Fabricatie", "Pret", "Greutate", "Stare"
+                "ID", "BRAND", "MODEL", "YEAR", "COLOR", "PRICE", "WEIGHT", "ENGINE", "TRANSMISSION", "MAX ALTITUDE", "MAX RANGE", "MAX SPEED", "ENGINE CYCLES", "ROTOR TYPE"
             }
         ));
-        jScrollPane3.setViewportView(tabelTractoare);
+        jScrollPane3.setViewportView(tableHelicopters);
 
-        butonSalvareTractorInTabel.setBackground(new java.awt.Color(216, 214, 196));
-        butonSalvareTractorInTabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonSalvareTractorInTabel.setForeground(new java.awt.Color(0, 0, 0));
-        butonSalvareTractorInTabel.setText("SALVEAZA IN TABEL");
-        butonSalvareTractorInTabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonSalvareTractorInTabel.addActionListener(new java.awt.event.ActionListener() {
+        saveHelicopterInTable.setBackground(new java.awt.Color(216, 214, 196));
+        saveHelicopterInTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        saveHelicopterInTable.setForeground(new java.awt.Color(0, 0, 0));
+        saveHelicopterInTable.setText("SAVE IN TABLE");
+        saveHelicopterInTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveHelicopterInTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonSalvareTractorInTabelActionPerformed(evt);
+                saveHelicopterInTableActionPerformed(evt);
             }
         });
 
-        butonStergeRandTractor.setBackground(new java.awt.Color(216, 214, 196));
-        butonStergeRandTractor.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        butonStergeRandTractor.setForeground(new java.awt.Color(0, 0, 0));
-        butonStergeRandTractor.setText("STERGE RAND ALES");
-        butonStergeRandTractor.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butonStergeRandTractor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                butonStergeRandTractorMouseClicked(evt);
-            }
-        });
-        butonStergeRandTractor.addActionListener(new java.awt.event.ActionListener() {
+        jLabel58.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel58.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel58.setText("SORT BY:");
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Featured", "Price: Low to High", "Price: High to Low" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butonStergeRandTractorActionPerformed(evt);
+                jComboBox3ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout TractorLayout = new javax.swing.GroupLayout(Tractor);
-        Tractor.setLayout(TractorLayout);
-        TractorLayout.setHorizontalGroup(
-            TractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TractorLayout.createSequentialGroup()
+        javax.swing.GroupLayout Airplane2Layout = new javax.swing.GroupLayout(Airplane2);
+        Airplane2.setLayout(Airplane2Layout);
+        Airplane2Layout.setHorizontalGroup(
+            Airplane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Airplane2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelTractor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(TractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TractorLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TractorLayout.createSequentialGroup()
-                        .addComponent(butonSalvareTractorInTabel)
-                        .addGap(191, 191, 191)
-                        .addComponent(butonStergeRandTractor, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))))
+                .addComponent(panelMasina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Airplane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Airplane2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Airplane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Airplane2Layout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Airplane2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(saveHelicopterInTable)
+                                .addGap(263, 263, 263))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Airplane2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel58)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(215, 215, 215))))
         );
-        TractorLayout.setVerticalGroup(
-            TractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TractorLayout.createSequentialGroup()
+        Airplane2Layout.setVerticalGroup(
+            Airplane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Airplane2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(TractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TractorLayout.createSequentialGroup()
-                        .addComponent(panelTractor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(TractorLayout.createSequentialGroup()
+                .addGroup(Airplane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelMasina2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(Airplane2Layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                        .addGroup(TractorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(butonSalvareTractorInTabel)
-                            .addComponent(butonStergeRandTractor))
-                        .addGap(33, 33, 33))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(saveHelicopterInTable)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Airplane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel58)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 39, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Helicopter", Tractor);
+        jTabbedPane1.addTab("Helicopters", Airplane2);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -1268,120 +1325,11 @@ public class Deposit extends javax.swing.JFrame {
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         //de adaugat 
-        LoginFrame LoginFrame = new LoginFrame();
+        AdminAccessOnly adminAccesOnly = new AdminAccessOnly();
         this.dispose();
     }//GEN-LAST:event_logoutButtonActionPerformed
 
-    private void butonStergeRandTractorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonStergeRandTractorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butonStergeRandTractorActionPerformed
-
-    private void butonStergeRandTractorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butonStergeRandTractorMouseClicked
-        // TODO add your handling code here:
-        int column=tabelTractoare.getColumnModel().getColumnIndexAtX(evt.getX());
-        int row=evt.getY()/tabelTractoare.getRowHeight();
-
-        if(row<tabelCamioane.getRowCount() && row>=0 && column<tabelTractoare.getColumnCount() && column>=0){
-            Object rowValue=tabelTractoare.getValueAt(row,column);
-            DefaultTableModel tableModel2=(DefaultTableModel)tabelTractoare.getModel();
-            int[]selectedRows=tabelTractoare.getSelectedRows();
-            for(int i=0;i<selectedRows.length;i++){
-                tableModel2.removeRow(selectedRows[i]);
-            }
-        }
-    }//GEN-LAST:event_butonStergeRandTractorMouseClicked
-
-    private void butonSalvareTractorInTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSalvareTractorInTabelActionPerformed
-        // TODO add your handling code here:
-        //testam daca are campuri goale
-        if(marcaTractor.getText().equals("") || modelTractor.getText().equals("") || capacitateCilindricaTractor.getText().equals("") || anFabricatieTractor.getText().equals("") || pretTractor.getText().equals("")  || greutateTractor.getText().equals("") || stareTractor.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Toate campurile sunt obligatorii!");
-        }else{
-            String date[]={marcaTractor.getText(),modelTractor.getText(),capacitateCilindricaTractor.getText(),anFabricatieTractor.getText(),pretTractor.getText(),greutateTractor.getText(),stareTractor.getText()};
-
-            DefaultTableModel tblModel2=(DefaultTableModel)tabelTractoare.getModel();
-
-            tblModel2.addRow(date);
-            JOptionPane.showMessageDialog(this,"Date adaugate cu succes!");
-
-            marcaTractor.setText("");
-            modelTractor.setText("");
-            capacitateCilindricaTractor.setText("");
-            anFabricatieTractor.setText("");
-            pretTractor.setText("");
-            stareTractor.setText("");
-
-            greutateTractor.setText("");
-        }
-
-    }//GEN-LAST:event_butonSalvareTractorInTabelActionPerformed
-
-    private void butonIncarcareDateTractorInFisierInTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonIncarcareDateTractorInFisierInTabelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butonIncarcareDateTractorInFisierInTabelActionPerformed
-
-    private void butonSalvareTractorInFisierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSalvareTractorInFisierActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butonSalvareTractorInFisierActionPerformed
-
-    private void butonStergeRandCamionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonStergeRandCamionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butonStergeRandCamionActionPerformed
-
-    private void butonStergeRandCamionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butonStergeRandCamionMouseClicked
-        // TODO add your handling code here:
-        int column=tabelCamioane.getColumnModel().getColumnIndexAtX(evt.getX());
-        int row=evt.getY()/tabelCamioane.getRowHeight();
-
-        if(row<tabelCamioane.getRowCount() && row>=0 && column<tabelCamioane.getColumnCount() && column>=0){
-            Object rowValue=tabelCamioane.getValueAt(row,column);
-            DefaultTableModel tableModel1=(DefaultTableModel)tabelCamioane.getModel();
-            int[]selectedRows=tabelCamioane.getSelectedRows();
-            for(int i=0;i<selectedRows.length;i++){
-                tableModel1.removeRow(selectedRows[i]);
-            }
-        }
-    }//GEN-LAST:event_butonStergeRandCamionMouseClicked
-
-    private void butonSalvareCamionInTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSalvareCamionInTabelActionPerformed
-        // TODO add your handling code here:
-        //testam daca exista campuri goale
-        if(marcaCamion.getText().equals("") || modelCamion.getText().equals("") || capacitateCilindricaCamion.getText().equals("") || anFabricatieCamion.getText().equals("") || pretCamion.getText().equals("")  || capacitateTractareCamion.getText().equals("") || categoriePermisCamion.getText().equals("") || stareCamion.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Toate campurile sunt obligatorii!");
-        }else{
-            String date[]={marcaCamion.getText(),modelCamion.getText(),capacitateCilindricaCamion.getText(),anFabricatieCamion.getText(),pretCamion.getText(),capacitateTractareCamion.getText(),categoriePermisCamion.getText(),stareCamion.getText()};
-
-            DefaultTableModel tblModel1=(DefaultTableModel)tabelCamioane.getModel();
-
-            tblModel1.addRow(date);
-            JOptionPane.showMessageDialog(this,"Date adaugate cu succes!");
-
-            marcaCamion.setText("");
-            modelCamion.setText("");
-            capacitateCilindricaCamion.setText("");
-            anFabricatieCamion.setText("");
-            pretCamion.setText("");
-            stareCamion.setText("");
-
-            categoriePermisCamion.setText("");
-            capacitateTractareCamion.setText("");
-        }
-
-    }//GEN-LAST:event_butonSalvareCamionInTabelActionPerformed
-
-    private void butonSalvareCamionInFisierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSalvareCamionInFisierActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butonSalvareCamionInFisierActionPerformed
-
-    private void butonIncarcareDateFinFisierInTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonIncarcareDateFinFisierInTabelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butonIncarcareDateFinFisierInTabelActionPerformed
-
-    private void marcaCamionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaCamionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_marcaCamionActionPerformed
-
-    private void butonSalvareMasinainTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSalvareMasinainTabelActionPerformed
+    private void saveAirplaneInTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAirplaneInTableActionPerformed
     
     if (idAirplane.getText().equals("") || 
         brandAirplane.getText().equals("") || 
@@ -1419,7 +1367,7 @@ public class Deposit extends javax.swing.JFrame {
         };
 
         
-        DefaultTableModel tblModel = (DefaultTableModel) tabelMasini.getModel();
+        DefaultTableModel tblModel = (DefaultTableModel) tableAirplanes.getModel();
         tblModel.addRow(date);
         JOptionPane.showMessageDialog(this, "Date adăugate cu succes!");
 
@@ -1439,160 +1387,426 @@ public class Deposit extends javax.swing.JFrame {
         passengerCapacityAirplane.setText("");
         categoryAirplane.setText("");
     }
-    }//GEN-LAST:event_butonSalvareMasinainTabelActionPerformed
+    }//GEN-LAST:event_saveAirplaneInTableActionPerformed
 
-    private void butonIncarcareDateDinFisierInTabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonIncarcareDateDinFisierInTabelActionPerformed
-        // TODO add your handling code here:
-        String filePath="C:\\Users\\Daria\\Desktop\\An2-Sem1\\dateMasini.txt";
-        File file=new File(filePath);
-        try{
-            BufferedReader br=new BufferedReader(new FileReader(file));
-            String primaLinie=br.readLine().trim();
-            String[] numeColoane=primaLinie.split(";");
-            DefaultTableModel model=(DefaultTableModel)tabelMasini.getModel();
+    private void uploadAirplanesInTheTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadAirplanesInTheTableActionPerformed
+
+    JFileChooser fileChooser = new JFileChooser();
+
+
+    int userSelection = fileChooser.showOpenDialog(null);
+
+    if (userSelection == JFileChooser.APPROVE_OPTION) {
+        File file = fileChooser.getSelectedFile();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+ 
+            String primaLinie = br.readLine().trim();
+            String[] numeColoane = primaLinie.split(";");
+
+
+            DefaultTableModel model = (DefaultTableModel) tableAirplanes.getModel();
             model.setColumnIdentifiers(numeColoane);
 
-            Object[] liniiTabel=br.lines().toArray();
 
-            for(int i=0;i<liniiTabel.length;i++){
-                String linie=liniiTabel[i].toString().trim();
-                String[] randDate=linie.split(",");
+            Object[] liniiTabel = br.lines().toArray();
+            for (int i = 0; i < liniiTabel.length; i++) {
+                String linie = liniiTabel[i].toString().trim();
+                String[] randDate = linie.split(","); 
                 model.addRow(randDate);
             }
-            JOptionPane.showMessageDialog(null,"Datele au fost incarcate cu succes din fisier in tabel.");
-        }catch(Exception ex){
-            Logger.getLogger(Deposit.class.getName()).log(Level.SEVERE,null,ex);
-            JOptionPane.showMessageDialog(null,"Eroare de incarcare a datelor.");
 
+            
+            JOptionPane.showMessageDialog(null, "Datele au fost încărcate cu succes din fișier în tabel.");
+        } catch (Exception ex) {
+            
+            Logger.getLogger(Deposit.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Eroare la încărcarea datelor: " + ex.getMessage());
         }
+    } else {
+        JOptionPane.showMessageDialog(null, "Încărcarea datelor a fost anulată.");
+    }
+    }//GEN-LAST:event_uploadAirplanesInTheTableActionPerformed
 
-    }//GEN-LAST:event_butonIncarcareDateDinFisierInTabelActionPerformed
-
-    private void butonSalvareMasinaInFisierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSalvareMasinaInFisierActionPerformed
-        // TODO add your handling code here:
-        //lucru cu fisiere
-        String marca=idAirplane.getText();
-        String model=brandAirplane.getText();
-        String cc=modelAirplane.getText();
-        String an=yearAirplane.getText();
-        String pret=colorAirplane.getText();
-        String stare=priceAirplane.getText();
-        String caroserie=weightAirplane.getText();
-        String catPerm=engineAirplane.getText();
-        String seria=transmissionAirplane.getText();
+    private void saveAirplaneInAFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAirplaneInAFileActionPerformed
 
         try {
-            // Creăm un JFileChooser pentru a permite selectarea fișierului
             JFileChooser fileChooser = new JFileChooser();
 
-            // Deschidem dialogul pentru salvare
+
             int userSelection =fileChooser.showSaveDialog(null);
 
             if (userSelection == JFileChooser.APPROVE_OPTION) {
-                // Obținem fișierul selectat
                 File fileToSave = fileChooser.getSelectedFile();
 
-                // Scriem datele în fișier
+               
                 try (FileWriter salvare = new FileWriter(fileToSave, true)) {
-                    salvare.write(marca + " , " + model + " , " + cc + " , " + an + " , " + pret + " , " +
-                        stare + " , " + caroserie + " , " + catPerm + " , " + seria);
-                    salvare.write(System.getProperty("line.separator")); // Adăugăm o linie nouă
+                    salvare.write(idAirplane.getText() + " , " + brandAirplane.getText() + " , " + modelAirplane.getText() + " , " + yearAirplane.getText() + " , " + colorAirplane.getText() + " , " +
+                        priceAirplane.getText() + " , " + weightAirplane.getText() + " , " + engineAirplane.getText() + " , " + transmissionAirplane.getText()+" , "+maxAltitudeAirplane.getText()+" , "+maxRangeAirplane.getText()+" , "+maxSpeedAirplane.getText()+" , "+passengerCapacityAirplane.getText()+" , "+categoryAirplane.getText());
+                    salvare.write(System.getProperty("line.separator")); 
                 }
 
-                // Afișăm un mesaj de succes
-                JOptionPane.showMessageDialog(null, "Datele au fost salvate cu succes în fișier!");
+                
+                JOptionPane.showMessageDialog(null, "The data has been successfully saved to the file!");
             } else {
-                JOptionPane.showMessageDialog(null, "Salvarea a fost anulată.");
+                JOptionPane.showMessageDialog(null, "The save operation was canceled.");
             }
         } catch (Exception e) {
             // Gestionăm eventualele erori
-            JOptionPane.showMessageDialog(null, "Eroare la salvarea datelor: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error saving data: " + e.getMessage());
         }
 
-    }//GEN-LAST:event_butonSalvareMasinaInFisierActionPerformed
+    }//GEN-LAST:event_saveAirplaneInAFileActionPerformed
 
     private void engineAirplaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engineAirplaneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_engineAirplaneActionPerformed
 
-    private void selectareVehicul1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectareVehicul1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_selectareVehicul1ActionPerformed
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+   
+    String selectedOption = jComboBox1.getSelectedItem().toString();
 
-    private void selectareVehiculActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectareVehiculActionPerformed
-        // TODO add your handling code here:
-        if(selectareVehicul.getSelectedItem().equals("Selecteaza tipul de vehicul")){
-            //            selectareVehicul1.addItem("BMW-i8");
-            //            selectareVehicul1.addItem("Audi-A6");
-            //            selectareVehicul1.addItem("Vw-arteon");
-            //            selectareVehicul1.addItem("Volvo-xc90");
-            selectareVehicul1.addItem("Tipul de vehicol nu a fost precizat");
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            jTextField5.setText("");
+    
+    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>((DefaultTableModel) tableAirplanes.getModel());
+    tableAirplanes.setRowSorter(sorter);
 
-        }else if(selectareVehicul.getSelectedItem().equals("Masina")){
-            selectareVehicul1.addItem("Necunoscut");
-            selectareVehicul1.addItem("BMW-i8");
-            selectareVehicul1.addItem("Audi-A6");
-            selectareVehicul1.addItem("Vw-arteon");
-            selectareVehicul1.addItem("Volvo-xc90");
-            if(selectareVehicul1.getSelectedItem().equals("BMW-i8")){
-                jTextField1.setText("Bmw");
-                jTextField2.setText("i8");
-                jTextField3.setText("1599");
-                jTextField4.setText("2016");
-                jTextField5.setText("75000");
-            }else if(selectareVehicul1.getSelectedItem().equals("Audi-A6")){
-                jTextField1.setText("Audi");
-                jTextField2.setText("A6");
-                jTextField3.setText("1999");
-                jTextField4.setText("2022");
-                jTextField5.setText("39999");
-            }else if(selectareVehicul1.getSelectedItem().equals("Vw-arteon")){
-                jTextField1.setText("Volkswagen");
-                jTextField2.setText("Arteon");
-                jTextField3.setText("1999");
-                jTextField4.setText("2022");
-                jTextField5.setText("37999");
-            }else if(selectareVehicul1.getSelectedItem().equals("Vw-arteon")){
-                jTextField1.setText("Volkswagen");
-                jTextField2.setText("Arteon");
-                jTextField3.setText("1999");
-                jTextField4.setText("2022");
-                jTextField5.setText("37999");
-            }else if(selectareVehicul1.getSelectedItem().equals("Volvo-xc90")){
-                jTextField1.setText("Volvo");
-                jTextField2.setText("xc90");
-                jTextField3.setText("1999");
-                jTextField4.setText("2022");
-                jTextField5.setText("67999");
+   
+    sorter.setComparator(5, (o1, o2) -> {
+        Double price1 = Double.parseDouble(o1.toString());
+        Double price2 = Double.parseDouble(o2.toString());
+        return Double.compare(price1, price2);
+    });
+
+  
+    if (selectedOption.equals("Price: Low to High")) {
+        sorter.setSortKeys(List.of(new RowSorter.SortKey(5, SortOrder.ASCENDING)));
+    } else if (selectedOption.equals("Price: High to Low")) {
+        sorter.setSortKeys(List.of(new RowSorter.SortKey(5, SortOrder.DESCENDING)));
+    }
+
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void engineJetplaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engineJetplaneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_engineJetplaneActionPerformed
+
+    private void saveJetplaneInAFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveJetplaneInAFileActionPerformed
+        // TODO add your handling code here:
+        
+        try {
+            JFileChooser fileChooser = new JFileChooser();
+
+
+            int userSelection =fileChooser.showSaveDialog(null);
+
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+               
+                try (FileWriter salvare = new FileWriter(fileToSave, true)) {
+                    salvare.write(idJetplane.getText() + " , " + brandJetplane.getText() + " , " + modelJetplane.getText() + " , " + yearJetplane.getText() + " , " + colorJetplane.getText() + " , " +
+                        priceJetplane.getText() + " , " + weightJetplane.getText() + " , " + engineJetplane.getText() + " , " + transmissionJetplane.getText()+" , "+maxAltitudeJetplane.getText()+" , "+maxRangeJetplane.getText()+" , "+maxSpeedJetplane.getText()+" , "+engineCyclesJetplane.getText()+" , "+propulsionSystemJetplane.getText());
+                    salvare.write(System.getProperty("line.separator")); 
+                }
+
+                
+                JOptionPane.showMessageDialog(null, "The data has been successfully saved to the file!");
+            } else {
+                JOptionPane.showMessageDialog(null, "The save operation was canceled.");
             }
+        } catch (Exception e) {
+            // Gestionăm eventualele erori
+            JOptionPane.showMessageDialog(null, "Error saving data: " + e.getMessage());
         }
-        //String valoareSelectata=selectareVehicul.getSelectedItem().toString();
-    }//GEN-LAST:event_selectareVehiculActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_saveJetplaneInAFileActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void uploadJetplanesInTheTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadJetplanesInTheTableActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+        
+    JFileChooser fileChooser = new JFileChooser();
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    int userSelection = fileChooser.showOpenDialog(null);
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    if (userSelection == JFileChooser.APPROVE_OPTION) {
+        File file = fileChooser.getSelectedFile();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+ 
+            String primaLinie = br.readLine().trim();
+            String[] numeColoane = primaLinie.split(";");
+
+
+            DefaultTableModel model = (DefaultTableModel) tableAirplanes.getModel();
+            model.setColumnIdentifiers(numeColoane);
+
+
+            Object[] liniiTabel = br.lines().toArray();
+            for (int i = 0; i < liniiTabel.length; i++) {
+                String linie = liniiTabel[i].toString().trim();
+                String[] randDate = linie.split(","); 
+                model.addRow(randDate);
+            }
+
+            
+            JOptionPane.showMessageDialog(null, "Datele au fost încărcate cu succes din fișier în tabel.");
+        } catch (Exception ex) {
+            
+            Logger.getLogger(Deposit.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Eroare la încărcarea datelor: " + ex.getMessage());
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Încărcarea datelor a fost anulată.");
+    }
+    }//GEN-LAST:event_uploadJetplanesInTheTableActionPerformed
+
+    private void saveJetplaneInTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveJetplaneInTableActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+            
+    if (idJetplane.getText().equals("") || 
+        brandJetplane.getText().equals("") || 
+        modelJetplane.getText().equals("") || 
+        yearJetplane.getText().equals("") || 
+        colorJetplane.getText().equals("") || 
+        priceJetplane.getText().equals("") || 
+        weightJetplane.getText().equals("") || 
+        engineJetplane.getText().equals("") || 
+        transmissionJetplane.getText().equals("") || 
+        maxAltitudeJetplane.getText().equals("") || 
+        maxRangeJetplane.getText().equals("") || 
+        maxSpeedJetplane.getText().equals("") || 
+        engineCyclesJetplane.getText().equals("") || 
+        propulsionSystemJetplane.getText().equals("")) {
+        
+        JOptionPane.showMessageDialog(this, "Toate câmpurile sunt obligatorii!");
+    } else {
+        
+        String date[] = {
+            idJetplane.getText(), 
+            brandJetplane.getText(), 
+            modelJetplane.getText(), 
+            yearJetplane.getText(), 
+            colorJetplane.getText(), 
+            priceJetplane.getText(), 
+            weightJetplane.getText(), 
+            engineJetplane.getText(), 
+            transmissionJetplane.getText(), 
+            maxAltitudeJetplane.getText(),
+            maxRangeJetplane.getText(),
+            maxSpeedJetplane.getText(),
+            engineCyclesJetplane.getText(),
+            propulsionSystemJetplane.getText()
+        };
+
+        
+        DefaultTableModel tblModel = (DefaultTableModel) tableJetplanes.getModel();
+        tblModel.addRow(date);
+        JOptionPane.showMessageDialog(this, "Date adăugate cu succes!");
+
+        
+        idAirplane.setText("");
+        brandJetplane.setText("");
+        modelJetplane.setText(""); 
+        yearJetplane.setText("");
+        colorJetplane.setText(""); 
+        priceJetplane.setText("");
+        weightJetplane.setText("");
+        engineJetplane.setText("");
+        transmissionJetplane.setText(""); 
+        maxAltitudeJetplane.setText("");
+        maxRangeJetplane.setText("");
+        maxSpeedJetplane.setText("");
+        engineCyclesJetplane.setText("");
+        propulsionSystemJetplane.setText("");
+    }
+    }//GEN-LAST:event_saveJetplaneInTableActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+   // Obținem valoarea selectată din jComboBox
+    String selectedOption = jComboBox2.getSelectedItem().toString();
+
+    // Obținem un sorter pentru tabel
+    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>((DefaultTableModel) tableJetplanes.getModel());
+    tableJetplanes.setRowSorter(sorter);
+
+    // Setăm comparatorul pentru coloana prețurilor (presupunem că este coloana 5)
+    sorter.setComparator(5, (o1, o2) -> {
+        Double price1 = Double.parseDouble(o1.toString());
+        Double price2 = Double.parseDouble(o2.toString());
+        return Double.compare(price1, price2);
+    });
+
+    // Sortăm în funcție de opțiunea selectată
+    if (selectedOption.equals("Price: Low to High")) {
+        sorter.setSortKeys(List.of(new RowSorter.SortKey(5, SortOrder.ASCENDING)));
+    } else if (selectedOption.equals("Price: High to Low")) {
+        sorter.setSortKeys(List.of(new RowSorter.SortKey(5, SortOrder.DESCENDING)));
+    }
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void engineHelicopterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engineHelicopterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_engineHelicopterActionPerformed
+
+    private void saveHelicopterInAFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveHelicopterInAFileActionPerformed
+        // TODO add your handling code here:
+                // TODO add your handling code here:
+        
+        try {
+            JFileChooser fileChooser = new JFileChooser();
+
+
+            int userSelection =fileChooser.showSaveDialog(null);
+
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+               
+                try (FileWriter salvare = new FileWriter(fileToSave, true)) {
+                    salvare.write(idHelicopter.getText() + " , " + brandHelicopter.getText() + " , " + modelHelicopter.getText() + " , " + yearHelicopter.getText() + " , " + colorHelicopter.getText() + " , " +
+                        priceHelicopter.getText() + " , " + weightHelicopter.getText() + " , " + engineHelicopter.getText() + " , " + transmissionHelicopter.getText()+" , "+maxAltitudeHelicopter.getText()+" , "+maxRangeHelicopter.getText()+" , "+maxSpeedHelicopter.getText()+" , "+engineCyclesHelicopter.getText()+" , "+rotorTypeHelicopter.getText());
+                    salvare.write(System.getProperty("line.separator")); 
+                }
+
+                
+                JOptionPane.showMessageDialog(null, "The data has been successfully saved to the file!");
+            } else {
+                JOptionPane.showMessageDialog(null, "The save operation was canceled.");
+            }
+        } catch (Exception e) {
+            // Gestionăm eventualele erori
+            JOptionPane.showMessageDialog(null, "Error saving data: " + e.getMessage());
+        }
+
+    }//GEN-LAST:event_saveHelicopterInAFileActionPerformed
+
+    private void uploadHelicoptersInTheTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadHelicoptersInTheTableActionPerformed
+        // TODO add your handling code here:
+        
+    JFileChooser fileChooser = new JFileChooser();
+
+
+    int userSelection = fileChooser.showOpenDialog(null);
+
+    if (userSelection == JFileChooser.APPROVE_OPTION) {
+        File file = fileChooser.getSelectedFile();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+ 
+            String primaLinie = br.readLine().trim();
+            String[] numeColoane = primaLinie.split(";");
+
+
+            DefaultTableModel model = (DefaultTableModel) tableAirplanes.getModel();
+            model.setColumnIdentifiers(numeColoane);
+
+
+            Object[] liniiTabel = br.lines().toArray();
+            for (int i = 0; i < liniiTabel.length; i++) {
+                String linie = liniiTabel[i].toString().trim();
+                String[] randDate = linie.split(","); 
+                model.addRow(randDate);
+            }
+
+            
+            JOptionPane.showMessageDialog(null, "Datele au fost încărcate cu succes din fișier în tabel.");
+        } catch (Exception ex) {
+            
+            Logger.getLogger(Deposit.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Eroare la încărcarea datelor: " + ex.getMessage());
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Încărcarea datelor a fost anulată.");
+    }
+    }//GEN-LAST:event_uploadHelicoptersInTheTableActionPerformed
+
+    private void saveHelicopterInTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveHelicopterInTableActionPerformed
+        // TODO add your handling code here:
+               // TODO add your handling code here:
+            
+    if (idHelicopter.getText().equals("") || 
+        brandHelicopter.getText().equals("") || 
+        modelHelicopter.getText().equals("") || 
+        yearHelicopter.getText().equals("") || 
+        colorHelicopter.getText().equals("") || 
+        priceHelicopter.getText().equals("") || 
+        weightHelicopter.getText().equals("") || 
+        engineHelicopter.getText().equals("") || 
+        transmissionHelicopter.getText().equals("") || 
+        maxAltitudeHelicopter.getText().equals("") || 
+        maxRangeHelicopter.getText().equals("") || 
+        maxSpeedHelicopter.getText().equals("") || 
+        engineCyclesHelicopter.getText().equals("") || 
+       rotorTypeHelicopter.getText().equals("")) {
+        
+        JOptionPane.showMessageDialog(this, "Toate câmpurile sunt obligatorii!");
+    } else {
+        
+        String date[] = {
+            idHelicopter.getText(), 
+            brandHelicopter.getText(), 
+            modelHelicopter.getText(), 
+            yearHelicopter.getText(), 
+            colorHelicopter.getText(), 
+            priceHelicopter.getText(), 
+            weightHelicopter.getText(), 
+            engineHelicopter.getText(), 
+            transmissionHelicopter.getText(), 
+            maxAltitudeHelicopter.getText(),
+            maxRangeHelicopter.getText(),
+            maxSpeedHelicopter.getText(),
+            engineCyclesHelicopter.getText(),
+            rotorTypeHelicopter.getText()
+        };
+
+        
+        DefaultTableModel tblModel = (DefaultTableModel) tableHelicopters.getModel();
+        tblModel.addRow(date);
+        JOptionPane.showMessageDialog(this, "Date adăugate cu succes!");
+
+        
+        idHelicopter.setText("");
+        brandHelicopter.setText("");
+        modelHelicopter.setText(""); 
+        yearHelicopter.setText("");
+        colorHelicopter.setText(""); 
+        priceHelicopter.setText("");
+        weightHelicopter.setText("");
+        engineHelicopter.setText("");
+        transmissionHelicopter.setText(""); 
+        maxAltitudeHelicopter.setText("");
+        maxRangeHelicopter.setText("");
+        maxSpeedHelicopter.setText("");
+        engineCyclesHelicopter.setText("");
+        rotorTypeHelicopter.setText("");
+    }
+        
+    }//GEN-LAST:event_saveHelicopterInTableActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+           
+    String selectedOption = jComboBox3.getSelectedItem().toString();
+
+    
+    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>((DefaultTableModel) tableHelicopters.getModel());
+    tableHelicopters.setRowSorter(sorter);
+
+   
+    sorter.setComparator(5, (o1, o2) -> {
+        Double price1 = Double.parseDouble(o1.toString());
+        Double price2 = Double.parseDouble(o2.toString());
+        return Double.compare(price1, price2);
+    });
+
+  
+    if (selectedOption.equals("Price: Low to High")) {
+        sorter.setSortKeys(List.of(new RowSorter.SortKey(5, SortOrder.ASCENDING)));
+    } else if (selectedOption.equals("Price: High to Low")) {
+        sorter.setSortKeys(List.of(new RowSorter.SortKey(5, SortOrder.DESCENDING)));
+    }
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1628,39 +1842,33 @@ public class Deposit extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Camion;
-    private javax.swing.JPanel Masina;
+    private javax.swing.JPanel Airplane;
+    private javax.swing.JPanel Airplane2;
+    private javax.swing.JPanel Jetplane;
     private javax.swing.JLabel Titlu1;
     private javax.swing.JLabel Titlu2;
     private javax.swing.JLabel Titlu3;
-    private javax.swing.JPanel Tractor;
-    private javax.swing.JTextField anFabricatieCamion;
-    private javax.swing.JTextField anFabricatieTractor;
     private javax.swing.JTextField brandAirplane;
-    private javax.swing.JButton butonIncarcareDateDinFisierInTabel;
-    private javax.swing.JButton butonIncarcareDateFinFisierInTabel;
-    private javax.swing.JButton butonIncarcareDateTractorInFisierInTabel;
-    private javax.swing.JButton butonSalvareCamionInFisier;
-    private javax.swing.JButton butonSalvareCamionInTabel;
-    private javax.swing.JButton butonSalvareMasinaInFisier;
-    private javax.swing.JButton butonSalvareMasinainTabel;
-    private javax.swing.JButton butonSalvareTractorInFisier;
-    private javax.swing.JButton butonSalvareTractorInTabel;
-    private javax.swing.JButton butonStergeRandCamion;
-    private javax.swing.JButton butonStergeRandTractor;
-    private javax.swing.JTextField capacitateCilindricaCamion;
-    private javax.swing.JTextField capacitateCilindricaTractor;
-    private javax.swing.JTextField capacitateTractareCamion;
-    private javax.swing.JTextField categoriePermisCamion;
+    private javax.swing.JTextField brandHelicopter;
+    private javax.swing.JTextField brandJetplane;
     private javax.swing.JTextField categoryAirplane;
     private javax.swing.JTextField colorAirplane;
+    private javax.swing.JTextField colorHelicopter;
+    private javax.swing.JTextField colorJetplane;
     private javax.swing.JTextField engineAirplane;
-    private javax.swing.JTextField greutateTractor;
+    private javax.swing.JTextField engineCyclesHelicopter;
+    private javax.swing.JTextField engineCyclesJetplane;
+    private javax.swing.JTextField engineHelicopter;
+    private javax.swing.JTextField engineJetplane;
     private javax.swing.JTextField idAirplane;
+    private javax.swing.JTextField idHelicopter;
+    private javax.swing.JTextField idJetplane;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1685,57 +1893,73 @@ public class Deposit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JPanel left;
     private javax.swing.JButton logoutButton;
     private javax.swing.JPanel mainPage;
-    private javax.swing.JTextField marcaCamion;
-    private javax.swing.JTextField marcaTractor;
     private javax.swing.JTextField maxAltitudeAirplane;
+    private javax.swing.JTextField maxAltitudeHelicopter;
+    private javax.swing.JTextField maxAltitudeJetplane;
     private javax.swing.JTextField maxRangeAirplane;
+    private javax.swing.JTextField maxRangeHelicopter;
+    private javax.swing.JTextField maxRangeJetplane;
     private javax.swing.JTextField maxSpeedAirplane;
+    private javax.swing.JTextField maxSpeedHelicopter;
+    private javax.swing.JTextField maxSpeedJetplane;
     private javax.swing.JTextField modelAirplane;
-    private javax.swing.JTextField modelCamion;
-    private javax.swing.JTextField modelTractor;
-    private javax.swing.JPanel panelCamion;
+    private javax.swing.JTextField modelHelicopter;
+    private javax.swing.JTextField modelJetplane;
     private javax.swing.JPanel panelMasina;
-    private javax.swing.JPanel panelTractor;
+    private javax.swing.JPanel panelMasina1;
+    private javax.swing.JPanel panelMasina2;
     private javax.swing.JTextField passengerCapacityAirplane;
-    private javax.swing.JTextField pretCamion;
-    private javax.swing.JTextField pretTractor;
     private javax.swing.JTextField priceAirplane;
-    private javax.swing.JPanel right;
-    private javax.swing.JComboBox<String> selectareVehicul;
-    private javax.swing.JComboBox<String> selectareVehicul1;
+    private javax.swing.JTextField priceHelicopter;
+    private javax.swing.JTextField priceJetplane;
+    private javax.swing.JTextField propulsionSystemJetplane;
+    private javax.swing.JTextField rotorTypeHelicopter;
+    private javax.swing.JButton saveAirplaneInAFile;
+    private javax.swing.JButton saveAirplaneInTable;
+    private javax.swing.JButton saveHelicopterInAFile;
+    private javax.swing.JButton saveHelicopterInTable;
+    private javax.swing.JButton saveJetplaneInAFile;
+    private javax.swing.JButton saveJetplaneInTable;
     private javax.swing.JSeparator separator;
-    private javax.swing.JTextField stareCamion;
-    private javax.swing.JTextField stareTractor;
-    private javax.swing.JTable tabelCamioane;
-    private javax.swing.JTable tabelMasini;
-    private javax.swing.JTable tabelTractoare;
+    private javax.swing.JTable tableAirplanes;
+    private javax.swing.JTable tableHelicopters;
+    private javax.swing.JTable tableJetplanes;
     private javax.swing.JTextField transmissionAirplane;
-    private javax.swing.JPanel vizualizare;
+    private javax.swing.JTextField transmissionHelicopter;
+    private javax.swing.JTextField transmissionJetplane;
+    private javax.swing.JButton uploadAirplanesInTheTable;
+    private javax.swing.JButton uploadHelicoptersInTheTable;
+    private javax.swing.JButton uploadJetplanesInTheTable;
     private javax.swing.JTextField weightAirplane;
+    private javax.swing.JTextField weightHelicopter;
+    private javax.swing.JTextField weightJetplane;
     private javax.swing.JTextField yearAirplane;
+    private javax.swing.JTextField yearHelicopter;
+    private javax.swing.JTextField yearJetplane;
     // End of variables declaration//GEN-END:variables
 }

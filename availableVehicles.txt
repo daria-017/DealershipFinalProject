@@ -28,12 +28,12 @@ Sail Boats,3,Catalina,275 Sport,2021,Blue,89999.99,3200,V4,100,50,Diesel,Manual,
 Drones,1,DJI,Phantom 4,2021,White,1500,1380,Electric,4,40,Quadcopter,None,0,drone1.png,4,true,Medium,true,6
 Drones,2,Parrot,Anafi,2020,Black,1000,500,Electric,2,25,Quadcopter,None,0,drone2.png,2,false,Small,false,4
 Drones,3,Autel Robotics,Evo Lite+,2022,Orange,2000,820,Electric,4,50,Quadcopter,None,0,drone3.png,4,true,Large,true,8
-Jet Planes,1,Concorde,Type A,1976,White,50000000,40000,Jet,2,2400,Turbofan,None,0,jetplane1.png,120000,2200,2400,true,false,Commercial,true,2
-Jet Planes,2,Boeing,747,1990,White,150000000,80000,Jet,2,900,Turbofan,None,0,jetplane2.png,45000,15000,900,false,true,Turbofan,false,2
-Jet Planes,3,Airbus,A380,2010,Blue,300000000,120000,Jet,2,1020,Turbofan,None,0,jetplane3.png,43000,15500,1020,false,true,Turbofan,false,4
-Airplanes,1,Boeing,737,2019,White,1200000,2000,Turbojet,2000,5000,Jet Fuel,Propeller,2,airplane1.png,80000,900,1000,150,2,true,false,true,Commercial,8000
-Airplanes,2,Boeing,747,2020,Gray,25000000,30000,Turbojet,2000,5000,Jet Fuel,Single-stage Gearbox,1,airplane2.png,13000,14000,1000,800,4,true,false,true,Commercial,1200
-Airplanes,3,Airbus,A320,2018,Blue,20000000,25000,Turboprop,1500,3000,Jet Fuel,Multi-stage Gearbox,3,airplane3.png,12000,7000,900,220,2,true,false,true,Commercial,600
-Helicopters,1,Bell,206,2020,Green,1200000,800,Turbojet,2,1000,Jet Fuel,Propeller,2,helicopter1.png,4000,220,250,1,800,2,true,true,Main Rotor
-Helicopters,2,Eurocopter,AS350,2018,Blue,900000,700,Turboprop,2,900,Jet Fuel,Single-stage Gearbox,1,helicopter2.png,3500,210,230,1,750,1,true,false,Main Rotor
-Helicopters,3,Sikorsky,UH-60,2015,Black,15000000,3000,Piston,2,300,Avgas,Multi-stage Gearbox,3,helicopter3.png,8000,295,315,4,900,4,true,true,Main Rotor
+Jet Planes,1,Concorde,Type A,1976,White,50000000,40000,Jet,2,2400,Turbofan,None,0,jetplane1.png,120000,2200,2400,2,Commercial
+Jet Planes,2,Boeing,747,1990,White,150000000,80000,Jet,2,900,Turbofan,None,0,jetplane2.png,45000,15000,900,2,Turbofan
+Jet Planes,3,Airbus,A380,2010,Blue,300000000,120000,Jet,2,1020,Turbofan,None,0,jetplane3.png,43000,15500,1020,false,true,4,Turbofan
+Airplanes,1,Boeing,737,2019,White,1200000,2000,Turbojet,2000,5000,Jet Fuel,Propeller,2,airplane1.png,80000,900,1000,150,Commercial
+Airplanes,2,Boeing,747,2020,Gray,25000000,30000,Turbojet,2000,5000,Jet Fuel,Single-stage Gearbox,1,airplane2.png,13000,14000,1000,800,Commercial
+Airplanes,3,Airbus,A320,2018,Blue,20000000,25000,Turboprop,1500,3000,Jet Fuel,Multi-stage Gearbox,3,airplane3.png,12000,7000,900,220,,Commercial
+Helicopters,1,Bell,206,2020,Green,1200000,800,Turbojet,2,1000,Jet Fuel,Propeller,2,helicopter1.png,4000,220,250,2,Main Rotor
+Helicopters,2,Eurocopter,AS350,2018,Blue,900000,700,Turboprop,2,900,Jet Fuel,Single-stage Gearbox,1,helicopter2.png,3500,210,230,1,Main Rotor
+Helicopters,3,Sikorsky,UH-60,2015,Black,15000000,3000,Piston,2,300,Avgas,Multi-stage Gearbox,3,helicopter3.png,8000,295,315,4,Main Rotor

@@ -6,10 +6,6 @@ package proiectjava.dealershipfinalproject;
 
 import java.awt.Color;
 
-/**
- *
- * @author Alex
- */
 public class CarDetails extends javax.swing.JFrame {
 
     /**
