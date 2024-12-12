@@ -167,7 +167,7 @@ public class Deposit extends javax.swing.JFrame {
         logoutButton.setBackground(new java.awt.Color(204, 0, 0));
         logoutButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         logoutButton.setForeground(new java.awt.Color(255, 255, 255));
-        logoutButton.setText("GO BACK");
+        logoutButton.setText("LOGOUT");
         logoutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1325,7 +1325,7 @@ public class Deposit extends javax.swing.JFrame {
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         //de adaugat 
-        AdminAccessOnly adminAccesOnly = new AdminAccessOnly();
+        new LoginFrame();
         this.dispose();
     }//GEN-LAST:event_logoutButtonActionPerformed
 
