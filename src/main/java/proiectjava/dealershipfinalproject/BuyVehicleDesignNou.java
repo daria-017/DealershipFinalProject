@@ -547,7 +547,7 @@ public class BuyVehicleDesignNou extends javax.swing.JFrame {
                 maxRange = Integer.parseInt(parts[16]);
                 maxSpeed = Integer.parseInt(parts[17]);
                 engineCycles = Integer.parseInt(parts[18]);
-                rotorType = parts[23];
+                rotorType = parts[19];
                 Helicopter helicopter = new Helicopter(id, brand, model, year, color, price, weight, engine, transmission, photo,
                         maxAltitude, maxRange, maxSpeed, engineCycles, rotorType);
                 moreText.setText(helicopter.toString());
