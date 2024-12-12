@@ -494,7 +494,7 @@ public class DragosFrame extends javax.swing.JFrame {
                 visibilityManager(2);
             }
         });
-        
+
         moreFButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 visibilityManager(3);
@@ -512,13 +512,13 @@ public class DragosFrame extends javax.swing.JFrame {
                 filterVehicles();
             }
         });
-        
+
         filterETButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 filterVehicles();
             }
         });
-        
+
         filterMButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 filterVehicles();
@@ -574,14 +574,13 @@ public class DragosFrame extends javax.swing.JFrame {
                 }
             }
         });
-        
+
 //        addWindowListener(new java.awt.event.WindowAdapter() {
 //            @Override
 //            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 //                new AdminAccessOnly();
 //            }
 //        });
-
     }
 
     public static void main(String[] args) {
@@ -633,23 +632,20 @@ public class DragosFrame extends javax.swing.JFrame {
         availableVehicles = "";
         if (vehicleType == 1 || vehicleType == 0) {
             for (Boat boat : rBoats) {
-                availableVehicles += boat + "\n~~~~~~~~~~~~~~~~~~~~\n\n";
+                availableVehicles += boat + "\n\n~~~~~~~~~~~~~~~~~~~~\n\n";
             }
         }
 
         if (vehicleType == 2 || vehicleType == 0) {
             for (SailBoat sailBoat : rSailBoats) {
-                availableVehicles += sailBoat + "\n~~~~~~~~~~~~~~~~~~~~\n\n";
+                availableVehicles += sailBoat + "\n\n~~~~~~~~~~~~~~~~~~~~\n\n";
 
             }
         }
-        
-        if(availableVehicles.equals(""))
-        {
+
+        if (availableVehicles.equals("")) {
             vehicleText.setText("No vehicles found.");
-        }
-        else
-        {
+        } else {
             vehicleText.setText(availableVehicles);
         }
         vehicleText.setCaretPosition(0);
@@ -685,332 +681,331 @@ public class DragosFrame extends javax.swing.JFrame {
         String hasLifeBuoy = (String) fHasLifeBuoy.getSelectedItem();
 
         // General Filters
-        if (!id.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getId() == Integer.parseInt(id)) {
-                    tempBoat2.add(boat);
+        try {
+            if (!id.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getId() == Integer.parseInt(id)) {
+                        tempBoat2.add(boat);
+                    }
                 }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getId() == Integer.parseInt(id)) {
-                    tempSailBoat2.add(sailBoat);
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getId() == Integer.parseInt(id)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
                 }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
             }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
 
-        if (!brand.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getBrand().toLowerCase().equals(brand.toLowerCase())) {
-                    tempBoat2.add(boat);
+            if (!brand.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getBrand().toLowerCase().equals(brand.toLowerCase())) {
+                        tempBoat2.add(boat);
+                    }
                 }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getBrand().toLowerCase().equals(brand.toLowerCase())) {
-                    tempSailBoat2.add(sailBoat);
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getBrand().toLowerCase().equals(brand.toLowerCase())) {
+                        tempSailBoat2.add(sailBoat);
+                    }
                 }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
             }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
 
-        if (!model.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getModel().toLowerCase().equals(model.toLowerCase())) {
-                    tempBoat2.add(boat);
+            if (!model.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getModel().toLowerCase().equals(model.toLowerCase())) {
+                        tempBoat2.add(boat);
+                    }
                 }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getModel().toLowerCase().equals(model.toLowerCase())) {
-                    tempSailBoat2.add(sailBoat);
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getModel().toLowerCase().equals(model.toLowerCase())) {
+                        tempSailBoat2.add(sailBoat);
+                    }
                 }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
             }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
 
-        if (!year.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getYear() >= Short.parseShort(year)) {
-                    tempBoat2.add(boat);
+            if (!year.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getYear() >= Short.parseShort(year)) {
+                        tempBoat2.add(boat);
+                    }
                 }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getYear() >= Short.parseShort(year)) {
-                    tempSailBoat2.add(sailBoat);
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getYear() >= Short.parseShort(year)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
                 }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
             }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
 
-        if (!color.equals("Any Color")) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getColor() == normColor(color)) {
-                    tempBoat2.add(boat);
+            if (!color.equals("Any Color")) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getColor() == normColor(color)) {
+                        tempBoat2.add(boat);
+                    }
                 }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getColor() == normColor(color)) {
-                    tempSailBoat2.add(sailBoat);
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getColor() == normColor(color)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
                 }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
             }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
 
-        if (!price.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getPrice() <= Double.parseDouble(price)) {
-                    tempBoat2.add(boat);
+            if (!price.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getPrice() <= Double.parseDouble(price)) {
+                        tempBoat2.add(boat);
+                    }
                 }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getPrice() <= Double.parseDouble(price)) {
-                    tempSailBoat2.add(sailBoat);
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getPrice() <= Double.parseDouble(price)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
                 }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
             }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
 
-        if (!weight.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getWeight() <= Integer.parseInt(weight)) {
-                    tempBoat2.add(boat);
+            if (!weight.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getWeight() <= Integer.parseInt(weight)) {
+                        tempBoat2.add(boat);
+                    }
                 }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getWeight() <= Integer.parseInt(weight)) {
-                    tempSailBoat2.add(sailBoat);
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getWeight() <= Integer.parseInt(weight)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
                 }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
             }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
+
+            // E&T Filters
+            if (!engineType.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getEngine().getType().toLowerCase().equals(engineType.toLowerCase())) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getEngine().getType().toLowerCase().equals(engineType.toLowerCase())) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!horsepower.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getEngine().getHorsepower() >= Integer.parseInt(horsepower)) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getEngine().getHorsepower() >= Integer.parseInt(horsepower)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!fuelCapacity.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getEngine().getFuelCapacity() >= Integer.parseInt(fuelCapacity)) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getEngine().getFuelCapacity() >= Integer.parseInt(fuelCapacity)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!typeOfFuel.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getEngine().getTypeOfFuel().toLowerCase().equals(typeOfFuel.toLowerCase())) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getEngine().getTypeOfFuel().toLowerCase().equals(typeOfFuel.toLowerCase())) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!transmissionType.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getTransmission().getType().toLowerCase().equals(transmissionType.toLowerCase())) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getTransmission().getType().toLowerCase().equals(transmissionType.toLowerCase())) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!numberOfGears.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getTransmission().getNumberOfGears() >= Integer.parseInt(numberOfGears)) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getTransmission().getNumberOfGears() >= Integer.parseInt(numberOfGears)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            // More Filters
+            if (!nauticalMiles.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getNauticalMiles() <= Integer.parseInt(nauticalMiles)) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getNauticalMiles() <= Integer.parseInt(nauticalMiles)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!GPS.equals("Any")) {
+                for (Boat boat : tempBoat1) {
+                    if (GPS.equals("Yes") && boat.getGps() == true) {
+                        tempBoat2.add(boat);
+                    } else if (GPS.equals("No") && boat.getGps() == false) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (GPS.equals("Yes") && sailBoat.getGps() == true) {
+                        tempSailBoat2.add(sailBoat);
+                    } else if (GPS.equals("No") && sailBoat.getGps() == false) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!accelerationTime.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getAccelerationTime() <= Double.parseDouble(accelerationTime)) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sailBoat.getAccelerationTime() <= Double.parseDouble(accelerationTime)) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!sonar.equals("Any")) {
+                for (Boat boat : tempBoat1) {
+                    if (sonar.equals("Yes") && boat.getSonar() == true) {
+                        tempBoat2.add(boat);
+                    } else if (sonar.equals("No") && boat.getSonar() == false) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (sonar.equals("Yes") && sailBoat.getSonar() == true) {
+                        tempSailBoat2.add(sailBoat);
+                    } else if (sonar.equals("No") && sailBoat.getSonar() == false) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempSailBoat1 = tempSailBoat2;
+                tempBoat2 = new ArrayList<>();
+                tempSailBoat2 = new ArrayList<>();
+            }
+
+            if (!propulsionType.isEmpty()) {
+                for (Boat boat : tempBoat1) {
+                    if (boat.getPropulsionType().toLowerCase().equals(propulsionType.toLowerCase())) {
+                        tempBoat2.add(boat);
+                    }
+                }
+                tempBoat1 = tempBoat2;
+                tempBoat2 = new ArrayList<>();
+            }
+
+            if (!hasLifeBuoy.equals("Any")) {
+                for (SailBoat sailBoat : tempSailBoat1) {
+                    if (hasLifeBuoy.equals("Yes") && sailBoat.getHasLifeBuoy() == true) {
+                        tempSailBoat2.add(sailBoat);
+                    } else if (hasLifeBuoy.equals("No") && sailBoat.getHasLifeBuoy() == false) {
+                        tempSailBoat2.add(sailBoat);
+                    }
+                }
+                tempSailBoat1 = tempSailBoat2;
+                tempSailBoat2 = new ArrayList<>();
+            }
+            readVehicles(tempBoat1, tempSailBoat1);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(jPanel, "Invalid filter input!\n"+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        // E&T Filters
-        if (!engineType.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getEngine().getType().toLowerCase().equals(engineType.toLowerCase())) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getEngine().getType().toLowerCase().equals(engineType.toLowerCase())) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!horsepower.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getEngine().getHorsepower() >= Integer.parseInt(horsepower)) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getEngine().getHorsepower() >= Integer.parseInt(horsepower)) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!fuelCapacity.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getEngine().getFuelCapacity() >= Integer.parseInt(fuelCapacity)) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getEngine().getFuelCapacity() >= Integer.parseInt(fuelCapacity)) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!typeOfFuel.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getEngine().getTypeOfFuel().toLowerCase().equals(typeOfFuel.toLowerCase())) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getEngine().getTypeOfFuel().toLowerCase().equals(typeOfFuel.toLowerCase())) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!transmissionType.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getTransmission().getType().toLowerCase().equals(transmissionType.toLowerCase())) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getTransmission().getType().toLowerCase().equals(transmissionType.toLowerCase())) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!numberOfGears.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getTransmission().getNumberOfGears() >= Integer.parseInt(numberOfGears)) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getTransmission().getNumberOfGears() >= Integer.parseInt(numberOfGears)) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        // More Filters
-        if (!nauticalMiles.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getNauticalMiles() <= Integer.parseInt(nauticalMiles)) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getNauticalMiles() <= Integer.parseInt(nauticalMiles)) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!GPS.equals("Any")) {
-            for (Boat boat : tempBoat1) {
-                if (GPS.equals("Yes") && boat.getGps() == true) {
-                    tempBoat2.add(boat);
-                }
-                else if (GPS.equals("No") && boat.getGps() == false) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (GPS.equals("Yes") && sailBoat.getGps() == true) {
-                    tempSailBoat2.add(sailBoat);
-                }
-                else if (GPS.equals("No") && sailBoat.getGps() == false) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!accelerationTime.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getAccelerationTime() <= Double.parseDouble(accelerationTime)) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sailBoat.getAccelerationTime() <= Double.parseDouble(accelerationTime)) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!sonar.equals("Any")) {
-            for (Boat boat : tempBoat1) {
-                if (sonar.equals("Yes") && boat.getSonar() == true) {
-                    tempBoat2.add(boat);
-                }
-                else if (sonar.equals("No") && boat.getSonar() == false) {
-                    tempBoat2.add(boat);
-                }
-            }
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (sonar.equals("Yes") && sailBoat.getSonar() == true) {
-                    tempSailBoat2.add(sailBoat);
-                }
-                else if (sonar.equals("No") && sailBoat.getSonar() == false) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempSailBoat1 = tempSailBoat2;
-            tempBoat2 = new ArrayList<>();
-            tempSailBoat2 = new ArrayList<>();
-        }
-        
-        if (!propulsionType.isEmpty()) {
-            for (Boat boat : tempBoat1) {
-                if (boat.getPropulsionType().toLowerCase().equals(propulsionType.toLowerCase())) {
-                    tempBoat2.add(boat);
-                }
-            }
-            tempBoat1 = tempBoat2;
-            tempBoat2 = new ArrayList<>();
-        }
-        
-        if (!hasLifeBuoy.equals("Any")) {
-            for (SailBoat sailBoat : tempSailBoat1) {
-                if (hasLifeBuoy.equals("Yes") && sailBoat.getHasLifeBuoy() == true) {
-                    tempSailBoat2.add(sailBoat);
-                }
-                else if (hasLifeBuoy.equals("No") && sailBoat.getHasLifeBuoy() == false) {
-                    tempSailBoat2.add(sailBoat);
-                }
-            }
-            tempSailBoat1 = tempSailBoat2;
-            tempSailBoat2 = new ArrayList<>();
-        }
-        readVehicles(tempBoat1, tempSailBoat1);
     }
 
     private void clearFilters() {
@@ -1023,14 +1018,14 @@ public class DragosFrame extends javax.swing.JFrame {
         fColor.setSelectedIndex(0);
         fPrice.setText("");
         fWeight.setText("");
-        
+
         fEngineType.setText("");
         fHorsepower.setText("");
         fFuelCapacity.setText("");
         fTypeOfFuel.setText("");
         fTransmissionType.setText("");
         fNumberOfGears.setText("");
-        
+
         fNauticalMiles.setText("");
         fGPS.setSelectedIndex(0);
         fAccelerationTime.setText("");
