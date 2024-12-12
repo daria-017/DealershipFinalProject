@@ -162,19 +162,19 @@ public class Vehicle {
                 return "Blue";
             case 0xFF00FFFF:
                 return "Cyan";
-            case 0xFFA9A9A9:
+            case 0xFF404040:
                 return "Dark Gray";
             case 0xFF808080:
                 return "Gray";
             case 0xFF00FF00:
                 return "Green";
-            case 0xFFD3D3D3:
+            case 0xFFC0C0C0:
                 return "Light Gray";
             case 0xFFFF00FF:
                 return "Magenta";
-            case 0xFFFFA500:
+            case 0xFFFFC800:
                 return "Orange";
-            case 0xFFFFC0CB:
+            case 0xFFFFAFAF:
                 return "Pink";
             case 0xFFFF0000:
                 return "Red";
