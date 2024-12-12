@@ -452,7 +452,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         String mileageChoice = carTextField.getText();
         Integer mileageChoiceInteger = Integer.parseInt(mileageChoice);
         
-        carDefaultListModel.clear(); // remove old elements for new generated state
+        carDefaultListModel.clear();
         for(Car car : cars) {
             if(convertibleChoiceBoolean == car.isIsConvertible() && mileageChoiceInteger < car.getMileage()) {
                 carDefaultListModel.addElement(car);
