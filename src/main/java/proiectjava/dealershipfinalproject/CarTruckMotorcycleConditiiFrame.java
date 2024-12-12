@@ -472,7 +472,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         String weightChoice = truckTextField.getText();
         Integer weightChoiceInteger = Integer.parseInt(weightChoice);
         
-        truckDefaultListModel.clear(); // remove old elements for new generated state
+        truckDefaultListModel.clear();
         for(Truck truck : trucks) {
             if(backupSoundChoiceBoolean == truck.isBackupSound() && weightChoiceInteger < truck.getMaxWeight()) {
                 truckDefaultListModel.addElement(truck);
