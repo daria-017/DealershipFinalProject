@@ -50,3 +50,4 @@
 -1,Helicopters,1,Bell,206,2020,Green,1200000.00,800,Turbojet,2,1000,Jet Fuel,Propeller,2,helicopter1.png,4000,220,250,1,800,2,true,true,Main Rotor
 -1,Helicopters,2,Eurocopter,AS350,2018,Blue,900000.00,700,Turboprop,2,900,Jet Fuel,Single-stage Gearbox,1,helicopter2.png,3500,210,230,1,750,1,true,false,Main Rotor
 -1,Helicopters,3,Sikorsky,UH-60,2015,Black,15000000.00,3000,Piston,2,300,Avgas,Multi-stage Gearbox,3,helicopter3.png,8000,295,315,4,900,4,true,true,Main Rotor
+-1,Trucks,3,Ram,3500,2021,Gray,65000,4500,V8,300,80,Benzina,Automatic,5,truck3.png,25000,8500,1900,true,false

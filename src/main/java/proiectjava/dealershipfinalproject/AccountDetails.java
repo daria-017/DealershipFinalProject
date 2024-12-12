@@ -95,7 +95,7 @@ public class AccountDetails extends javax.swing.JFrame {
 
         jTextField1.setText("jTextField1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Account");
         setAutoRequestFocus(false);
         setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -829,11 +829,8 @@ public class AccountDetails extends javax.swing.JFrame {
     
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         // TODO add your handling code here:
-        MainFrame mainFrame = new MainFrame();
-        mainFrame.setVisible(true);
-        mainFrame.pack();
-        mainFrame.setLocationRelativeTo(null);
-        this.dispose();
+        dispose();
+        //MainFrame.main(null);
     }//GEN-LAST:event_menuButtonActionPerformed
 
     /**
