@@ -1362,78 +1362,90 @@
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="12" rowCount="4">
+                          <Table columnCount="12" rowCount="5">
                             <Column editable="true" title="ID" type="java.lang.Object">
                               <Data value="1"/>
                               <Data value="2"/>
                               <Data value="3"/>
                               <Data value="4"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="BRAND" type="java.lang.Object">
                               <Data value="Kawasaki"/>
                               <Data value="Honda"/>
                               <Data value="Sea-Doo"/>
                               <Data value="Yamaha"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="MODEL" type="java.lang.Object">
                               <Data value="Ultra 310X"/>
                               <Data value="AquaTrax"/>
                               <Data value="Spark Trixx"/>
                               <Data value="SuperJet"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="YEAR" type="java.lang.Object">
                               <Data value="2023"/>
                               <Data value="2022"/>
                               <Data value="2021"/>
                               <Data value="2020"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="COLOR" type="java.lang.Object">
                               <Data value="BLACK"/>
                               <Data value="YELLOW"/>
                               <Data value="WHITE"/>
                               <Data value="GRAY"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="PRICE" type="java.lang.Object">
                               <Data value="16000"/>
                               <Data value="14500"/>
                               <Data value="12000"/>
                               <Data value="13000"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="WEIGHT" type="java.lang.Object">
                               <Data value="600"/>
                               <Data value="500"/>
                               <Data value="450"/>
                               <Data value="400"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="ENGINE" type="java.lang.Object">
                               <Data value="jetskiEngine1"/>
                               <Data value="jetskiEngine2"/>
                               <Data value="jetskiEngine3"/>
                               <Data value="jetskiEngine4"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="TRANSMISSION" type="java.lang.Object">
                               <Data value="jetskiTransmission1"/>
                               <Data value="jetskiTransmission2"/>
                               <Data value="jetskiTransmission3"/>
                               <Data value="jetskiTransmission4"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="NAUTICAL MILES" type="java.lang.Object">
                               <Data value="140"/>
                               <Data value="130"/>
                               <Data value="90"/>
                               <Data value="110"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="PROPULSION SYSTEM" type="java.lang.Object">
                               <Data value="Waterjet"/>
                               <Data value="Waterjet"/>
                               <Data value="Propeller"/>
                               <Data value="Waterjet"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="HANDLEBARS SYSTEM" type="java.lang.Object">
                               <Data value="TRUE"/>
                               <Data value="TRUE"/>
                               <Data value="TRUE"/>
                               <Data value="FALSE"/>
+                              <Data value="null"/>
                             </Column>
                           </Table>
                         </Property>
