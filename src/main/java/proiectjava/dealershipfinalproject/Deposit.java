@@ -1538,7 +1538,7 @@ public class Deposit extends javax.swing.JFrame {
             String[] numeColoane = primaLinie.split(";");
 
 
-            DefaultTableModel model = (DefaultTableModel) tableAirplanes.getModel();
+            DefaultTableModel model = (DefaultTableModel) tableJetplanes.getModel();
             model.setColumnIdentifiers(numeColoane);
 
 
@@ -1698,7 +1698,7 @@ public class Deposit extends javax.swing.JFrame {
             String[] numeColoane = primaLinie.split(";");
 
 
-            DefaultTableModel model = (DefaultTableModel) tableAirplanes.getModel();
+            DefaultTableModel model = (DefaultTableModel) tableHelicopters.getModel();
             model.setColumnIdentifiers(numeColoane);
 
 
