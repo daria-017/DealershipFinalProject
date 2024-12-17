@@ -15,7 +15,7 @@ public class DealershipFinalProject {
 
     public static void main(String[] args) {
         
-        new LoginFrame();
+        new Login();
         
         System.out.println("--------Yacht--------");
         Engine yachtEngine1 = new Engine("V6 Marine", 500, 300, "Diesel");

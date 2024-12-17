@@ -159,14 +159,14 @@ public class CreateAccountFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new LoginFrame();
+                new Login();
             }
         });
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                new LoginFrame();
+                new Login();
             }
         });
 
@@ -307,7 +307,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                 writer.newLine();
                 JOptionPane.showMessageDialog(this, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
-                new LoginFrame();
+                new Login();
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(this, "Error writing to file!", "Error", JOptionPane.ERROR_MESSAGE);
             }
