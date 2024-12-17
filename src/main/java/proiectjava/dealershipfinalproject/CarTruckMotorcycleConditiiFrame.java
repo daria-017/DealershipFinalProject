@@ -1,7 +1,11 @@
 package proiectjava.dealershipfinalproject;
 
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
     private final Car[] cars;
@@ -94,6 +98,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         carScrollPane = new javax.swing.JScrollPane();
         carList = new javax.swing.JList<>();
         carProceedButton = new javax.swing.JButton();
+        carSaveFileButton = new javax.swing.JButton();
         truckPanel = new javax.swing.JPanel();
         truckTitle = new javax.swing.JLabel();
         truckLabel1 = new javax.swing.JLabel();
@@ -167,6 +172,16 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
             }
         });
 
+        carSaveFileButton.setBackground(new java.awt.Color(0, 102, 102));
+        carSaveFileButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        carSaveFileButton.setForeground(new java.awt.Color(216, 214, 196));
+        carSaveFileButton.setText("Save File");
+        carSaveFileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                carSaveFileButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout carPanelLayout = new javax.swing.GroupLayout(carPanel);
         carPanel.setLayout(carPanelLayout);
         carPanelLayout.setHorizontalGroup(
@@ -183,10 +198,12 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
                             .addComponent(carTitle)
                             .addGroup(carPanelLayout.createSequentialGroup()
                                 .addComponent(carLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                                 .addComponent(carTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(carPanelLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(carSaveFileButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(carProceedButton)))
                 .addGap(18, 18, 18)
                 .addComponent(carScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,7 +226,9 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
                             .addComponent(carLabel2)
                             .addComponent(carTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(carProceedButton)))
+                        .addGroup(carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(carProceedButton)
+                            .addComponent(carSaveFileButton))))
                 .addContainerGap())
         );
 
@@ -526,6 +545,19 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_motorcycleProceedButtonActionPerformed
 
+    private void carSaveFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carSaveFileButtonActionPerformed
+        // TODO add your handling code here:
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("fisierFiltrare.txt"))) {
+            for(int i = 0; i < carListModel.getSize(); i++) {
+                bufferedWriter.write(carListModel.getElementAt(i));
+                bufferedWriter.newLine();
+            }
+            JOptionPane.showMessageDialog(null, "Saved filters!");
+        } catch(IOException exception) {
+            exception.printStackTrace();
+        }
+    }//GEN-LAST:event_carSaveFileButtonActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -569,6 +601,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
     private javax.swing.JList<String> carList;
     private javax.swing.JPanel carPanel;
     private javax.swing.JButton carProceedButton;
+    private javax.swing.JButton carSaveFileButton;
     private javax.swing.JScrollPane carScrollPane;
     private javax.swing.JTextField carTextField;
     private javax.swing.JLabel carTitle;
