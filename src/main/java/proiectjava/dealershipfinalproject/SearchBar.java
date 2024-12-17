@@ -112,7 +112,10 @@ public class SearchBar extends javax.swing.JFrame {
                 for (String line : randomLines) {
                     String splitline[]=line.split(",");
                     
-                    if(vehicleSearchBar.getText().equals(splitline[0])||vehicleSearchBar.getText().equals(splitline[2])||vehicleSearchBar.getText().equals(splitline[3]))
+                    if(vehicleSearchBar.getText().equals(splitline[0])||vehicleSearchBar.getText().equals(splitline[2])||vehicleSearchBar.getText().equals(splitline[3])
+                            ||vehicleSearchBar.getText().toLowerCase().equals(splitline[0].toLowerCase())||vehicleSearchBar.getText().toLowerCase().equals(splitline[2].toLowerCase())||vehicleSearchBar.getText().toLowerCase().equals(splitline[3].toLowerCase())
+                            
+                            )
                     {
                        finalstring+=line+"\n";
                     }
