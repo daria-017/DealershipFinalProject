@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
@@ -547,15 +548,19 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
 
     private void carSaveFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carSaveFileButtonActionPerformed
         // TODO add your handling code here:
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("fisierFiltrare.txt"))) {
-            for(int i = 0; i < carListModel.getSize(); i++) {
-                bufferedWriter.write(carListModel.getElementAt(i));
-                bufferedWriter.newLine();
-            }
-            JOptionPane.showMessageDialog(null, "Saved filters!");
-        } catch(IOException exception) {
-            exception.printStackTrace();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Save Filtered Cars");
+        if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileChooser.getSelectedFile()))) {
+                for (int i = 0; i < carListModel.getSize(); i++) {
+                    bufferedWriter.write(carListModel.getElementAt(i));
+                    bufferedWriter.newLine();
+                }
+                JOptionPane.showMessageDialog(null, "Filters saved successfully!");
+            } catch (IOException exception) {
+                JOptionPane.showMessageDialog(null, "Error saving file: " + exception.getMessage());
         }
+    }
     }//GEN-LAST:event_carSaveFileButtonActionPerformed
 
     
