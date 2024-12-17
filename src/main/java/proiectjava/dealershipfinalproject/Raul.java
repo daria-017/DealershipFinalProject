@@ -650,7 +650,8 @@ public class Raul extends javax.swing.JFrame {
                 {"1", "Kawasaki", "Ultra 310X", "2023", "BLACK", "16000", "600", "jetskiEngine1", "jetskiTransmission1", "140", "Waterjet", "TRUE"},
                 {"2", "Honda", "AquaTrax", "2022", "YELLOW", "14500", "500", "jetskiEngine2", "jetskiTransmission2", "130", "Waterjet", "TRUE"},
                 {"3", "Sea-Doo", "Spark Trixx", "2021", "WHITE", "12000", "450", "jetskiEngine3", "jetskiTransmission3", "90", "Propeller", "TRUE"},
-                {"4", "Yamaha", "SuperJet", "2020", "GRAY", "13000", "400", "jetskiEngine4", "jetskiTransmission4", "110", "Waterjet", "FALSE"}
+                {"4", "Yamaha", "SuperJet", "2020", "GRAY", "13000", "400", "jetskiEngine4", "jetskiTransmission4", "110", "Waterjet", "FALSE"},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "ID", "BRAND", "MODEL", "YEAR", "COLOR", "PRICE", "WEIGHT", "ENGINE", "TRANSMISSION", "NAUTICAL MILES", "PROPULSION SYSTEM", "HANDLEBARS SYSTEM"

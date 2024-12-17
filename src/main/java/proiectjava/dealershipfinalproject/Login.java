@@ -4,12 +4,15 @@
  */
 package proiectjava.dealershipfinalproject;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Daria
  */
 public class Login extends javax.swing.JFrame {
-
+ImageIcon logo200x = new ImageIcon("Dealership_logo_200px.png");
     /**
      * Creates new form Login
      */
@@ -34,8 +37,8 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        emailField = new javax.swing.JTextField();
+        passwordField = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -52,7 +55,6 @@ public class Login extends javax.swing.JFrame {
         Right.setPreferredSize(new java.awt.Dimension(400, 500));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proiectjava/dealershipfinalproject/Dealership_logo_200px.png"))); // NOI18N
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel5.setMaximumSize(new java.awt.Dimension(100, 100));
         jLabel5.setMinimumSize(new java.awt.Dimension(100, 100));
@@ -87,7 +89,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel5.getAccessibleContext().setAccessibleName("Logo");
+        jLabel5.setIcon(logo200x);
 
         jPanel1.add(Right);
         Right.setBounds(0, 0, 400, 500);
@@ -110,10 +112,15 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Email");
 
-        jTextField2.setBackground(new java.awt.Color(216, 214, 196));
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        emailField.setBackground(new java.awt.Color(216, 214, 196));
+        emailField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
-        jPasswordField1.setBackground(new java.awt.Color(216, 214, 196));
+        passwordField.setBackground(new java.awt.Color(216, 214, 196));
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(216, 214, 196));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -165,8 +172,8 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
-                            .addComponent(jPasswordField1)
+                            .addComponent(emailField, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                            .addComponent(passwordField)
                             .addGroup(LeftLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(jLabel4)
@@ -187,11 +194,11 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(109, 109, 109)
                 .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,8 +211,6 @@ public class Login extends javax.swing.JFrame {
                     .addGap(146, 146, 146)))
         );
 
-        jLabel1.getAccessibleContext().setAccessibleName("LOGIN");
-
         jPanel1.add(Left);
         Left.setBounds(400, 0, 400, 500);
 
@@ -215,22 +220,22 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 70, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 66, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        getAccessibleContext().setAccessibleName("LOGIN");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.dispose(); // Închide fereastra curentă
+        new CreateAccountFrame().setVisible(true); // Deschide fereastra de înregistrare
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
@@ -242,13 +247,47 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MousePressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        SignUp SignUpFrame = new SignUp();
-        SignUpFrame.setVisible(true);
-        SignUpFrame.pack();
-        SignUpFrame.setLocationRelativeTo(null);
-        this.dispose();
+    String email = emailField.getText();
+    String password = new String(passwordField.getPassword());
+
+    // Verificare autentificare pentru administrator
+    if (email.equals("admin@dealership.company") && password.equals("AdminAccessOnly")) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Admin login successful!", "Succes", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        this.dispose(); // Închide fereastra curentă
+        new AdminAccessOnly().setVisible(true); // Deschide fereastra pentru administratori
+        return;
+    }
+
+    // Verificare autentificare pentru utilizatorii obișnuiți
+    boolean loginSuccess = false;
+    try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("accounts.txt"))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] userDetails = line.split(",");
+            // Verificăm dacă linia are exact 5 elemente și emailul și parola coincid
+            if (userDetails.length == 5 && userDetails[2].equals(email) && userDetails[3].equals(password)) {
+                loginSuccess = true;
+                break;
+            }
+        }
+    } catch (java.io.IOException ex) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Error reading from file!", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Rezultatul autentificării
+    if (loginSuccess) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Login successful!", "Succes", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        this.dispose(); // Închide fereastra curentă
+        MainFrame.main(null); // Deschide fereastra principală
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "Invalid email or password!", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -288,6 +327,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Left;
     private javax.swing.JPanel Right;
+    private javax.swing.JTextField emailField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -297,7 +337,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField passwordField;
     // End of variables declaration//GEN-END:variables
 }
