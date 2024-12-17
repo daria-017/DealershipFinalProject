@@ -188,7 +188,7 @@ public class AdminAccessOnly extends javax.swing.JFrame {
     }else if(selectedOption.equals("Dragoș")){
         this.dispose();
         new DragosFrame();
-    }else{
+    }else if(selectedOption.equals("Nicolas")){
        this.dispose();
        new CarTruckMotorcycleConditiiFrame();  
     }
