@@ -152,6 +152,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         carTextField.setText("Enter mileage");
 
         carList.setBackground(new java.awt.Color(0, 102, 102));
+        carList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         carList.setForeground(new java.awt.Color(216, 214, 196));
         carList.setModel(carListModel);
         carScrollPane.setViewportView(carList);
@@ -248,6 +249,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         });
 
         truckList.setBackground(new java.awt.Color(0, 102, 102));
+        truckList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         truckList.setForeground(new java.awt.Color(216, 214, 196));
         truckList.setModel(truckListModel);
         truckScrollPane.setViewportView(truckList);
@@ -343,6 +345,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         });
 
         motorcycleList.setBackground(new java.awt.Color(0, 102, 102));
+        motorcycleList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         motorcycleList.setForeground(new java.awt.Color(216, 214, 196));
         motorcycleList.setModel(motorcycleListModel);
         motorcycleScrollPane.setViewportView(motorcycleList);
@@ -449,7 +452,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         String mileageChoice = carTextField.getText();
         Integer mileageChoiceInteger = Integer.parseInt(mileageChoice);
         
-        carDefaultListModel.clear(); // remove old elements for new generated state
+        carDefaultListModel.clear();
         for(Car car : cars) {
             if(convertibleChoiceBoolean == car.isIsConvertible() && mileageChoiceInteger < car.getMileage()) {
                 carDefaultListModel.addElement(car);
@@ -472,7 +475,7 @@ public class CarTruckMotorcycleConditiiFrame extends javax.swing.JFrame {
         String weightChoice = truckTextField.getText();
         Integer weightChoiceInteger = Integer.parseInt(weightChoice);
         
-        truckDefaultListModel.clear(); // remove old elements for new generated state
+        truckDefaultListModel.clear();
         for(Truck truck : trucks) {
             if(backupSoundChoiceBoolean == truck.isBackupSound() && weightChoiceInteger < truck.getMaxWeight()) {
                 truckDefaultListModel.addElement(truck);
