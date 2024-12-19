@@ -16,6 +16,10 @@ import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import javax.swing.*;
+import java.io.*;
+import java.awt.event.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -42,37 +46,6 @@ public class Raul extends javax.swing.JFrame {
 
         mainPage = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        Yacht = new javax.swing.JPanel();
-        panelMasina = new javax.swing.JPanel();
-        Titlu1 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        idYacht = new javax.swing.JTextField();
-        yearYacht = new javax.swing.JTextField();
-        brandYacht = new javax.swing.JTextField();
-        modelYacht = new javax.swing.JTextField();
-        priceYacht = new javax.swing.JTextField();
-        colorYacht = new javax.swing.JTextField();
-        weightYacht = new javax.swing.JTextField();
-        engineYacht = new javax.swing.JTextField();
-        transmissionYacht = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        nauticalMilesYacht = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
-        maxCrewYacht = new javax.swing.JTextField();
-        jLabel43 = new javax.swing.JLabel();
-        flagYacht = new javax.swing.JTextField();
-        saveYatchInTable = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableYachts = new javax.swing.JTable();
-        sortButton = new javax.swing.JButton();
         Jetski = new javax.swing.JPanel();
         panelMasina1 = new javax.swing.JPanel();
         Titlu2 = new javax.swing.JLabel();
@@ -104,6 +77,43 @@ public class Raul extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableJetski = new javax.swing.JTable();
         sortButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        Yacht = new javax.swing.JPanel();
+        panelMasina = new javax.swing.JPanel();
+        Titlu1 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        idYacht = new javax.swing.JTextField();
+        yearYacht = new javax.swing.JTextField();
+        brandYacht = new javax.swing.JTextField();
+        modelYacht = new javax.swing.JTextField();
+        priceYacht = new javax.swing.JTextField();
+        colorYacht = new javax.swing.JTextField();
+        weightYacht = new javax.swing.JTextField();
+        engineYacht = new javax.swing.JTextField();
+        transmissionYacht = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        nauticalMilesYacht = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        maxCrewYacht = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        flagYacht = new javax.swing.JTextField();
+        saveYatchInTable = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableYachts = new javax.swing.JTable();
+        sortButton = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,119 +121,358 @@ public class Raul extends javax.swing.JFrame {
         mainPage.setForeground(new java.awt.Color(0, 102, 102));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane1.setForeground(new java.awt.Color(0, 0, 0));
+
+        Jetski.setBackground(new java.awt.Color(255, 255, 255));
+        Jetski.setForeground(new java.awt.Color(211, 210, 190));
+
+        panelMasina1.setBackground(new java.awt.Color(255, 255, 255));
+
+        Titlu2.setBackground(new java.awt.Color(211, 210, 190));
+        Titlu2.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        Titlu2.setText("Add Jetski");
+
+        jLabel13.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel13.setText("ID");
+
+        jLabel25.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel25.setText("BRAND");
+
+        jLabel26.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel26.setText("MODEL");
+
+        jLabel27.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel27.setText("YEAR");
+
+        jLabel28.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel28.setText("COLOR");
+
+        jLabel29.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel29.setText("PRICE");
+
+        jLabel30.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel30.setText("WEIGHT");
+
+        jLabel31.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel31.setText("ENGINE");
+
+        jLabel32.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel32.setText("TRANSMISSION");
+
+        engineJetski.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                engineJetskiActionPerformed(evt);
+            }
+        });
+
+        jLabel44.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel44.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel44.setText("NAUTICAL MILES");
+
+        jLabel45.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel45.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel45.setText("HANDLEBARS");
+
+        jLabel46.setBackground(new java.awt.Color(211, 210, 190));
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel46.setText("PROPULSION SYSTEM");
+
+        propulsionSystemJetski.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                propulsionSystemJetskiActionPerformed(evt);
+            }
+        });
+
+        saveJetskiInTable.setBackground(new java.awt.Color(0, 0, 0));
+        saveJetskiInTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        saveJetskiInTable.setForeground(new java.awt.Color(255, 255, 255));
+        saveJetskiInTable.setText("SAVE IN TABLE");
+        saveJetskiInTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveJetskiInTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveJetskiInTableActionPerformed(evt);
+            }
+        });
+
+        handlebarsJetski.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FALSE", "TRUE" }));
+
+        javax.swing.GroupLayout panelMasina1Layout = new javax.swing.GroupLayout(panelMasina1);
+        panelMasina1.setLayout(panelMasina1Layout);
+        panelMasina1Layout.setHorizontalGroup(
+            panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMasina1Layout.createSequentialGroup()
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(Titlu2))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel32))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel44))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel46)
+                            .addGroup(panelMasina1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel31)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel30)
+                                    .addComponent(jLabel45))))
+                        .addGap(22, 22, 22)
+                        .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(propulsionSystemJetski)
+                            .addComponent(weightJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(priceJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(colorJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(yearJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(modelJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(brandJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(idJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(transmissionJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(engineJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(nauticalMilesJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(handlebarsJetski, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(panelMasina1Layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(saveJetskiInTable)))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        panelMasina1Layout.setVerticalGroup(
+            panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMasina1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Titlu2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(idJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(brandJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(modelJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(yearJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(colorJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(priceJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(weightJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(engineJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(transmissionJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(nauticalMilesJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(propulsionSystemJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(handlebarsJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(saveJetskiInTable)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tableJetski.setAutoCreateRowSorter(true);
+        tableJetski.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tableJetski.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1", "Kawasaki", "Ultra 310X", "2023", "BLACK", "16000", "600", "jetskiEngine1", "jetskiTransmission1", "140", "Waterjet", "TRUE"},
+                {"2", "Honda", "AquaTrax", "2022", "YELLOW", "14500", "500", "jetskiEngine2", "jetskiTransmission2", "130", "Waterjet", "TRUE"},
+                {"3", "Sea-Doo", "Spark Trixx", "2021", "WHITE", "12000", "450", "jetskiEngine3", "jetskiTransmission3", "90", "Propeller", "TRUE"},
+                {"4", "Yamaha", "SuperJet", "2020", "GRAY", "13000", "400", "jetskiEngine4", "jetskiTransmission4", "110", "Waterjet", "FALSE"},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "BRAND", "MODEL", "YEAR", "COLOR", "PRICE", "WEIGHT", "ENGINE", "TRANSMISSION", "NAUTICAL MILES", "PROPULSION SYSTEM", "HANDLEBARS SYSTEM"
+            }
+        ));
+        jScrollPane2.setViewportView(tableJetski);
+
+        sortButton2.setBackground(new java.awt.Color(0, 0, 0));
+        sortButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        sortButton2.setForeground(new java.awt.Color(255, 255, 255));
+        sortButton2.setText("SORT by: Price low to High");
+        sortButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        sortButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("SAVE IN .TXT FILE");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("READ FROM .TXT");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("DELETE FROM .TXT");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JetskiLayout = new javax.swing.GroupLayout(Jetski);
+        Jetski.setLayout(JetskiLayout);
+        JetskiLayout.setHorizontalGroup(
+            JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JetskiLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelMasina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JetskiLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jButton4)
+                        .addGap(34, 34, 34)
+                        .addComponent(jButton5)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(sortButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JetskiLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1094, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(308, Short.MAX_VALUE))
+        );
+        JetskiLayout.setVerticalGroup(
+            JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JetskiLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JetskiLayout.createSequentialGroup()
+                        .addComponent(panelMasina1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(JetskiLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sortButton2)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton6))
+                        .addGap(25, 70, Short.MAX_VALUE))))
+        );
+
+        jTabbedPane1.addTab("Jetski", Jetski);
 
         Yacht.setBackground(new java.awt.Color(255, 255, 255));
         Yacht.setForeground(new java.awt.Color(211, 210, 190));
 
         panelMasina.setBackground(new java.awt.Color(255, 255, 255));
-        panelMasina.setForeground(new java.awt.Color(0, 0, 0));
 
         Titlu1.setBackground(new java.awt.Color(211, 210, 190));
         Titlu1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        Titlu1.setForeground(new java.awt.Color(0, 0, 0));
         Titlu1.setText("Add Yacht");
 
         jLabel12.setBackground(new java.awt.Color(211, 210, 190));
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("ID");
 
         jLabel17.setBackground(new java.awt.Color(211, 210, 190));
         jLabel17.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("BRAND");
 
         jLabel18.setBackground(new java.awt.Color(211, 210, 190));
         jLabel18.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("MODEL");
 
         jLabel19.setBackground(new java.awt.Color(211, 210, 190));
         jLabel19.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("YEAR");
 
         jLabel20.setBackground(new java.awt.Color(211, 210, 190));
         jLabel20.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
         jLabel20.setText("COLOR");
 
         jLabel21.setBackground(new java.awt.Color(211, 210, 190));
         jLabel21.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setText("PRICE");
 
         jLabel22.setBackground(new java.awt.Color(211, 210, 190));
         jLabel22.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("WEIGHT");
 
         jLabel23.setBackground(new java.awt.Color(211, 210, 190));
         jLabel23.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setText("ENGINE");
 
         jLabel24.setBackground(new java.awt.Color(211, 210, 190));
         jLabel24.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("TRANSMISSION");
 
-        idYacht.setBackground(new java.awt.Color(255, 255, 255));
-        idYacht.setForeground(new java.awt.Color(0, 0, 0));
-
-        yearYacht.setBackground(new java.awt.Color(255, 255, 255));
-        yearYacht.setForeground(new java.awt.Color(0, 0, 0));
-
-        brandYacht.setBackground(new java.awt.Color(255, 255, 255));
-        brandYacht.setForeground(new java.awt.Color(0, 0, 0));
-
-        modelYacht.setBackground(new java.awt.Color(255, 255, 255));
-        modelYacht.setForeground(new java.awt.Color(0, 0, 0));
-
-        priceYacht.setBackground(new java.awt.Color(255, 255, 255));
-        priceYacht.setForeground(new java.awt.Color(0, 0, 0));
-
-        colorYacht.setBackground(new java.awt.Color(255, 255, 255));
-        colorYacht.setForeground(new java.awt.Color(0, 0, 0));
-
-        weightYacht.setBackground(new java.awt.Color(255, 255, 255));
-        weightYacht.setForeground(new java.awt.Color(0, 0, 0));
-
-        engineYacht.setBackground(new java.awt.Color(255, 255, 255));
-        engineYacht.setForeground(new java.awt.Color(0, 0, 0));
         engineYacht.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 engineYachtActionPerformed(evt);
             }
         });
 
-        transmissionYacht.setBackground(new java.awt.Color(255, 255, 255));
-        transmissionYacht.setForeground(new java.awt.Color(0, 0, 0));
-
         jLabel41.setBackground(new java.awt.Color(211, 210, 190));
         jLabel41.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setText("NAUTICAL MILES");
-
-        nauticalMilesYacht.setBackground(new java.awt.Color(255, 255, 255));
-        nauticalMilesYacht.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel42.setBackground(new java.awt.Color(211, 210, 190));
         jLabel42.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(0, 0, 0));
         jLabel42.setText("MAX CREW");
-
-        maxCrewYacht.setBackground(new java.awt.Color(255, 255, 255));
-        maxCrewYacht.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel43.setBackground(new java.awt.Color(211, 210, 190));
         jLabel43.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(0, 0, 0));
         jLabel43.setText("FLAG");
-
-        flagYacht.setBackground(new java.awt.Color(255, 255, 255));
-        flagYacht.setForeground(new java.awt.Color(0, 0, 0));
 
         saveYatchInTable.setBackground(new java.awt.Color(0, 0, 0));
         saveYatchInTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -340,15 +589,13 @@ public class Raul extends javax.swing.JFrame {
                 .addGroup(panelMasinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
                     .addComponent(flagYacht, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addComponent(saveYatchInTable)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tableYachts.setAutoCreateRowSorter(true);
-        tableYachts.setBackground(new java.awt.Color(255, 255, 255));
         tableYachts.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tableYachts.setForeground(new java.awt.Color(0, 0, 0));
         tableYachts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", "Azimut", "Grande", "2023", "BLUE", "5000000", "30000", "yachtEngine1", "yachtTransmission1", "400", "12", "Italy"},
@@ -373,6 +620,36 @@ public class Raul extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("DELETE FROM .TXT");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("READ FROM .TXT");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("SAVE IN .TXT FILE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout YachtLayout = new javax.swing.GroupLayout(Yacht);
         Yacht.setLayout(YachtLayout);
         YachtLayout.setHorizontalGroup(
@@ -382,333 +659,44 @@ public class Raul extends javax.swing.JFrame {
                 .addComponent(panelMasina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(YachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(YachtLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, YachtLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(123, 123, 123)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(45, 45, 45)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(38, 38, 38)
+                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(44, 44, 44)
                         .addComponent(sortButton, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(239, 239, 239))))
+                        .addGap(373, 373, 373))
+                    .addGroup(YachtLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         YachtLayout.setVerticalGroup(
             YachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(YachtLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(YachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(YachtLayout.createSequentialGroup()
-                        .addComponent(panelMasina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(YachtLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sortButton)
-                        .addGap(25, 75, Short.MAX_VALUE))))
+                .addComponent(panelMasina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(YachtLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(YachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sortButton)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 83, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Yacht", Yacht);
-
-        Jetski.setBackground(new java.awt.Color(255, 255, 255));
-        Jetski.setForeground(new java.awt.Color(211, 210, 190));
-
-        panelMasina1.setBackground(new java.awt.Color(255, 255, 255));
-        panelMasina1.setForeground(new java.awt.Color(0, 0, 0));
-
-        Titlu2.setBackground(new java.awt.Color(211, 210, 190));
-        Titlu2.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        Titlu2.setForeground(new java.awt.Color(0, 0, 0));
-        Titlu2.setText("Add Jetski");
-
-        jLabel13.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("ID");
-
-        jLabel25.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel25.setText("BRAND");
-
-        jLabel26.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel26.setText("MODEL");
-
-        jLabel27.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel27.setText("YEAR");
-
-        jLabel28.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel28.setText("COLOR");
-
-        jLabel29.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel29.setText("PRICE");
-
-        jLabel30.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel30.setText("WEIGHT");
-
-        jLabel31.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel31.setText("ENGINE");
-
-        jLabel32.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel32.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel32.setText("TRANSMISSION");
-
-        idJetski.setBackground(new java.awt.Color(255, 255, 255));
-        idJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        yearJetski.setBackground(new java.awt.Color(255, 255, 255));
-        yearJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        brandJetski.setBackground(new java.awt.Color(255, 255, 255));
-        brandJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        modelJetski.setBackground(new java.awt.Color(255, 255, 255));
-        modelJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        priceJetski.setBackground(new java.awt.Color(255, 255, 255));
-        priceJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        colorJetski.setBackground(new java.awt.Color(255, 255, 255));
-        colorJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        weightJetski.setBackground(new java.awt.Color(255, 255, 255));
-        weightJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        engineJetski.setBackground(new java.awt.Color(255, 255, 255));
-        engineJetski.setForeground(new java.awt.Color(0, 0, 0));
-        engineJetski.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                engineJetskiActionPerformed(evt);
-            }
-        });
-
-        transmissionJetski.setBackground(new java.awt.Color(255, 255, 255));
-        transmissionJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        jLabel44.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel44.setText("NAUTICAL MILES");
-
-        nauticalMilesJetski.setBackground(new java.awt.Color(255, 255, 255));
-        nauticalMilesJetski.setForeground(new java.awt.Color(0, 0, 0));
-
-        jLabel45.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel45.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel45.setText("HANDLEBARS");
-
-        jLabel46.setBackground(new java.awt.Color(211, 210, 190));
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel46.setText("PROPULSION SYSTEM");
-
-        propulsionSystemJetski.setBackground(new java.awt.Color(255, 255, 255));
-        propulsionSystemJetski.setForeground(new java.awt.Color(0, 0, 0));
-        propulsionSystemJetski.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                propulsionSystemJetskiActionPerformed(evt);
-            }
-        });
-
-        saveJetskiInTable.setBackground(new java.awt.Color(0, 0, 0));
-        saveJetskiInTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        saveJetskiInTable.setForeground(new java.awt.Color(255, 255, 255));
-        saveJetskiInTable.setText("SAVE IN TABLE");
-        saveJetskiInTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        saveJetskiInTable.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveJetskiInTableActionPerformed(evt);
-            }
-        });
-
-        handlebarsJetski.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FALSE", "TRUE" }));
-
-        javax.swing.GroupLayout panelMasina1Layout = new javax.swing.GroupLayout(panelMasina1);
-        panelMasina1.setLayout(panelMasina1Layout);
-        panelMasina1Layout.setHorizontalGroup(
-            panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMasina1Layout.createSequentialGroup()
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMasina1Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(Titlu2))
-                    .addGroup(panelMasina1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel32))
-                    .addGroup(panelMasina1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel44))
-                    .addGroup(panelMasina1Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(saveJetskiInTable))
-                    .addGroup(panelMasina1Layout.createSequentialGroup()
-                        .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel46)
-                            .addGroup(panelMasina1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel31)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel25)
-                                    .addComponent(jLabel26)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel45))))
-                        .addGap(22, 22, 22)
-                        .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(propulsionSystemJetski)
-                            .addComponent(weightJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(priceJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(colorJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(yearJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(modelJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(brandJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(idJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(transmissionJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(engineJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(nauticalMilesJetski, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(handlebarsJetski, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        panelMasina1Layout.setVerticalGroup(
-            panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMasina1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Titlu2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(idJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(brandJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(modelJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(yearJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(colorJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(priceJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(weightJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel31)
-                    .addComponent(engineJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(transmissionJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel44)
-                    .addComponent(nauticalMilesJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(propulsionSystemJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelMasina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(handlebarsJetski, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(saveJetskiInTable)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        tableJetski.setAutoCreateRowSorter(true);
-        tableJetski.setBackground(new java.awt.Color(255, 255, 255));
-        tableJetski.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tableJetski.setForeground(new java.awt.Color(0, 0, 0));
-        tableJetski.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"1", "Kawasaki", "Ultra 310X", "2023", "BLACK", "16000", "600", "jetskiEngine1", "jetskiTransmission1", "140", "Waterjet", "TRUE"},
-                {"2", "Honda", "AquaTrax", "2022", "YELLOW", "14500", "500", "jetskiEngine2", "jetskiTransmission2", "130", "Waterjet", "TRUE"},
-                {"3", "Sea-Doo", "Spark Trixx", "2021", "WHITE", "12000", "450", "jetskiEngine3", "jetskiTransmission3", "90", "Propeller", "TRUE"},
-                {"4", "Yamaha", "SuperJet", "2020", "GRAY", "13000", "400", "jetskiEngine4", "jetskiTransmission4", "110", "Waterjet", "FALSE"},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "BRAND", "MODEL", "YEAR", "COLOR", "PRICE", "WEIGHT", "ENGINE", "TRANSMISSION", "NAUTICAL MILES", "PROPULSION SYSTEM", "HANDLEBARS SYSTEM"
-            }
-        ));
-        jScrollPane2.setViewportView(tableJetski);
-
-        sortButton2.setBackground(new java.awt.Color(0, 0, 0));
-        sortButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        sortButton2.setForeground(new java.awt.Color(255, 255, 255));
-        sortButton2.setText("SORT by: Price low to High");
-        sortButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        sortButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sortButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout JetskiLayout = new javax.swing.GroupLayout(Jetski);
-        Jetski.setLayout(JetskiLayout);
-        JetskiLayout.setHorizontalGroup(
-            JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JetskiLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelMasina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JetskiLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JetskiLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sortButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(239, 239, 239))))
-        );
-        JetskiLayout.setVerticalGroup(
-            JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JetskiLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(JetskiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JetskiLayout.createSequentialGroup()
-                        .addComponent(panelMasina1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(JetskiLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sortButton2)
-                        .addGap(25, 75, Short.MAX_VALUE))))
-        );
-
-        jTabbedPane1.addTab("Jetski", Jetski);
 
         javax.swing.GroupLayout mainPageLayout = new javax.swing.GroupLayout(mainPage);
         mainPage.setLayout(mainPageLayout);
         mainPageLayout.setHorizontalGroup(
             mainPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1)
         );
         mainPageLayout.setVerticalGroup(
             mainPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -939,6 +927,164 @@ public class Raul extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_propulsionSystemJetskiActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\thepy\\OneDrive\\Desktop\\POO.txt"))) {
+            DefaultTableModel model = (DefaultTableModel) tableYachts.getModel();
+            int rowCount = model.getRowCount();
+            int columnCount = model.getColumnCount();
+
+            for (int i = 0; i < rowCount; i++) {
+                for (int j = 0; j < columnCount; j++) {
+                    writer.write(model.getValueAt(i, j).toString());
+                    if (j < columnCount - 1) {
+                        writer.write("\t");  // Tab-separated values for each column
+                    }
+                }
+                writer.newLine(); // New line for each row
+            }
+            JOptionPane.showMessageDialog(this, "Data saved successfully.");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error saving data: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tableYachts.getSelectedRow();
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) tableYachts.getModel();
+            model.removeRow(selectedRow);  // Remove the row from the JTable
+
+            // Now, update the text file by removing the same row
+            try {
+                File file = new File("C:\\Users\\thepy\\OneDrive\\Desktop\\POO.txt");
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line;
+                StringBuilder fileContent = new StringBuilder();
+                int currentRow = 0;
+                int rowCount = model.getRowCount();
+
+                while ((line = reader.readLine()) != null) {
+                    if (currentRow != selectedRow) {
+                        fileContent.append(line).append("\n");
+                    }
+                    currentRow++;
+                }
+                reader.close();
+
+                // Rewrite the text file without the deleted row
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+                writer.write(fileContent.toString());
+                writer.close();
+
+                JOptionPane.showMessageDialog(this, "Row deleted successfully.");
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error deleting row: " + e.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\thepy\\OneDrive\\Desktop\\POO.txt"))) {
+            String line;
+            DefaultTableModel model = (DefaultTableModel) tableYachts.getModel();
+            model.setRowCount(0);  // Clear existing rows
+
+            while ((line = reader.readLine()) != null) {
+                String[] rowData = line.split("\t");  // Assuming tab-separated values
+                model.addRow(rowData);  // Add data to JTable model
+            }
+
+            JOptionPane.showMessageDialog(this, "Data loaded successfully.");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error loading data: " + e.getMessage());
+        }
+        // Create and show the frame
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\thepy\\OneDrive\\Desktop\\POO1.txt"))) {
+            DefaultTableModel model = (DefaultTableModel) tableJetski.getModel();
+            int rowCount = model.getRowCount();
+            int columnCount = model.getColumnCount();
+
+            for (int i = 0; i < rowCount; i++) {
+                for (int j = 0; j < columnCount; j++) {
+                    writer.write(model.getValueAt(i, j).toString());
+                    if (j < columnCount - 1) {
+                        writer.write("\t");  // Tab-separated values for each column
+                    }
+                }
+                writer.newLine(); // New line for each row
+            }
+            JOptionPane.showMessageDialog(this, "Data saved successfully.");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error saving data: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tableJetski.getSelectedRow();
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) tableJetski.getModel();
+            model.removeRow(selectedRow);  // Remove the row from the JTable
+
+            // Now, update the text file by removing the same row
+            try {
+                File file = new File("C:\\Users\\thepy\\OneDrive\\Desktop\\POO1.txt");
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line;
+                StringBuilder fileContent = new StringBuilder();
+                int currentRow = 0;
+                int rowCount = model.getRowCount();
+
+                while ((line = reader.readLine()) != null) {
+                    if (currentRow != selectedRow) {
+                        fileContent.append(line).append("\n");
+                    }
+                    currentRow++;
+                }
+                reader.close();
+
+                // Rewrite the text file without the deleted row
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+                writer.write(fileContent.toString());
+                writer.close();
+
+                JOptionPane.showMessageDialog(this, "Row deleted successfully.");
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error deleting row: " + e.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+        }
+     
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\thepy\\OneDrive\\Desktop\\POO1.txt"))) {
+            String line;
+            DefaultTableModel model = (DefaultTableModel) tableJetski.getModel();
+            model.setRowCount(0);  // Clear existing rows
+
+            while ((line = reader.readLine()) != null) {
+                String[] rowData = line.split("\t");  // Assuming tab-separated values
+                model.addRow(rowData);  // Add data to JTable model
+            }
+
+            JOptionPane.showMessageDialog(this, "Data loaded successfully.");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error loading data: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -989,6 +1135,12 @@ public class Raul extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> handlebarsJetski;
     private javax.swing.JTextField idJetski;
     private javax.swing.JTextField idYacht;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
