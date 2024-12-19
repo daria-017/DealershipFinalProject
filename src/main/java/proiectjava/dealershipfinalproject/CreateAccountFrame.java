@@ -159,14 +159,14 @@ public class CreateAccountFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new Login();
+                new Login().setVisible(true);
             }
         });
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                new Login();
+                new Login().setVisible(true);
             }
         });
 
@@ -291,6 +291,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
         try (BufferedReader reader = new BufferedReader(new FileReader("accounts.txt"))) {
             if (checkForExistingData(reader, username, email)) {
                 dataExists = true;
+                return;
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Error reading from file!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -307,7 +308,7 @@ public class CreateAccountFrame extends javax.swing.JFrame {
                 writer.newLine();
                 JOptionPane.showMessageDialog(this, "Account created successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
-                new Login();
+                new Login().setVisible(true);
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(this, "Error writing to file!", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -402,5 +403,10 @@ public class CreateAccountFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error reading from file!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         return accountCount;
+    }
+    
+    public static void main(String[] args)
+    {
+        new CreateAccountFrame();
     }
 }
